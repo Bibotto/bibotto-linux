@@ -1,0 +1,38 @@
+# live-build generated directories
+/.build/
+/binary/
+/cache/
+/chroot/
+/output/
+
+# Generated ISO and build manifests
+/*.iso
+/*.contents
+/*.files
+/*.packages
+/binary.modified_timestamps
+/chroot.files
+/chroot.packages.*
+
+# Downloaded installer packages
+/*.deb
+
+# Temporary files
+*.tmp
+*.log
+*~
+
+# Local build artifacts and release files
+/local/
+/releases/
+/config/includes.binary/bibotto-repo/pool/
+/scripts/__pycache__/
+
+# Temporary download logs
+/wget-log*
+
+# Backup files
+*.bak-*
+/config/*.backup-*
+/config/includes.binary/bibotto-repo/Packages
+/config/includes.binary/bibotto-repo/Packages.gz

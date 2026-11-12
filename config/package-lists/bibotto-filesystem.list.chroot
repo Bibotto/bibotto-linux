@@ -1,0 +1,5 @@
+btrfs-progs
+
+# LUKS disk encryption and initramfs support
+cryptsetup
+cryptsetup-initramfs

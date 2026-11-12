@@ -1,0 +1,20 @@
+---
+componentName: bibotto
+
+welcomeStyleCalamares: true
+welcomeExpandingLogo: true
+
+strings:
+    productName: "Bibotto Linux"
+    shortProductName: "Bibotto"
+    version: "0.1"
+    shortVersion: "0.1"
+    versionedName: "Bibotto Linux 0.1"
+    shortVersionedName: "Bibotto 0.1"
+    bootloaderEntryName: "Bibotto"
+
+# Disable external Calamares log uploads.
+uploadServer:
+    type: none
+    url: ""
+    sizeLimit: 0

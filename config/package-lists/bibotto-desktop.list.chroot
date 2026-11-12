@@ -1,0 +1,58 @@
+# Bibotto Linux - KDE Plasma 6 Desktop
+
+# Display manager and sessions
+sddm
+sddm-theme-breeze
+plasma-workspace
+plasma-desktop
+kwin-x11
+kwin-wayland
+xserver-xorg
+xserver-xorg-core
+xserver-xorg-input-libinput
+xserver-xorg-video-amdgpu
+xserver-xorg-video-nouveau
+xwayland
+
+# KDE applications
+systemsettings
+dolphin
+konsole
+ark
+kinfocenter
+kde-spectacle
+kscreen
+powerdevil
+plasma-pa
+plasma-nm
+plasma-discover
+plasma-discover-backend-flatpak
+plasma-discover-backend-fwupd
+kio-extras
+ffmpegthumbs
+kdegraphics-thumbnailers
+okular
+
+# Package management and applications
+flatpak
+packagekit
+fwupd
+vlc
+vlc-l10n
+vlc-plugin-access-extra
+libreoffice
+
+# Desktop integration
+xdg-desktop-portal
+xdg-desktop-portal-kde
+xdg-desktop-portal-gtk
+xdg-user-dirs
+xdg-utils
+
+# Themes and fonts
+breeze
+breeze-gtk-theme
+breeze-icon-theme
+fonts-inter
+fonts-noto-core
+fonts-noto-color-emoji

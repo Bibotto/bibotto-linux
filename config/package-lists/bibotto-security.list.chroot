@@ -1,0 +1,16 @@
+# Bibotto Linux - Security
+
+# Application confinement
+apparmor
+apparmor-utils
+
+# Firewall
+firewalld
+plasma-firewall
+nftables
+
+# Automatic security updates
+unattended-upgrades
+
+# Password quality enforcement
+libpam-pwquality

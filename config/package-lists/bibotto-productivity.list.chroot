@@ -1,0 +1,21 @@
+# Bibotto Linux - Productivity and Essential Tools
+
+# Archive support
+zip
+unzip
+tar
+gzip
+bzip2
+7zip
+unrar-free
+
+# Developer essentials
+git
+
+# Btrfs snapshot management
+snapper
+btrfs-assistant
+btrfsmaintenance
+
+# Memory management
+zram-tools

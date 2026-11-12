@@ -1,0 +1,7 @@
+# Bibotto Linux - Calamares shellprocess module descriptor
+---
+type: "job"
+name: "shellprocess"
+interface: "qtplugin"
+load: "libcalamares_job_shellprocess.so"
+emergency: true

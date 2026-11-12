@@ -1,0 +1,4 @@
+# Bibotto Linux - Kernel and Initramfs
+
+linux-image-amd64
+initramfs-tools

@@ -1,0 +1,3 @@
+# Email clients - selectable during installation
+kmail
+thunderbird

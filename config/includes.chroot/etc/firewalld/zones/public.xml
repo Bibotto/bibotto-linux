@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<zone>
+  <short>Bibotto Public</short>
+  <description>Bibotto default firewall zone. Rejects unsolicited incoming connections.</description>
+  <service name="dhcpv6-client"/>
+</zone>

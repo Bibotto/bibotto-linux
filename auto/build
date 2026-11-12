@@ -1,0 +1,31 @@
+#!/bin/sh
+
+set -e
+
+PROJECT_ROOT="$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)"
+cd "$PROJECT_ROOT"
+
+BRANDING_SOURCE="branding/calamares/bibotto"
+BRANDING_TARGET="config/includes.chroot/etc/calamares/branding/bibotto"
+
+if [ ! -f "$BRANDING_SOURCE/branding.desc" ]; then
+    echo "ERROR: Calamares branding.desc source is missing."
+    exit 1
+fi
+
+if [ ! -f "$BRANDING_SOURCE/development.svg" ] ||
+   [ ! -f "$BRANDING_SOURCE/email.svg" ]; then
+    echo "ERROR: Required package chooser SVG source is missing."
+    exit 1
+fi
+
+mkdir -p "$BRANDING_TARGET"
+cp -a "$BRANDING_SOURCE/." "$BRANDING_TARGET/"
+
+echo "Bibotto Calamares branding assets synchronized."
+
+if [ "${BIBOTTO_BRANDING_SYNC_ONLY:-0}" = "1" ]; then
+    exit 0
+fi
+
+exec lb build noauto "$@"

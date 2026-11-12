@@ -1,0 +1,4 @@
+# Bibotto - Optional Developer Tools
+build-essential
+docker.io
+docker-compose

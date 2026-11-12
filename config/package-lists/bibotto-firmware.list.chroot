@@ -1,0 +1,9 @@
+# Bibotto Linux - Firmware and Microcode
+
+firmware-linux
+firmware-intel-graphics
+firmware-nvidia-graphics
+firmware-realtek
+firmware-iwlwifi
+amd64-microcode
+intel-microcode
