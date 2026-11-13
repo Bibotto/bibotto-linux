@@ -1,1269 +1,5014 @@
-echo "===== CONFIG DİZİNİ ====="
-find config -maxdepth 5 -type f | sort
+Bibotto@Bibotto:/tmp/breath-upstream-forgejo$ cd /tmp/breath-upstream-forgejo
+
+echo "========== DUPLICATION COMMIT =========="
+git show --stat 59b6057
+git show --format=fuller --find-renames 59b6057 -- sddm-theme
 
 echo
-echo "===== BRANDING ====="
-find branding -maxdepth 3 -type f -print
+echo "========== NEXT SDDM SYNC COMMIT =========="
+git show --stat 2eb6abb
+git show --format=fuller 2eb6abb -- sddm-theme
 
 echo
-echo "===== AUTO ====="
-find auto -maxdepth 2 -type f -print
+echo "========== CURRENT COMPONENTS FILE =========="
+git log -p -5 -- sddm-theme/components
 
 echo
-echo "===== BUILD AYARLARI ====="
-cat auto/build
+echo "========== ROOT CMAKE =========="
+sed -n '1,240p' CMakeLists.txt
 
 echo
-echo "===== GIT TRACKED DOSYALAR ====="
-git ls-files | head -200
-===== CONFIG DİZİNİ =====
-config/binary
-config/binary.backup-before-branding
-config/bootstrap
-config/chroot
-config/common
-config/common.backup-before-branding
-config/includes.binary/bibotto-repo/Packages
-config/includes.binary/bibotto-repo/Packages.gz
-config/includes.binary/bibotto-repo/pool/accountwizard_4%3a24.12.3-1+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/adduser_3.152_all.deb
-config/includes.binary/bibotto-repo/pool/adwaita-icon-theme_48.1-1_all.deb
-config/includes.binary/bibotto-repo/pool/akonadi-backend-sqlite_4%3a24.12.3-2~deb13u1_all.deb
-config/includes.binary/bibotto-repo/pool/akonadi-contacts-data_4%3a24.12.3-1_all.deb
-config/includes.binary/bibotto-repo/pool/akonadi-mime-data_4%3a24.12.3-1_all.deb
-config/includes.binary/bibotto-repo/pool/akonadi-server_4%3a24.12.3-2~deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/alsa-topology-conf_1.2.5.1-3_all.deb
-config/includes.binary/bibotto-repo/pool/alsa-ucm-conf_1.2.14-1_all.deb
-config/includes.binary/bibotto-repo/pool/apparmor_4.1.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/apt_3.0.4_amd64.deb
-config/includes.binary/bibotto-repo/pool/aspell_0.60.8.1-4_amd64.deb
-config/includes.binary/bibotto-repo/pool/aspell-en_2020.12.07-0-1_all.deb
-config/includes.binary/bibotto-repo/pool/at-spi2-common_2.56.2-1+deb13u2_all.deb
-config/includes.binary/bibotto-repo/pool/at-spi2-core_2.56.2-1+deb13u2_amd64.deb
-config/includes.binary/bibotto-repo/pool/base-files_13.8+deb13u7_amd64.deb
-config/includes.binary/bibotto-repo/pool/base-passwd_3.6.7_amd64.deb
-config/includes.binary/bibotto-repo/pool/binutils_2.44-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/binutils-common_2.44-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/binutils-x86-64-linux-gnu_2.44-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/build-essential_12.12_amd64.deb
-config/includes.binary/bibotto-repo/pool/bzip2_1.0.8-6_amd64.deb
-config/includes.binary/bibotto-repo/pool/ca-certificates_20250419+deb13u1_all.deb
-config/includes.binary/bibotto-repo/pool/containerd_1.7.24~ds1-6+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/cpp-14_14.2.0-19_amd64.deb
-config/includes.binary/bibotto-repo/pool/cpp-14-x86-64-linux-gnu_14.2.0-19_amd64.deb
-config/includes.binary/bibotto-repo/pool/cpp_4%3a14.2.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/cpp-x86-64-linux-gnu_4%3a14.2.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/criu_4.1.1-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/dbus_1.16.2-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/dbus-bin_1.16.2-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/dbus-daemon_1.16.2-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/dbus-session-bus-common_1.16.2-2_all.deb
-config/includes.binary/bibotto-repo/pool/dbus-system-bus-common_1.16.2-2_all.deb
-config/includes.binary/bibotto-repo/pool/dbus-user-session_1.16.2-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/dconf-gsettings-backend_0.40.0-5_amd64.deb
-config/includes.binary/bibotto-repo/pool/dconf-service_0.40.0-5_amd64.deb
-config/includes.binary/bibotto-repo/pool/debconf_1.5.91_all.deb
-config/includes.binary/bibotto-repo/pool/debconf-i18n_1.5.91_all.deb
-config/includes.binary/bibotto-repo/pool/debian-archive-keyring_2025.1_all.deb
-config/includes.binary/bibotto-repo/pool/debianutils_5.23.2_amd64.deb
-config/includes.binary/bibotto-repo/pool/dictionaries-common_1.30.10_all.deb
-config/includes.binary/bibotto-repo/pool/dirmngr_2.4.7-21+deb13u1+b5_amd64.deb
-config/includes.binary/bibotto-repo/pool/dmsetup_2%3a1.02.205-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/docker-buildx_0.13.1+ds1-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/docker-cli_26.1.5+dfsg1-9+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/docker-compose_2.26.1-4_amd64.deb
-config/includes.binary/bibotto-repo/pool/docker.io_26.1.5+dfsg1-9+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/dpkg_1.22.22_amd64.deb
-config/includes.binary/bibotto-repo/pool/dpkg-dev_1.22.22_all.deb
-config/includes.binary/bibotto-repo/pool/emacsen-common_3.0.8_all.deb
-config/includes.binary/bibotto-repo/pool/fakeroot_1.37.1.1-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/fontconfig_2.15.0-2.3_amd64.deb
-config/includes.binary/bibotto-repo/pool/fontconfig-config_2.15.0-2.3_amd64.deb
-config/includes.binary/bibotto-repo/pool/fonts-dejavu-core_2.37-8_all.deb
-config/includes.binary/bibotto-repo/pool/fonts-dejavu-mono_2.37-8_all.deb
-config/includes.binary/bibotto-repo/pool/fuse3_3.17.2-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/g++-14_14.2.0-19_amd64.deb
-config/includes.binary/bibotto-repo/pool/g++-14-x86-64-linux-gnu_14.2.0-19_amd64.deb
-config/includes.binary/bibotto-repo/pool/g++_4%3a14.2.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/gcc-14_14.2.0-19_amd64.deb
-config/includes.binary/bibotto-repo/pool/gcc-14-base_14.2.0-19_amd64.deb
-config/includes.binary/bibotto-repo/pool/gcc-14-x86-64-linux-gnu_14.2.0-19_amd64.deb
-config/includes.binary/bibotto-repo/pool/gcc_4%3a14.2.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/gcc-x86-64-linux-gnu_4%3a14.2.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/gcr_3.41.2-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/gcr4_4.4.0.1-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/gettext-base_0.23.1-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/git_1%3a2.47.3-0+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/git-man_1%3a2.47.3-0+deb13u1_all.deb
-config/includes.binary/bibotto-repo/pool/gnome-keyring_48.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/gnome-keyring-pkcs11_48.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/gnome-themes-extra-data_3.28-4_all.deb
-config/includes.binary/bibotto-repo/pool/gnupg_2.4.7-21+deb13u1_all.deb
-config/includes.binary/bibotto-repo/pool/gnupg-l10n_2.4.7-21+deb13u1_all.deb
-config/includes.binary/bibotto-repo/pool/gnupg-utils_2.4.7-21+deb13u1+b5_amd64.deb
-config/includes.binary/bibotto-repo/pool/gpg_2.4.7-21+deb13u1+b5_amd64.deb
-config/includes.binary/bibotto-repo/pool/gpg-agent_2.4.7-21+deb13u1+b5_amd64.deb
-config/includes.binary/bibotto-repo/pool/gpgconf_2.4.7-21+deb13u1+b5_amd64.deb
-config/includes.binary/bibotto-repo/pool/gpgsm_2.4.7-21+deb13u1+b5_amd64.deb
-config/includes.binary/bibotto-repo/pool/gpgv_2.4.7-21+deb13u1+b5_amd64.deb
-config/includes.binary/bibotto-repo/pool/gpg-wks-client_2.4.7-21+deb13u1+b5_amd64.deb
-config/includes.binary/bibotto-repo/pool/gsettings-desktop-schemas_48.0-1_all.deb
-config/includes.binary/bibotto-repo/pool/gstreamer1.0-gl_1.26.2-1+deb13u2_amd64.deb
-config/includes.binary/bibotto-repo/pool/gstreamer1.0-plugins-base_1.26.2-1+deb13u2_amd64.deb
-config/includes.binary/bibotto-repo/pool/gtk-update-icon-cache_4.18.6+ds-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/g++-x86-64-linux-gnu_4%3a14.2.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/hicolor-icon-theme_0.18-2_all.deb
-config/includes.binary/bibotto-repo/pool/hunspell-en-us_1%3a2020.12.07-4_all.deb
-config/includes.binary/bibotto-repo/pool/i965-va-driver_2.4.1+dfsg1-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/init-system-helpers_1.69~deb13u1_all.deb
-config/includes.binary/bibotto-repo/pool/intel-media-va-driver_25.2.3+dfsg1-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/iproute2_6.15.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/iptables_1.8.11-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/isa-support_27_amd64.deb
-config/includes.binary/bibotto-repo/pool/iso-codes_4.18.0-1_all.deb
-config/includes.binary/bibotto-repo/pool/kaccounts-providers_4%3a25.04.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/kactivitymanagerd_6.3.4-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/kaddressbook-data_4%3a24.12.3-1_all.deb
-config/includes.binary/bibotto-repo/pool/kdeconnect_25.04.2-1+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/kdeconnect-libs_25.04.2-1+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/kded6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/kdepim-addons_24.12.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/kdepim-runtime_4%3a24.12.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/kdepim-themeeditors_4%3a24.12.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/keditbookmarks_25.04.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/kio6_6.13.0-6_amd64.deb
-config/includes.binary/bibotto-repo/pool/kio-ldap_24.12.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/kirigami-addons-data_1.7.0-1_all.deb
-config/includes.binary/bibotto-repo/pool/kmail_4%3a24.12.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/kmailtransport-plugins_24.12.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/kpackagetool6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/krb5-locales_1.21.3-5+deb13u1_all.deb
-config/includes.binary/bibotto-repo/pool/kwallet6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/less_668-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libaa1_1.4p5-51.1+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libaacs0_0.11.1-4+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libabsl20240722_20240722.0-4_amd64.deb
-config/includes.binary/bibotto-repo/pool/libaccounts-glib0_1.27-1+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libaccounts-qt6-1_1.17-4+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libacl1_2.3.2-2+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libakonadicalendar-data_4%3a24.12.3-1_all.deb
-config/includes.binary/bibotto-repo/pool/libakonadi-data_4%3a24.12.3-2~deb13u1_all.deb
-config/includes.binary/bibotto-repo/pool/libakonadisearch-bin_4%3a24.12.3-1+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libakonadisearch-data_4%3a24.12.3-1+deb13u1_all.deb
-config/includes.binary/bibotto-repo/pool/libakonadisearch-plugins_4%3a24.12.3-1+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libalgorithm-diff-perl_1.201-1_all.deb
-config/includes.binary/bibotto-repo/pool/libalgorithm-diff-xs-perl_0.04-9_amd64.deb
-config/includes.binary/bibotto-repo/pool/libalgorithm-merge-perl_0.08-5_all.deb
-config/includes.binary/bibotto-repo/pool/libaom3_3.12.1-1+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libapparmor1_4.1.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libapt-pkg7.0_3.0.4_amd64.deb
-config/includes.binary/bibotto-repo/pool/libarchive13t64_3.7.4-4+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libaribb24-0t64_1.0.3-2.1+b2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libasan8_14.2.0-19_amd64.deb
-config/includes.binary/bibotto-repo/pool/libasound2-data_1.2.14-1+deb13u1_all.deb
-config/includes.binary/bibotto-repo/pool/libasound2t64_1.2.14-1+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libaspell15_0.60.8.1-4_amd64.deb
-config/includes.binary/bibotto-repo/pool/libass9_1%3a0.17.3-1+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libassuan9_3.0.2-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libasyncns0_0.8-6+b5_amd64.deb
-config/includes.binary/bibotto-repo/pool/libatk1.0-0t64_2.56.2-1+deb13u2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libatk-bridge2.0-0t64_2.56.2-1+deb13u2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libatomic1_14.2.0-19_amd64.deb
-config/includes.binary/bibotto-repo/pool/libatspi2.0-0t64_2.56.2-1+deb13u2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libattr1_1%3a2.5.2-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libaudit1_1%3a4.0.2-2+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libaudit-common_1%3a4.0.2-2+deb13u1_all.deb
-config/includes.binary/bibotto-repo/pool/libauthen-sasl-perl_2.1700-1_all.deb
-config/includes.binary/bibotto-repo/pool/libavahi-client3_0.8-16_amd64.deb
-config/includes.binary/bibotto-repo/pool/libavahi-common3_0.8-16_amd64.deb
-config/includes.binary/bibotto-repo/pool/libavahi-common-data_0.8-16_amd64.deb
-config/includes.binary/bibotto-repo/pool/libavc1394-0_0.5.4-5+b2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libavcodec61_7%3a7.1.5-0+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libavformat61_7%3a7.1.5-0+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libavutil59_7%3a7.1.5-0+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libb2-1_0.98.1-1.1+b2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libbdplus0_0.2.0-4+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libbinutils_2.44-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libblkid1_2.41.5-0+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libbluetooth3_5.82-1.1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libbluray2_1%3a1.3.4-1+b2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libboost-thread1.83.0_1.83.0-4.2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libbotan-2-19_2.19.5+dfsg-4_amd64.deb
-config/includes.binary/bibotto-repo/pool/libbpf1_1%3a1.5.0-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libbrotli1_1.1.0-2+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libbsd0_0.12.2-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libbz2-1.0_1.0.8-6_amd64.deb
-config/includes.binary/bibotto-repo/pool/libc6_2.41-12+deb13u4_amd64.deb
-config/includes.binary/bibotto-repo/pool/libc6-dev_2.41-12+deb13u4_amd64.deb
-config/includes.binary/bibotto-repo/pool/libcaca0_0.99.beta20-5+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libcairo2_1.18.4-1+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libcairo-gobject2_1.18.4-1+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libcairo-script-interpreter2_1.18.4-1+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libcalendarsupport-data_4%3a24.12.3-1_all.deb
-config/includes.binary/bibotto-repo/pool/libcanberra0_0.30-18_amd64.deb
-config/includes.binary/bibotto-repo/pool/libcap2_1%3a2.75-10+deb13u1+b3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libcap2-bin_1%3a2.75-10+deb13u1+b3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libcap-ng0_0.8.5-4+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libcbor0.10_0.10.2-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libcc1-0_14.2.0-19_amd64.deb
-config/includes.binary/bibotto-repo/pool/libcddb2_1.3.2-7.1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libc-dev-bin_2.41-12+deb13u4_amd64.deb
-config/includes.binary/bibotto-repo/pool/libcdparanoia0_3.10.2+debian-14+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libchromaprint1_1.5.1-7_amd64.deb
-config/includes.binary/bibotto-repo/pool/libcjson1_1.7.18-3.1+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libclone-perl_0.47-1+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libcloudproviders0_0.3.6-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libcodec2-1.2_1.2.0-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libcolord2_1.4.7-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libcom-err2_1.47.2-3+b12_amd64.deb
-config/includes.binary/bibotto-repo/pool/libcompel1_4.1.1-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libcrypt1_1%3a4.4.38-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libcrypt-dev_1%3a4.4.38-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libcryptsetup12_2%3a2.7.5-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libctf0_2.44-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libctf-nobfd0_2.44-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libcups2t64_2.4.10-3+deb13u2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libcurl3t64-gnutls_8.14.1-2+deb13u7_amd64.deb
-config/includes.binary/bibotto-repo/pool/libdata-dump-perl_1.25-1_all.deb
-config/includes.binary/bibotto-repo/pool/libdatrie1_0.2.13-3+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libdav1d7_1.5.1-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libdb5.3t64_5.3.28+dfsg2-9_amd64.deb
-config/includes.binary/bibotto-repo/pool/libdbus-1-3_1.16.2-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libdc1394-25_2.2.6-5_amd64.deb
-config/includes.binary/bibotto-repo/pool/libdconf1_0.40.0-5_amd64.deb
-config/includes.binary/bibotto-repo/pool/libdebconfclient0_0.280_amd64.deb
-config/includes.binary/bibotto-repo/pool/libdeflate0_1.23-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libdevmapper1.02.1_2%3a1.02.205-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libdmtx0t64_0.7.7-1.2+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libdouble-conversion3_3.3.1-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libdpkg-perl_1.22.22_all.deb
-config/includes.binary/bibotto-repo/pool/libdrm2_2.4.124-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libdrm-amdgpu1_2.4.124-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libdrm-common_2.4.124-2_all.deb
-config/includes.binary/bibotto-repo/pool/libdrm-intel1_2.4.124-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libduktape207_2.7.0-2+b2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libdvbpsi10_1.3.3-1+b2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libdvdnav4_6.1.1-3+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libdvdread8t64_6.1.3-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libebml5_1.4.5-1+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libebur128-1_1.2.6-1+b2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libedit2_3.1-20250104-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libegl1_1.7.0-1+b2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libegl-mesa0_25.0.7-2+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libelf1t64_0.192-4_amd64.deb
-config/includes.binary/bibotto-repo/pool/libencode-locale-perl_1.05-3_all.deb
-config/includes.binary/bibotto-repo/pool/libepoxy0_1.5.10-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/liberror-perl_0.17030-1_all.deb
-config/includes.binary/bibotto-repo/pool/libevdev2_1.13.4+dfsg-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libevent-2.1-7t64_2.1.13-stable-1~deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libeventviews-data_4%3a24.12.3-1_all.deb
-config/includes.binary/bibotto-repo/pool/libexpat1_2.9.0-1~deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libfaad2_2.11.2-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libfakekey0_0.3+git20170516-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libfakeroot_1.37.1.1-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libffi8_3.4.8-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libfftw3-single3_3.3.10-2+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libfido2-1_1.15.0-1+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libfile-basedir-perl_0.09-2_all.deb
-config/includes.binary/bibotto-repo/pool/libfile-desktopentry-perl_0.22-3_all.deb
-config/includes.binary/bibotto-repo/pool/libfile-fcntllock-perl_0.22-4+b4_amd64.deb
-config/includes.binary/bibotto-repo/pool/libfile-listing-perl_6.16-1_all.deb
-config/includes.binary/bibotto-repo/pool/libfile-mimeinfo-perl_0.35-1_all.deb
-config/includes.binary/bibotto-repo/pool/libflac14_1.5.0+ds-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libfont-afm-perl_1.20-4_all.deb
-config/includes.binary/bibotto-repo/pool/libfontconfig1_2.15.0-2.3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libfreetype6_2.13.3+dfsg-1+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libfribidi0_1.0.16-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libfuse3-4_3.17.2-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libgbm1_25.0.7-2+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libgcc-14-dev_14.2.0-19_amd64.deb
-config/includes.binary/bibotto-repo/pool/libgcc-s1_14.2.0-19_amd64.deb
-config/includes.binary/bibotto-repo/pool/libgck-1-0_3.41.2-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libgck-2-2_4.4.0.1-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libgcr-4-4_4.4.0.1-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libgcr-base-3-1_3.41.2-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libgcr-ui-3-1_3.41.2-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libgcrypt20_1.11.0-7+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libgdbm6t64_1.24-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libgdbm-compat4t64_1.24-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libgdk-pixbuf-2.0-0_2.42.12+dfsg-4+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libgdk-pixbuf2.0-bin_2.42.12+dfsg-4+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libgdk-pixbuf2.0-common_2.42.12+dfsg-4+deb13u1_all.deb
-config/includes.binary/bibotto-repo/pool/libgl1_1.7.0-1+b2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libgl1-mesa-dri_25.0.7-2+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libgles2_1.7.0-1+b2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libglib2.0-0t64_2.84.4-3~deb13u5_amd64.deb
-config/includes.binary/bibotto-repo/pool/libglib2.0-data_2.84.4-3~deb13u5_all.deb
-config/includes.binary/bibotto-repo/pool/libglvnd0_1.7.0-1+b2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libglx0_1.7.0-1+b2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libglx-mesa0_25.0.7-2+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libgme0_0.6.3-7+b2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libgmp10_2%3a6.3.0+dfsg-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libgnutls30t64_3.8.9-3+deb13u4_amd64.deb
-config/includes.binary/bibotto-repo/pool/libgomp1_14.2.0-19_amd64.deb
-config/includes.binary/bibotto-repo/pool/libgpg-error0_1.51-4_amd64.deb
-config/includes.binary/bibotto-repo/pool/libgpg-error-l10n_1.51-4_all.deb
-config/includes.binary/bibotto-repo/pool/libgpgme11t64_1.24.2-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libgpgmepp6t64_1.24.2-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libgpm2_1.20.7-11+b2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libgprofng0_2.44-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libgrantleetheme-data_24.12.3-1_all.deb
-config/includes.binary/bibotto-repo/pool/libgrantleetheme-plugins_24.12.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libgraphene-1.0-0_1.10.8-5_amd64.deb
-config/includes.binary/bibotto-repo/pool/libgraphite2-3_1.3.14-2+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libgravatar-data_4%3a24.12.3-1_all.deb
-config/includes.binary/bibotto-repo/pool/libgsm1_1.0.22-1+b2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libgssapi-krb5-2_1.21.3-5+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libgstreamer1.0-0_1.26.2-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libgstreamer-gl1.0-0_1.26.2-1+deb13u2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libgstreamer-plugins-base1.0-0_1.26.2-1+deb13u2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libgtk-3-0t64_3.24.49-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libgtk-3-bin_3.24.49-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libgtk-3-common_3.24.49-3_all.deb
-config/includes.binary/bibotto-repo/pool/libgtk-4-1_4.18.6+ds-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libgtk-4-bin_4.18.6+ds-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libgtk-4-common_4.18.6+ds-2_all.deb
-config/includes.binary/bibotto-repo/pool/libgtk-4-media-gstreamer_4.18.6+ds-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libgudev-1.0-0_238-6_amd64.deb
-config/includes.binary/bibotto-repo/pool/libharfbuzz0b_10.2.0-1+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libharfbuzz-subset0_10.2.0-1+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libhfstospell11_0.5.4-1+b3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libhogweed6t64_3.10.1-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libhtml-format-perl_2.16-2_all.deb
-config/includes.binary/bibotto-repo/pool/libhtml-form-perl_6.12-1_all.deb
-config/includes.binary/bibotto-repo/pool/libhtml-parser-perl_3.83-2~deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libhtml-tagset-perl_3.24-1_all.deb
-config/includes.binary/bibotto-repo/pool/libhtml-tree-perl_5.07-3_all.deb
-config/includes.binary/bibotto-repo/pool/libhttp-cookies-perl_6.11-1_all.deb
-config/includes.binary/bibotto-repo/pool/libhttp-daemon-perl_6.16-1+deb13u1_all.deb
-config/includes.binary/bibotto-repo/pool/libhttp-date-perl_6.06-1_all.deb
-config/includes.binary/bibotto-repo/pool/libhttp-message-perl_7.00-2_all.deb
-config/includes.binary/bibotto-repo/pool/libhttp-negotiate-perl_6.01-2_all.deb
-config/includes.binary/bibotto-repo/pool/libhunspell-1.7-0_1.7.2+really1.7.2-10+b4_amd64.deb
-config/includes.binary/bibotto-repo/pool/libhwasan0_14.2.0-19_amd64.deb
-config/includes.binary/bibotto-repo/pool/libhwy1t64_1.2.0-2+b2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libical3t64_3.0.20-1+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libice6_2%3a1.1.1-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libicu76_76.1-4_amd64.deb
-config/includes.binary/bibotto-repo/pool/libidn12_1.43-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libidn2-0_2.3.8-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libigdgmm12_22.7.2+ds1-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libimobiledevice-1.0-6_1.3.0+git20250228-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libimobiledevice-glue-1.0-0_1.3.1-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libincidenceeditor-data_24.12.3-1_all.deb
-config/includes.binary/bibotto-repo/pool/libinput10_1.28.1-1+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libinput-bin_1.28.1-1+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libintl-perl_1.35-1_all.deb
-config/includes.binary/bibotto-repo/pool/libintl-xs-perl_1.35-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libio-compress-brotli-perl_0.004001-2+b3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libio-html-perl_1.004-3_all.deb
-config/includes.binary/bibotto-repo/pool/libio-socket-ssl-perl_2.089-1_all.deb
-config/includes.binary/bibotto-repo/pool/libio-stringy-perl_2.113-2_all.deb
-config/includes.binary/bibotto-repo/pool/libip4tc2_1.8.11-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libip6tc2_1.8.11-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libipc-system-simple-perl_1.30-2_all.deb
-config/includes.binary/bibotto-repo/pool/libisl23_0.27-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libitm1_14.2.0-19_amd64.deb
-config/includes.binary/bibotto-repo/pool/libixml11t64_1%3a1.14.20-1+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libjansson4_2.14-2+b3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libjbig0_2.1-6.1+b2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libjpeg62-turbo_1%3a2.1.5-4_amd64.deb
-config/includes.binary/bibotto-repo/pool/libjson-c5_0.18+ds-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libjxl0.11_0.11.2-0.1~deb13u3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libk5crypto3_1.21.3-5+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkaccounts6-2_4%3a25.04.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkate1_0.4.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkcalendarutils-data_4%3a24.12.3-1_all.deb
-config/includes.binary/bibotto-repo/pool/libkdepim-data_4%3a24.12.3-1_all.deb
-config/includes.binary/bibotto-repo/pool/libkdepim-plugins_4%3a24.12.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkeyutils1_1.6.3-6_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6archive6_6.13.0-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6archive-data_6.13.0-2_all.deb
-config/includes.binary/bibotto-repo/pool/libkf6attica6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6authcore6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6auth-data_6.13.0-1_all.deb
-config/includes.binary/bibotto-repo/pool/libkf6bluezqt6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6bluezqt-data_6.13.0-1_all.deb
-config/includes.binary/bibotto-repo/pool/libkf6bookmarks6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6bookmarks-data_6.13.0-1_all.deb
-config/includes.binary/bibotto-repo/pool/libkf6bookmarkswidgets6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6breezeicons6_6.13.0-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6calendarcore6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6calendarevents6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6codecs6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6codecs-data_6.13.0-1_all.deb
-config/includes.binary/bibotto-repo/pool/libkf6colorscheme6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6colorscheme-data_6.13.0-1_all.deb
-config/includes.binary/bibotto-repo/pool/libkf6completion6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6completion-data_6.13.0-1_all.deb
-config/includes.binary/bibotto-repo/pool/libkf6config-bin_6.13.0-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6configcore6_6.13.0-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6config-data_6.13.0-2_all.deb
-config/includes.binary/bibotto-repo/pool/libkf6configgui6_6.13.0-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6configqml6_6.13.0-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6configwidgets6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6configwidgets-data_6.13.0-1_all.deb
-config/includes.binary/bibotto-repo/pool/libkf6contacts6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6contacts-data_6.13.0-1_all.deb
-config/includes.binary/bibotto-repo/pool/libkf6coreaddons6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6coreaddons-data_6.13.0-1_all.deb
-config/includes.binary/bibotto-repo/pool/libkf6crash6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6dav6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6dav-data_6.13.0-1_all.deb
-config/includes.binary/bibotto-repo/pool/libkf6dbusaddons6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6dbusaddons-bin_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6dbusaddons-data_6.13.0-1_all.deb
-config/includes.binary/bibotto-repo/pool/libkf6declarative-data_6.13.0-1_all.deb
-config/includes.binary/bibotto-repo/pool/libkf6doctools6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6globalaccel6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6globalaccel-data_6.13.0-1_all.deb
-config/includes.binary/bibotto-repo/pool/libkf6guiaddons6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6guiaddons-bin_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6guiaddons-data_6.13.0-1_all.deb
-config/includes.binary/bibotto-repo/pool/libkf6holidays6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6holidays-data_6.13.0-1_all.deb
-config/includes.binary/bibotto-repo/pool/libkf6i18n6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6i18n-data_6.13.0-1_all.deb
-config/includes.binary/bibotto-repo/pool/libkf6i18nlocaledata6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6i18nqml6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6iconthemes6_6.13.0-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6iconthemes-bin_6.13.0-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6iconthemes-data_6.13.0-2_all.deb
-config/includes.binary/bibotto-repo/pool/libkf6iconwidgets6_6.13.0-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6itemmodels6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6itemviews6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6itemviews-data_6.13.0-1_all.deb
-config/includes.binary/bibotto-repo/pool/libkf6jobwidgets6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6jobwidgets-data_6.13.0-1_all.deb
-config/includes.binary/bibotto-repo/pool/libkf6kcmutils6_6.13.0-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6kcmutils-bin_6.13.0-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6kcmutilscore6_6.13.0-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6kcmutils-data_6.13.0-2_all.deb
-config/includes.binary/bibotto-repo/pool/libkf6kcmutilsquick6_6.13.0-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6kiocore6_6.13.0-6_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6kiofilewidgets6_6.13.0-6_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6kiogui6_6.13.0-6_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6kiowidgets6_6.13.0-6_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6modemmanagerqt6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6newstuffcore6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6newstuff-data_6.13.0-1_all.deb
-config/includes.binary/bibotto-repo/pool/libkf6newstuffwidgets6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6notifications6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6notifications-data_6.13.0-1_all.deb
-config/includes.binary/bibotto-repo/pool/libkf6notifyconfig6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6notifyconfig-data_6.13.0-1_all.deb
-config/includes.binary/bibotto-repo/pool/libkf6package6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6package-data_6.13.0-1_all.deb
-config/includes.binary/bibotto-repo/pool/libkf6parts6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6parts-data_6.13.0-1_all.deb
-config/includes.binary/bibotto-repo/pool/libkf6people6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6peoplebackend6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6people-data_6.13.0-1_all.deb
-config/includes.binary/bibotto-repo/pool/libkf6prison6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6prisonscanner6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6pulseaudioqt5_1.7.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6purpose6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6purpose-bin_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6purpose-data_6.13.0-1_all.deb
-config/includes.binary/bibotto-repo/pool/libkf6purposewidgets6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6qqc2desktopstyle-data_6.13.0-1_all.deb
-config/includes.binary/bibotto-repo/pool/libkf6runner6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6service6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6service-bin_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6service-data_6.13.0-1_all.deb
-config/includes.binary/bibotto-repo/pool/libkf6solid6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6solid-data_6.13.0-1_all.deb
-config/includes.binary/bibotto-repo/pool/libkf6sonnetcore6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6sonnet-data_6.13.0-1_all.deb
-config/includes.binary/bibotto-repo/pool/libkf6sonnetui6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6statusnotifieritem6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6statusnotifieritem-data_6.13.0-1_all.deb
-config/includes.binary/bibotto-repo/pool/libkf6svg6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6syndication6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6syntaxhighlighting6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6syntaxhighlighting-data_6.13.0-1_all.deb
-config/includes.binary/bibotto-repo/pool/libkf6textaddonswidgets1_1.5.4-4_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6textautocorrectioncore1_1.5.4-4_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6textautocorrectionwidgets1_1.5.4-4_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6textcustomeditor1_1.5.4-4_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6textedittexttospeech1_1.5.4-4_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6textemoticonscore1_1.5.4-4_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6textemoticonswidgets1_1.5.4-4_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6textgrammarcheck1_1.5.4-4_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6texttemplate6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6texttranslator1_1.5.4-4_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6textutils1_1.5.4-4_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6textwidgets6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6textwidgets-data_6.13.0-1_all.deb
-config/includes.binary/bibotto-repo/pool/libkf6userfeedbackcore6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6userfeedback-data_6.13.0-1_all.deb
-config/includes.binary/bibotto-repo/pool/libkf6userfeedback-doc_6.13.0-1_all.deb
-config/includes.binary/bibotto-repo/pool/libkf6userfeedbackwidgets6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6wallet6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6walletbackend6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6wallet-data_6.13.0-1_all.deb
-config/includes.binary/bibotto-repo/pool/libkf6widgetsaddons6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6widgetsaddons-data_6.13.0-1_all.deb
-config/includes.binary/bibotto-repo/pool/libkf6windowsystem6_6.13.0-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6windowsystem-data_6.13.0-2_all.deb
-config/includes.binary/bibotto-repo/pool/libkf6xmlgui6_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkf6xmlgui-data_6.13.0-1_all.deb
-config/includes.binary/bibotto-repo/pool/libkgantt6-3_3.0.1-4_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkgantt-l10n_3.0.1-4_all.deb
-config/includes.binary/bibotto-repo/pool/libkgapi-data_24.12.3-1_all.deb
-config/includes.binary/bibotto-repo/pool/libkimap-data_24.12.3-1_all.deb
-config/includes.binary/bibotto-repo/pool/libkirigami6_6.13.0-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkirigami-data_6.13.0-2_all.deb
-config/includes.binary/bibotto-repo/pool/libkirigamidelegates6_6.13.0-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkirigamidialogs6_6.13.0-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkirigamilayouts6_6.13.0-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkirigamiplatform6_6.13.0-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkirigamiprimitives6_6.13.0-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkirigamiprivate6_6.13.0-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkitinerary-data_24.12.3-1_all.deb
-config/includes.binary/bibotto-repo/pool/libkldap-data_24.12.3-1_all.deb
-config/includes.binary/bibotto-repo/pool/libkleo-data_4%3a24.12.3-3_all.deb
-config/includes.binary/bibotto-repo/pool/libkmailtransport-data_24.12.3-1_all.deb
-config/includes.binary/bibotto-repo/pool/libkmime-data_24.12.3-1_all.deb
-config/includes.binary/bibotto-repo/pool/libkmod2_34.2-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkolabxml1v5_1.2.1-5+b6_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkontactinterface-data_24.12.3-1_all.deb
-config/includes.binary/bibotto-repo/pool/libkpim6addressbookimportexport6_4%3a24.12.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6akonadiagentbase6_4%3a24.12.3-2~deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6akonadicalendar6_4%3a24.12.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6akonadicontactcore6_4%3a24.12.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6akonadicontactwidgets6_4%3a24.12.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6akonadicore6_4%3a24.12.3-2~deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6akonadimime6_4%3a24.12.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6akonadiprivate6_4%3a24.12.3-2~deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6akonadisearchcore6_4%3a24.12.3-1+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6akonadisearchdebug6_4%3a24.12.3-1+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6akonadisearchpim6_4%3a24.12.3-1+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6akonadisearchxapian6_4%3a24.12.3-1+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6akonadiwidgets6_4%3a24.12.3-2~deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6calendarsupport6_4%3a24.12.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6calendarutils6_4%3a24.12.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6eventviews6_4%3a24.12.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6gapicalendar6_24.12.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6gapicore6_24.12.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6gapipeople6_24.12.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6gapitasks6_24.12.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6grantleetheme6_24.12.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6gravatar6_4%3a24.12.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6identitymanagementcore6_24.12.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6identitymanagementwidgets6_24.12.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6imap6_24.12.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6importwizard6_4%3a24.12.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6incidenceeditor6_24.12.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6itinerary6_24.12.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6kmanagesieve6_4%3a24.12.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6kontactinterface6_24.12.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6ksieve6_4%3a24.12.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6ksievecore6_4%3a24.12.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6ksieveui6_4%3a24.12.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6ldapcore6_24.12.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6ldapwidgets6_24.12.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6libkdepim6_4%3a24.12.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6libkleo6_4%3a24.12.3-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6mailcommon6_4%3a24.12.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6mailimporter6_4%3a24.12.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6mailimporterakonadi6_4%3a24.12.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6mailtransport6_24.12.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6mbox6_24.12.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6messagecomposer6_4%3a24.12.3-4_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6messagecore6_4%3a24.12.3-4_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6messagelist6_4%3a24.12.3-4_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6messageviewer6_4%3a24.12.3-4_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6mime6_24.12.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6mimetreeparser6_4%3a24.12.3-4_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6pimcommon6_4%3a24.12.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6pimcommonakonadi6_4%3a24.12.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6pkpass6_24.12.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6smtp6_24.12.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6templateparser6_4%3a24.12.3-4_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6textedit6_24.12.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6tnef6_4%3a24.12.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpim6webengineviewer6_4%3a24.12.3-4_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkpimtextedit-data_24.12.3-1_all.deb
-config/includes.binary/bibotto-repo/pool/libkrb5-3_1.21.3-5+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libkrb5support0_1.21.3-5+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libksba8_1.6.7-2+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libksieve-data_4%3a24.12.3-1_all.deb
-config/includes.binary/bibotto-repo/pool/libksmtp-data_24.12.3-1_all.deb
-config/includes.binary/bibotto-repo/pool/libktextaddons-data_1.5.4-4_all.deb
-config/includes.binary/bibotto-repo/pool/libktnef-data_4%3a24.12.3-1_all.deb
-config/includes.binary/bibotto-repo/pool/liblcms2-2_2.16-2+deb13u2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libldap2_2.6.10+dfsg-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libldap-common_2.6.10+dfsg-1_all.deb
-config/includes.binary/bibotto-repo/pool/liblerc4_4.0.0+ds-5_amd64.deb
-config/includes.binary/bibotto-repo/pool/liblilv-0-0_0.24.26-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/liblirc-client0t64_0.10.2-0.10_amd64.deb
-config/includes.binary/bibotto-repo/pool/libllvm19_1%3a19.1.7-3+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/liblocale-gettext-perl_1.07-7+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/liblsan0_14.2.0-19_amd64.deb
-config/includes.binary/bibotto-repo/pool/libltdl7_2.5.4-4_amd64.deb
-config/includes.binary/bibotto-repo/pool/liblua5.2-0_5.2.4-3+b3_amd64.deb
-config/includes.binary/bibotto-repo/pool/liblwp-mediatypes-perl_6.04-2_all.deb
-config/includes.binary/bibotto-repo/pool/liblwp-protocol-https-perl_6.14-1_all.deb
-config/includes.binary/bibotto-repo/pool/liblz4-1_1.10.0-4_amd64.deb
-config/includes.binary/bibotto-repo/pool/liblzma5_5.8.1-1+deb13u2_amd64.deb
-config/includes.binary/bibotto-repo/pool/liblzo2-2_2.10-3+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libmad0_0.15.1b-11+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libmailcommon-data_4%3a24.12.3-1_all.deb
-config/includes.binary/bibotto-repo/pool/libmailimporter-data_4%3a24.12.3-1_all.deb
-config/includes.binary/bibotto-repo/pool/libmailtools-perl_2.22-1_all.deb
-config/includes.binary/bibotto-repo/pool/libmarkdown2_2.2.7-2.1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libmatroska7_1.7.1-1+b2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libmbedcrypto16_3.6.6-0.1~deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libmd0_1.1.0-2+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libmd4c0_0.5.2-2+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libminizip1t64_1%3a1.3.dfsg+really1.3.1-1+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libmnl0_1.0.5-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libmodule-find-perl_0.17-1_all.deb
-config/includes.binary/bibotto-repo/pool/libmount1_2.41.5-0+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libmp3lame0_3.100-6+b3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libmpc3_1.3.1-1+b3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libmpcdec6_2%3a0.1~r495-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libmpfr6_4.2.2-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libmpg123-0t64_1.32.10-1+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libmtdev1t64_1.1.7-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libmtp9t64_1.1.22-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libmtp-common_1.1.22-1_all.deb
-config/includes.binary/bibotto-repo/pool/libmtp-runtime_1.1.22-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libmysofa1_1.3.3+dfsg-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libncurses6_6.5+20250216-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libncursesw6_6.5+20250216-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libnet1_1.3+dfsg-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libnet-dbus-perl_1.2.0-2+b3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libnetfilter-conntrack3_1.1.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libnet-http-perl_6.23-1_all.deb
-config/includes.binary/bibotto-repo/pool/libnet-smtp-ssl-perl_1.04-2_all.deb
-config/includes.binary/bibotto-repo/pool/libnet-ssleay-perl_1.94-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libnettle8t64_3.10.1-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libnfnetlink0_1.0.2-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libnfs14_5.0.2-1+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libnftables1_1.1.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libnftnl11_1.2.9-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libnghttp2-14_1.64.0-1.1+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libnghttp3-9_1.8.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libngtcp2-16_1.11.0-1+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libngtcp2-crypto-gnutls8_1.11.0-1+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libnl-3-200_3.7.0-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libnorm1t64_1.5.9+dfsg-3.1+b2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libnpth0t64_1.8-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libnspr4_2%3a4.36-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libnss3_2%3a3.110-1+deb13u5_amd64.deb
-config/includes.binary/bibotto-repo/pool/libnss-systemd_257.13-1~deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libnuma1_2.0.19-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libogg0_1.3.5-3+b2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libopengl0_1.7.0-1+b2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libopenjp2-7_2.5.3-2.1~deb13u2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libopenmpt0t64_0.7.13-1+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libopenmpt-modplug1_0.8.9.0-openmpt1-2+b3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libopus0_1.5.2-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/liborc-0.4-0t64_1%3a0.4.41-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libotr5t64_4.1.1-6_amd64.deb
-config/includes.binary/bibotto-repo/pool/libp11-kit0_0.25.5-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libpam0g_1.7.0-5_amd64.deb
-config/includes.binary/bibotto-repo/pool/libpam-cap_1%3a2.75-10+deb13u1+b3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libpam-gnome-keyring_48.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libpam-modules_1.7.0-5_amd64.deb
-config/includes.binary/bibotto-repo/pool/libpam-modules-bin_1.7.0-5_amd64.deb
-config/includes.binary/bibotto-repo/pool/libpam-runtime_1.7.0-5_all.deb
-config/includes.binary/bibotto-repo/pool/libpam-systemd_257.13-1~deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libpango-1.0-0_1.56.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libpangocairo-1.0-0_1.56.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libpangoft2-1.0-0_1.56.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libpciaccess0_0.17-3+b3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libpcre2-16-0_10.46-1~deb13u3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libpcre2-8-0_10.46-1~deb13u3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libperl5.40_5.40.1-6+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libpgm-5.3-0t64_5.3.128~dfsg-2.1+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libphonenumber8_8.13.51+ds-4.2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libphonon4qt6-4t64_4%3a4.12.0-5_amd64.deb
-config/includes.binary/bibotto-repo/pool/libphonon-l10n_4%3a4.12.0-5_all.deb
-config/includes.binary/bibotto-repo/pool/libpimcommon-data_4%3a24.12.3-1_all.deb
-config/includes.binary/bibotto-repo/pool/libpipewire-0.3-0t64_1.4.2-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libpipewire-0.3-common_1.4.2-1_all.deb
-config/includes.binary/bibotto-repo/pool/libpixman-1-0_0.44.0-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libplasma6_6.3.5-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libplasmaactivities6_6.3.4-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libplasmaquick6_6.3.5-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libplist-2.0-4_2.6.0-2+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libpng16-16t64_1.6.48-1+deb13u6_amd64.deb
-config/includes.binary/bibotto-repo/pool/libpolkit-agent-1-0_126-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libpolkit-gobject-1-0_126-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libpolkit-qt6-1-1_0.200.0-4+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libpoppler147_25.03.0-5+deb13u4_amd64.deb
-config/includes.binary/bibotto-repo/pool/libpostproc58_7%3a7.1.5-0+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libproc2-0_2%3a4.0.4-9_amd64.deb
-config/includes.binary/bibotto-repo/pool/libproc-processtable-perl_0.636-1+b3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libprotobuf32t64_3.21.12-11+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libprotobuf-c1_1.5.1-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libprotobuf-lite32t64_3.21.12-11+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libproxy1v5_0.5.9-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libproxy-tools_0.5.9-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libpsl5t64_0.21.2-1.1+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libpulse0_17.0+dfsg1-2+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libpulse-mainloop-glib0_17.0+dfsg1-2+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libpython3.13-minimal_3.13.5-2+deb13u5_amd64.deb
-config/includes.binary/bibotto-repo/pool/libpython3.13-stdlib_3.13.5-2+deb13u5_amd64.deb
-config/includes.binary/bibotto-repo/pool/libpython3-stdlib_3.13.5-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libqca-qt6-2_2.3.10-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libqca-qt6-plugins_2.3.10-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libqgpgmeqt6-15_1.24.2-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libqrencode4_4.1.1-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libqt6bluetooth6_6.8.2-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libqt6bluetooth6-bin_6.8.2-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libqt6core5compat6_6.8.2-3+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libqt6core6t64_6.8.2+dfsg-9+deb13u2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libqt6dbus6_6.8.2+dfsg-9+deb13u2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libqt6gui6_6.8.2+dfsg-9+deb13u2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libqt6keychain1_0.15.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libqt6labsplatform6_6.8.2+dfsg-7_amd64.deb
-config/includes.binary/bibotto-repo/pool/libqt6multimedia6_6.8.2-8_amd64.deb
-config/includes.binary/bibotto-repo/pool/libqt6network6_6.8.2+dfsg-9+deb13u2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libqt6networkauth6_6.8.2-4_amd64.deb
-config/includes.binary/bibotto-repo/pool/libqt6opengl6_6.8.2+dfsg-9+deb13u2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libqt6positioning6_6.8.2-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libqt6printsupport6_6.8.2+dfsg-9+deb13u2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libqt6qml6_6.8.2+dfsg-7_amd64.deb
-config/includes.binary/bibotto-repo/pool/libqt6qmlmeta6_6.8.2+dfsg-7_amd64.deb
-config/includes.binary/bibotto-repo/pool/libqt6qmlmodels6_6.8.2+dfsg-7_amd64.deb
-config/includes.binary/bibotto-repo/pool/libqt6qmlworkerscript6_6.8.2+dfsg-7_amd64.deb
-config/includes.binary/bibotto-repo/pool/libqt6quick6_6.8.2+dfsg-7_amd64.deb
-config/includes.binary/bibotto-repo/pool/libqt6quickcontrols2-6_6.8.2+dfsg-7_amd64.deb
-config/includes.binary/bibotto-repo/pool/libqt6quickshapes6_6.8.2+dfsg-7_amd64.deb
-config/includes.binary/bibotto-repo/pool/libqt6quicktemplates2-6_6.8.2+dfsg-7_amd64.deb
-config/includes.binary/bibotto-repo/pool/libqt6quickwidgets6_6.8.2+dfsg-7_amd64.deb
-config/includes.binary/bibotto-repo/pool/libqt6shadertools6_6.8.2-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libqt6sql6_6.8.2+dfsg-9+deb13u2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libqt6sql6-sqlite_6.8.2+dfsg-9+deb13u2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libqt6svg6_6.8.2-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libqt6texttospeech6_6.8.2-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libqt6waylandclient6_6.8.2-4_amd64.deb
-config/includes.binary/bibotto-repo/pool/libqt6waylandcompositor6_6.8.2-4_amd64.deb
-config/includes.binary/bibotto-repo/pool/libqt6webchannel6_6.8.2-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libqt6webchannelquick6_6.8.2-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libqt6webengine6-data_6.8.2+dfsg-4_all.deb
-config/includes.binary/bibotto-repo/pool/libqt6webenginecore6_6.8.2+dfsg-4_amd64.deb
-config/includes.binary/bibotto-repo/pool/libqt6webenginecore6-bin_6.8.2+dfsg-4_amd64.deb
-config/includes.binary/bibotto-repo/pool/libqt6webenginequick6_6.8.2+dfsg-4_amd64.deb
-config/includes.binary/bibotto-repo/pool/libqt6webenginewidgets6_6.8.2+dfsg-4_amd64.deb
-config/includes.binary/bibotto-repo/pool/libqt6widgets6_6.8.2+dfsg-9+deb13u2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libqt6wlshellintegration6_6.8.2-4_amd64.deb
-config/includes.binary/bibotto-repo/pool/libqt6xml6_6.8.2+dfsg-9+deb13u2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libquadmath0_14.2.0-19_amd64.deb
-config/includes.binary/bibotto-repo/pool/librabbitmq4_0.15.0-1+deb13u2_amd64.deb
-config/includes.binary/bibotto-repo/pool/librav1e0.7_0.7.1-9+b2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libraw1394-11_2.1.2-2+b2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libreadline8t64_8.2-6_amd64.deb
-config/includes.binary/bibotto-repo/pool/libresid-builder0c2a_2.1.1-16_amd64.deb
-config/includes.binary/bibotto-repo/pool/librist4_0.2.11+dfsg-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/librnp0_0.17.1-1+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/librsvg2-2_2.60.0+dfsg-1+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/librsvg2-common_2.60.0+dfsg-1+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/librtmp1_2.4+20151223.gitfa8646d.1-2+b5_amd64.deb
-config/includes.binary/bibotto-repo/pool/libsamplerate0_0.2.2-4+b2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libsasl2-2_2.1.28+dfsg1-9_amd64.deb
-config/includes.binary/bibotto-repo/pool/libsasl2-modules_2.1.28+dfsg1-9_amd64.deb
-config/includes.binary/bibotto-repo/pool/libsasl2-modules-db_2.1.28+dfsg1-9_amd64.deb
-config/includes.binary/bibotto-repo/pool/libsasl2-modules-kdexoauth2_24.12.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libseccomp2_2.6.0-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libsecret-1-0_0.21.7-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libsecret-common_0.21.7-1_all.deb
-config/includes.binary/bibotto-repo/pool/libselinux1_3.8.1-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libsemanage2_3.8.1-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libsemanage-common_3.8.1-1_all.deb
-config/includes.binary/bibotto-repo/pool/libsensors5_1%3a3.6.2-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libsensors-config_1%3a3.6.2-2_all.deb
-config/includes.binary/bibotto-repo/pool/libsepol2_3.8.1-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libserd-0-0_0.32.4-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libsexpp0_0.8.7-4+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libsframe1_2.44-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libsharpyuv0_1.5.0-0.1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libshine3_3.1.1-2+b2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libshout3_2.4.6-1+b3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libsidplay2_2.1.1-16_amd64.deb
-config/includes.binary/bibotto-repo/pool/libsignon-plugins-common1_8.61+git20231015.c8ad982-7_amd64.deb
-config/includes.binary/bibotto-repo/pool/libsignon-qt6-1_8.61+git20231015.c8ad982-7_amd64.deb
-config/includes.binary/bibotto-repo/pool/libslang2_2.3.3-5+b2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libsm6_2%3a1.2.6-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libsmartcols1_2.41.5-0+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libsnappy1v5_1.2.2-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libsndfile1_1.2.2-2+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libsodium23_1.0.18-1+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libsord-0-0_0.16.18-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libsort-naturally-perl_1.03-4_all.deb
-config/includes.binary/bibotto-repo/pool/libsoxr0_0.1.3-4+b2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libspa-0.2-modules_1.4.2-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libspatialaudio0t64_0.3.0+git20180730+dfsg1-2.1+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libspeex1_1.2.1-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libspeexdsp1_1.2.1-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libsqlite3-0_3.46.1-7+deb13u2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libsratom-0-0_0.6.18-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libsrt1.5-gnutls_1.5.4-1+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libssh2-1t64_1.11.1-1+deb13u2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libssh-4_0.11.5-0+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libssl3t64_3.5.7-1~deb13u3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libstdc++-14-dev_14.2.0-19_amd64.deb
-config/includes.binary/bibotto-repo/pool/libstdc++6_14.2.0-19_amd64.deb
-config/includes.binary/bibotto-repo/pool/libsvtav1enc2_2.3.0+dfsg-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libswresample5_7%3a7.1.5-0+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libswscale8_7%3a7.1.5-0+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libsystemd0_257.13-1~deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libsystemd-shared_257.13-1~deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libtag2_2.0.2-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libtasn1-6_4.20.0-2+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libtdb1_2%3a1.4.13+samba4.22.11+dfsg-0+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libterm-readkey-perl_2.38-2+b4_amd64.deb
-config/includes.binary/bibotto-repo/pool/libtext-charwidth-perl_0.04-11+b4_amd64.deb
-config/includes.binary/bibotto-repo/pool/libtext-iconv-perl_1.7-8+b4_amd64.deb
-config/includes.binary/bibotto-repo/pool/libtext-wrapi18n-perl_0.06-10_all.deb
-config/includes.binary/bibotto-repo/pool/libthai0_0.1.29-2+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libthai-data_0.1.29-2_all.deb
-config/includes.binary/bibotto-repo/pool/libtheora0_1.2.0~alpha1+dfsg-6_amd64.deb
-config/includes.binary/bibotto-repo/pool/libtheoradec1_1.2.0~alpha1+dfsg-6_amd64.deb
-config/includes.binary/bibotto-repo/pool/libtheoraenc1_1.2.0~alpha1+dfsg-6_amd64.deb
-config/includes.binary/bibotto-repo/pool/libtie-ixhash-perl_1.23-4_all.deb
-config/includes.binary/bibotto-repo/pool/libtiff6_4.7.0-3+deb13u3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libtimedate-perl_2.3300-2_all.deb
-config/includes.binary/bibotto-repo/pool/libtinfo6_6.5+20250216-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libtirpc3t64_1.3.6+ds-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libtirpc-common_1.3.6+ds-1_all.deb
-config/includes.binary/bibotto-repo/pool/libtry-tiny-perl_0.32-1_all.deb
-config/includes.binary/bibotto-repo/pool/libts0t64_1.22-1.1+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libtsan2_14.2.0-19_amd64.deb
-config/includes.binary/bibotto-repo/pool/libtspi1_0.3.15-0.4_amd64.deb
-config/includes.binary/bibotto-repo/pool/libtwolame0_0.4.0-2+b2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libubsan1_14.2.0-19_amd64.deb
-config/includes.binary/bibotto-repo/pool/libudev1_257.13-1~deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libudfread0_1.1.2-1+b2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libunibreak6_6.1-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libunistring5_1.3-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libupnp17t64_1%3a1.14.20-1+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/liburi-perl_5.30-1_all.deb
-config/includes.binary/bibotto-repo/pool/libusb-1.0-0_2%3a1.0.28-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libusbmuxd-2.0-7_2.1.0-1+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libuuid1_2.41.5-0+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libva2_2.22.0-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libva-drm2_2.22.0-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libva-wayland2_2.22.0-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libva-x11-2_2.22.0-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libvdpau1_1.5-3+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libvdpau-va-gl1_0.4.2-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libvisual-0.4-0_0.4.2-2+b2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libvlc5_3.0.24-0+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libvlc-bin_3.0.24-0+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libvlccore9_3.0.24-0+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libvoikko1_4.3.2-1+b2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libvorbis0a_1.3.7-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libvorbisenc2_1.3.7-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libvorbisfile3_1.3.7-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libvpl2_1%3a2.14.0-1+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libvpx9_1.15.0-2.1+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libvulkan1_1.4.309.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libwacom9_2.14.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libwacom-common_2.14.0-1_all.deb
-config/includes.binary/bibotto-repo/pool/libwayland-client0_1.23.1-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libwayland-cursor0_1.23.1-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libwayland-egl1_1.23.1-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libwayland-server0_1.23.1-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libwebp7_1.5.0-0.1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libwebpdemux2_1.5.0-0.1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libwebpmux3_1.5.0-0.1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libwebrtc-audio-processing-1-3_1.3-3+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libwww-perl_6.78-1_all.deb
-config/includes.binary/bibotto-repo/pool/libwww-robotrules-perl_6.02-1_all.deb
-config/includes.binary/bibotto-repo/pool/libx11-6_2%3a1.8.12-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libx11-data_2%3a1.8.12-1_all.deb
-config/includes.binary/bibotto-repo/pool/libx11-protocol-perl_0.56-9_all.deb
-config/includes.binary/bibotto-repo/pool/libx11-xcb1_2%3a1.8.12-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libx264-164_2%3a0.164.3108+git31e19f9-2+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libx265-215_4.1-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxapian30_1.4.29-3+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxau6_1%3a1.0.11-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxaw7_2%3a1.0.16-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxcb1_1.17.0-2+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxcb-composite0_1.17.0-2+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxcb-cursor0_0.1.5-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxcb-damage0_1.17.0-2+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxcb-dri3-0_1.17.0-2+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxcb-glx0_1.17.0-2+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxcb-icccm4_0.4.2-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxcb-image0_0.4.0-2+b2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxcb-keysyms1_0.4.1-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxcb-present0_1.17.0-2+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxcb-randr0_1.17.0-2+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxcb-render0_1.17.0-2+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxcb-render-util0_0.3.10-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxcb-res0_1.17.0-2+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxcb-shape0_1.17.0-2+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxcb-shm0_1.17.0-2+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxcb-sync1_1.17.0-2+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxcb-util1_0.4.1-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxcb-xfixes0_1.17.0-2+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxcb-xinput0_1.17.0-2+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxcb-xkb1_1.17.0-2+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxcb-xv0_1.17.0-2+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxcomposite1_1%3a0.4.6-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxcursor1_1%3a1.2.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxdamage1_1%3a1.1.6-1+b2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxdmcp6_1%3a1.1.5-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxerces-c3.2t64_3.2.4+debian-1.3+b2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxext6_2%3a1.3.4-1+b3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxfixes3_1%3a6.0.0-2+b4_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxft2_2.3.6-1+b4_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxi6_2%3a1.8.2-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxinerama1_2%3a1.1.4-3+b4_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxkbcommon0_1.7.0-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxkbcommon-x11-0_1.7.0-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxkbfile1_1%3a1.1.0-1+b4_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxml2_2.12.7+dfsg+really2.9.14-2.1+deb13u3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxml-parser-perl_2.47-2~deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxml-twig-perl_1%3a3.52-3_all.deb
-config/includes.binary/bibotto-repo/pool/libxml-xpathengine-perl_0.14-2_all.deb
-config/includes.binary/bibotto-repo/pool/libxmu6_2%3a1.1.3-3+b4_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxmuu1_2%3a1.1.3-3+b4_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxpm4_1%3a3.5.17-1+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxrandr2_2%3a1.5.4-1+b3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxrender1_1%3a0.9.12-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxshmfence1_1.3.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxslt1.1_1.1.35-1.2+deb13u3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxt6t64_1%3a1.2.1-1.2+b2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxtables12_1.8.11-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxtst6_2%3a1.2.5-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxv1_2%3a1.0.11-1.1+b3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxvidcore4_2%3a1.3.7-1+b2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxxf86dga1_2%3a1.1.5-1+b3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxxf86vm1_1%3a1.1.4-1+b4_amd64.deb
-config/includes.binary/bibotto-repo/pool/libxxhash0_0.8.3-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/libz3-4_4.13.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libzix-0-0_0.6.2-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libzmq5_4.3.5-1+b3_amd64.deb
-config/includes.binary/bibotto-repo/pool/libzstd1_1.5.7+dfsg-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libzvbi0t64_0.2.44-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/libzvbi-common_0.2.44-1_all.deb
-config/includes.binary/bibotto-repo/pool/libzxing3_2.3.0-4_amd64.deb
-config/includes.binary/bibotto-repo/pool/linux-libc-dev_6.12.116-1_all.deb
-config/includes.binary/bibotto-repo/pool/linux-sysctl-defaults_4.12.1_all.deb
-config/includes.binary/bibotto-repo/pool/login.defs_1%3a4.17.4-2_all.deb
-config/includes.binary/bibotto-repo/pool/luit_2.0.20240910-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/make_4.4.1-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/manpages_6.9.1-1_all.deb
-config/includes.binary/bibotto-repo/pool/manpages-dev_6.9.1-1_all.deb
-config/includes.binary/bibotto-repo/pool/mawk_1.3.4.20250131-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/mbox-importer_4%3a24.12.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/media-player-info_26-1_all.deb
-config/includes.binary/bibotto-repo/pool/media-types_13.0.0_all.deb
-config/includes.binary/bibotto-repo/pool/mesa-libgallium_25.0.7-2+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/mesa-va-drivers_25.0.7-2+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/mesa-vdpau-drivers_25.0.7-2+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/mesa-vulkan-drivers_25.0.7-2+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/messagelib-data_4%3a24.12.3-4_all.deb
-config/includes.binary/bibotto-repo/pool/mount_2.41.5-0+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/needrestart_3.11-1_all.deb
-config/includes.binary/bibotto-repo/pool/netbase_6.5_all.deb
-config/includes.binary/bibotto-repo/pool/nftables_1.1.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/ocl-icd-libopencl1_2.3.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/openssh-client_1%3a10.0p1-7+deb13u4_amd64.deb
-config/includes.binary/bibotto-repo/pool/openssl_3.5.7-1~deb13u3_amd64.deb
-config/includes.binary/bibotto-repo/pool/openssl-provider-legacy_3.5.7-1~deb13u3_amd64.deb
-config/includes.binary/bibotto-repo/pool/p11-kit_0.25.5-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/p11-kit-modules_0.25.5-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/passwd_1%3a4.17.4-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/patch_2.8-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/perl_5.40.1-6+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/perl-base_5.40.1-6+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/perl-modules-5.40_5.40.1-6+deb13u1_all.deb
-config/includes.binary/bibotto-repo/pool/perl-openssl-defaults_7+b2_amd64.deb
-config/includes.binary/bibotto-repo/pool/phonon4qt6_4%3a4.12.0-5_amd64.deb
-config/includes.binary/bibotto-repo/pool/phonon4qt6-backend-vlc_0.12.0-3+b4_amd64.deb
-config/includes.binary/bibotto-repo/pool/phonon-backend-vlc-common_0.12.0-3_all.deb
-config/includes.binary/bibotto-repo/pool/pim-data-exporter_4%3a24.12.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/pim-sieve-editor_4%3a24.12.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/pinentry-curses_1.3.1-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/pinentry-gnome3_1.3.1-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/plasma-activities-bin_6.3.4-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/plasma-desktoptheme_6.3.5-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/poppler-data_0.4.12-1_all.deb
-config/includes.binary/bibotto-repo/pool/procps_2%3a4.0.4-9_amd64.deb
-config/includes.binary/bibotto-repo/pool/psmisc_23.7-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/publicsuffix_20250328.1952-0.1_all.deb
-config/includes.binary/bibotto-repo/pool/python3.13_3.13.5-2+deb13u5_amd64.deb
-config/includes.binary/bibotto-repo/pool/python3.13-minimal_3.13.5-2+deb13u5_amd64.deb
-config/includes.binary/bibotto-repo/pool/python3_3.13.5-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/python3-minimal_3.13.5-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/python3-protobuf_3.21.12-11+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/python3-pycriu_4.1.1-1_all.deb
-config/includes.binary/bibotto-repo/pool/qml6-module-org-kde-bluezqt_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/qml6-module-org-kde-config_6.13.0-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/qml6-module-org-kde-coreaddons_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/qml6-module-org-kde-desktop_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/qml6-module-org-kde-kcmutils_6.13.0-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/qml6-module-org-kde-kdeconnect_25.04.2-1+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/qml6-module-org-kde-kirigami_6.13.0-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/qml6-module-org-kde-kirigamiaddons-components_1.7.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/qml6-module-org-kde-kirigamiaddons-datetime_1.7.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/qml6-module-org-kde-kirigamiaddons-delegates_1.7.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/qml6-module-org-kde-kirigamiaddons-formcard_1.7.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/qml6-module-org-kde-kirigamiaddons-treeview_1.7.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/qml6-module-org-kde-kitemmodels_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/qml6-module-org-kde-kquickcontrolsaddons_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/qml6-module-org-kde-ksvg_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/qml6-module-org-kde-newstuff_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/qml6-module-org-kde-people_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/qml6-module-org-kde-prison_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/qml6-module-org-kde-purpose_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/qml6-module-org-kde-sonnet_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/qml6-module-org-kde-userfeedback_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/qml6-module-qt5compat-graphicaleffects_6.8.2-3+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/qml6-module-qtcore_6.8.2+dfsg-7_amd64.deb
-config/includes.binary/bibotto-repo/pool/qml6-module-qt-labs-folderlistmodel_6.8.2+dfsg-7_amd64.deb
-config/includes.binary/bibotto-repo/pool/qml6-module-qt-labs-platform_6.8.2+dfsg-7_amd64.deb
-config/includes.binary/bibotto-repo/pool/qml6-module-qt-labs-qmlmodels_6.8.2+dfsg-7_amd64.deb
-config/includes.binary/bibotto-repo/pool/qml6-module-qtmultimedia_6.8.2-8_amd64.deb
-config/includes.binary/bibotto-repo/pool/qml6-module-qtqml_6.8.2+dfsg-7_amd64.deb
-config/includes.binary/bibotto-repo/pool/qml6-module-qtqml-models_6.8.2+dfsg-7_amd64.deb
-config/includes.binary/bibotto-repo/pool/qml6-module-qtqml-workerscript_6.8.2+dfsg-7_amd64.deb
-config/includes.binary/bibotto-repo/pool/qml6-module-qtquick_6.8.2+dfsg-7_amd64.deb
-config/includes.binary/bibotto-repo/pool/qml6-module-qtquick-controls_6.8.2+dfsg-7_amd64.deb
-config/includes.binary/bibotto-repo/pool/qml6-module-qtquick-dialogs_6.8.2+dfsg-7_amd64.deb
-config/includes.binary/bibotto-repo/pool/qml6-module-qtquick-layouts_6.8.2+dfsg-7_amd64.deb
-config/includes.binary/bibotto-repo/pool/qml6-module-qtquick-particles_6.8.2+dfsg-7_amd64.deb
-config/includes.binary/bibotto-repo/pool/qml6-module-qtquick-shapes_6.8.2+dfsg-7_amd64.deb
-config/includes.binary/bibotto-repo/pool/qml6-module-qtquick-templates_6.8.2+dfsg-7_amd64.deb
-config/includes.binary/bibotto-repo/pool/qml6-module-qtquick-tooling_6.8.2+dfsg-7_amd64.deb
-config/includes.binary/bibotto-repo/pool/qml6-module-qtquick-window_6.8.2+dfsg-7_amd64.deb
-config/includes.binary/bibotto-repo/pool/qml6-module-qtwebchannel_6.8.2-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/qml6-module-qtwebengine_6.8.2+dfsg-4_amd64.deb
-config/includes.binary/bibotto-repo/pool/qml6-module-sso-onlineaccounts_0.7+git20231028.05e79eb-6_amd64.deb
-config/includes.binary/bibotto-repo/pool/qt6-gtk-platformtheme_6.8.2+dfsg-9+deb13u2_amd64.deb
-config/includes.binary/bibotto-repo/pool/qt6-qpa-plugins_6.8.2+dfsg-9+deb13u2_amd64.deb
-config/includes.binary/bibotto-repo/pool/qt6-svg-plugins_6.8.2-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/qt6-translations-l10n_6.8.2-2_all.deb
-config/includes.binary/bibotto-repo/pool/qt6-wayland_6.8.2-4_amd64.deb
-config/includes.binary/bibotto-repo/pool/readline-common_8.2-6_all.deb
-config/includes.binary/bibotto-repo/pool/rpcsvc-proto_1.4.3-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/runc_1.1.15+ds1-2+b4_amd64.deb
-config/includes.binary/bibotto-repo/pool/sed_4.9-2+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/sensible-utils_0.0.25_all.deb
-config/includes.binary/bibotto-repo/pool/shared-mime-info_2.4-5+b2_amd64.deb
-config/includes.binary/bibotto-repo/pool/signon-plugin-oauth2_0.25+git20231015.fab69886-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/sonnet6-plugins_6.13.0-1_amd64.deb
-config/includes.binary/bibotto-repo/pool/sound-theme-freedesktop_0.8-6~deb13u1_all.deb
-config/includes.binary/bibotto-repo/pool/sq_1.3.1-2+b2_amd64.deb
-config/includes.binary/bibotto-repo/pool/sqv_1.3.0-3+b2_amd64.deb
-config/includes.binary/bibotto-repo/pool/sse3-support_27_amd64.deb
-config/includes.binary/bibotto-repo/pool/sshfs_3.7.3-1.2~deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/switcheroo-control_2.6-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/systemd_257.13-1~deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/systemd-cryptsetup_257.13-1~deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/systemd-sysv_257.13-1~deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/systemd-timesyncd_257.13-1~deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/systemsettings_4%3a6.3.4-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/sysvinit-utils_3.14-4_amd64.deb
-config/includes.binary/bibotto-repo/pool/tar_1.35+dfsg-3.1_amd64.deb
-config/includes.binary/bibotto-repo/pool/thunderbird_1%3a153.6.0esr-1~deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/tini_0.19.0-3+b8_amd64.deb
-config/includes.binary/bibotto-repo/pool/tzdata_2026f-0+deb13u1_all.deb
-config/includes.binary/bibotto-repo/pool/udev_257.13-1~deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/usbmuxd_1.1.1-6+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/va-driver-all_2.22.0-3_amd64.deb
-config/includes.binary/bibotto-repo/pool/vdpau-driver-all_1.5-3+b1_amd64.deb
-config/includes.binary/bibotto-repo/pool/vlc-data_3.0.24-0+deb13u1_all.deb
-config/includes.binary/bibotto-repo/pool/vlc-plugin-base_3.0.24-0+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/vlc-plugin-video-output_3.0.24-0+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/x11-common_1%3a7.7+24+deb13u1_all.deb
-config/includes.binary/bibotto-repo/pool/x11-utils_7.7+7_amd64.deb
-config/includes.binary/bibotto-repo/pool/x11-xserver-utils_7.7+11_amd64.deb
-config/includes.binary/bibotto-repo/pool/xauth_1%3a1.1.2-1.1_amd64.deb
-config/includes.binary/bibotto-repo/pool/xdg-user-dirs_0.18-2_amd64.deb
-config/includes.binary/bibotto-repo/pool/xdg-utils_1.2.1-2_all.deb
-config/includes.binary/bibotto-repo/pool/xkb-data_2.42-1_all.deb
-config/includes.binary/bibotto-repo/pool/xz-utils_5.8.1-1+deb13u2_amd64.deb
-config/includes.binary/bibotto-repo/pool/zlib1g_1%3a1.3.dfsg+really1.3.1-1+deb13u1_amd64.deb
-config/includes.binary/bibotto-repo/pool/zutty_0.16.2.20241020+dfsg1-1_amd64.deb
-config/includes.chroot/etc/apt/apt.conf.d/20auto-upgrades
-config/includes.chroot/etc/apt/apt.conf.d/52bibotto-unattended-upgrades
-config/includes.chroot/etc/calamares/modules/bootloader.conf
-config/includes.chroot/etc/calamares/modules/displaymanager.conf
-config/includes.chroot/etc/calamares/modules/finished.conf
-config/includes.chroot/etc/calamares/modules/fstab.conf
-config/includes.chroot/etc/calamares/modules/grubcfg.conf
-config/includes.chroot/etc/calamares/modules/mount.conf
-config/includes.chroot/etc/calamares/modules/packagechooser.conf
-config/includes.chroot/etc/calamares/modules/packages.conf
-config/includes.chroot/etc/calamares/modules/partition.conf
-config/includes.chroot/etc/calamares/modules/services-systemd.conf
-config/includes.chroot/etc/calamares/modules/shellprocess-crypttab-luks.conf
-config/includes.chroot/etc/calamares/modules/shellprocess-offline-repo-cleanup.conf
-config/includes.chroot/etc/calamares/modules/shellprocess-offline-repo-setup.conf
-config/includes.chroot/etc/calamares/modules/umount.conf
-config/includes.chroot/etc/calamares/modules/unpackfs.conf
-config/includes.chroot/etc/calamares/modules/users.conf
-config/includes.chroot/etc/calamares/modules/welcome.conf
-config/includes.chroot/etc/calamares/settings.conf
-config/includes.chroot/etc/firewalld/zones/public.xml
-config/includes.chroot/etc/live/config.conf
-config/includes.chroot/etc/sddm.conf
-config/includes.chroot/etc/security/pwquality.conf.d/50-bibotto.conf
-config/includes.chroot/etc/skel/.config/kdeglobals
-config/includes.chroot/etc/xdg/kdeglobals
-config/includes.chroot/usr/share/color-schemes/Bibotto-Dark.colors
-config/includes.chroot/usr/share/color-schemes/Bibotto-Light.colors
-config/package-lists/bibotto-bootloader.list.chroot
-config/package-lists/bibotto-desktop.list.chroot
-config/package-lists/bibotto-filesystem.list.chroot
-config/package-lists/bibotto-firmware.list.chroot
-config/package-lists/bibotto-hardware.list.chroot
-config/package-lists/bibotto-installer.list.chroot
-config/package-lists/bibotto-kernel.list.chroot
-config/package-lists/bibotto-productivity.list.chroot
-config/package-lists/bibotto-security.list.chroot
-config/package-lists/live.list.chroot
-config/source
+echo "========== ALL CMAKE FILES =========="
+find . -name CMakeLists.txt -o -name '*.cmake' | sort
+========== DUPLICATION COMMIT ==========
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 2 (delta 1), pack-reused 0 (from 0)
+Receiving objects: 100% (3/3), 964 bytes | 964.00 KiB/s, done.
+Resolving deltas: 100% (1/1), done.
+commit 59b6057a6af7f77d17b5d93ecdb4ecbeb752aa0b
+Author: Artem Grinev <agrinev@manjaro.org>
+Date:   Sat Dec 4 15:37:56 2021 +0400
 
-===== BRANDING =====
-branding/themes/dark/Bibotto-Dark.colors
-branding/themes/light/Bibotto-Light.colors
-branding/colors.json
-branding/calamares/bibotto/email.svg
-branding/calamares/bibotto/development.svg
-branding/calamares/bibotto/branding.desc
-branding/brand-guidelines.md
+    [sddm-theme] Duplicate components instead of symlinking
 
-===== AUTO =====
-auto/build
+ CMakeLists.txt                                      |   4 --
+ sddm-theme/components                               |   1 -
+ sddm-theme/components/ActionButton.qml              | 115 ++++++++++++++++++++++++++++++++++++++
+ sddm-theme/components/Battery.qml                   |  43 +++++++++++++++
+ sddm-theme/components/Clock.qml                     |  37 +++++++++++++
+ sddm-theme/components/SessionManagementScreen.qml   | 109 ++++++++++++++++++++++++++++++++++++
+ sddm-theme/components/UserDelegate.qml              | 180 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ sddm-theme/components/UserList.qml                  |  88 +++++++++++++++++++++++++++++
+ sddm-theme/components/VirtualKeyboard.qml           |  70 +++++++++++++++++++++++
+ sddm-theme/components/VirtualKeyboard_wayland.qml   |  24 ++++++++
+ sddm-theme/components/WallpaperFader.qml            | 162 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ sddm-theme/components/artwork/README.txt            |   1 +
+ sddm-theme/components/artwork/logout_primary.svgz   | Bin 0 -> 2514 bytes
+ sddm-theme/components/artwork/restart_primary.svgz  | Bin 0 -> 1860 bytes
+ sddm-theme/components/artwork/shutdown_primary.svgz | Bin 0 -> 1738 bytes
+ 15 files changed, 829 insertions(+), 5 deletions(-)
+commit 59b6057a6af7f77d17b5d93ecdb4ecbeb752aa0b
+Author:     Artem Grinev <agrinev@manjaro.org>
+AuthorDate: Sat Dec 4 15:37:56 2021 +0400
+Commit:     Artem Grinev <agrinev@manjaro.org>
+CommitDate: Sat Dec 4 15:37:56 2021 +0400
 
-===== BUILD AYARLARI =====
-#!/bin/sh
+    [sddm-theme] Duplicate components instead of symlinking
 
-set -e
+diff --git a/sddm-theme/components b/sddm-theme/components
+deleted file mode 120000
+index 250c60d..0000000
+--- a/sddm-theme/components
++++ /dev/null
+@@ -1 +0,0 @@
+-/usr/share/plasma/look-and-feel/org.kde.breeze.desktop/contents/components/
+\ No newline at end of file
+diff --git a/sddm-theme/components/ActionButton.qml b/sddm-theme/components/ActionButton.qml
+new file mode 100644
+index 0000000..af278f6
+--- /dev/null
++++ b/sddm-theme/components/ActionButton.qml
+@@ -0,0 +1,115 @@
++/*
++    SPDX-FileCopyrightText: 2016 David Edmundson <davidedmundson@kde.org>
++
++    SPDX-License-Identifier: LGPL-2.0-or-later
++*/
++
++import QtQuick 2.8
++import org.kde.plasma.core 2.0 as PlasmaCore
++import org.kde.plasma.components 3.0 as PlasmaComponents3
++
++Item {
++    id: root
++    property alias text: label.text
++    property alias iconSource: icon.source
++    property alias containsMouse: mouseArea.containsMouse
++    property alias font: label.font
++    property alias labelRendering: label.renderType
++    property alias circleOpacity: iconCircle.opacity
++    property alias circleVisiblity: iconCircle.visible
++    property int fontSize: PlasmaCore.Theme.defaultFont.pointSize + 1
++    readonly property bool softwareRendering: GraphicsInfo.api === GraphicsInfo.Software
++    signal clicked
++
++    activeFocusOnTab: true
++
++    property int iconSize: PlasmaCore.Units.gridUnit * 3
++
++    implicitWidth: Math.max(iconSize + PlasmaCore.Units.largeSpacing * 2, label.contentWidth)
++    implicitHeight: iconSize + PlasmaCore.Units.smallSpacing + label.implicitHeight
++
++    opacity: activeFocus || containsMouse ? 1 : 0.85
++    Behavior on opacity {
++        PropertyAnimation { // OpacityAnimator makes it turn black at random intervals
++            duration: PlasmaCore.Units.longDuration
++            easing.type: Easing.InOutQuad
++        }
++    }
++
++    Rectangle {
++        id: iconCircle
++        anchors.centerIn: icon
++        width: iconSize + PlasmaCore.Units.smallSpacing
++        height: width
++        radius: width / 2
++        color: softwareRendering ?  PlasmaCore.ColorScope.backgroundColor : PlasmaCore.ColorScope.textColor
++        opacity: root.activeFocus || containsMouse ? (softwareRendering ? 0.8 : 0.15) : (softwareRendering ? 0.6 : 0)
++        Behavior on opacity {
++            PropertyAnimation { // OpacityAnimator makes it turn black at random intervals
++                duration: PlasmaCore.Units.longDuration
++                easing.type: Easing.InOutQuad
++            }
++        }
++    }
++
++    Rectangle {
++        anchors.centerIn: iconCircle
++        width: iconCircle.width
++        height: width
++        radius: width / 2
++        scale: mouseArea.containsPress ? 1 : 0
++        color: PlasmaCore.ColorScope.textColor
++        opacity: 0.15
++        Behavior on scale {
++            PropertyAnimation {
++                duration: PlasmaCore.Units.shortDuration
++                easing.type: Easing.InOutQuart
++            }
++        }
++    }
++
++    PlasmaCore.IconItem {
++        id: icon
++        anchors {
++            top: parent.top
++            horizontalCenter: parent.horizontalCenter
++        }
++        width: iconSize
++        height: iconSize
++
++        colorGroup: PlasmaCore.ColorScope.colorGroup
++        active: mouseArea.containsMouse || root.activeFocus
++    }
++
++    PlasmaComponents3.Label {
++        id: label
++        font.pointSize: root.fontSize
++        anchors {
++            top: icon.bottom
++            topMargin: (softwareRendering ? 1.5 : 1) * PlasmaCore.Units.smallSpacing
++            left: parent.left
++            right: parent.right
++        }
++        style: softwareRendering ? Text.Outline : Text.Normal
++        styleColor: softwareRendering ? PlasmaCore.ColorScope.backgroundColor : "transparent" //no outline, doesn't matter
++        horizontalAlignment: Text.AlignHCenter
++        verticalAlignment: Text.AlignTop
++        wrapMode: Text.WordWrap
++        font.underline: root.activeFocus
++    }
++
++    MouseArea {
++        id: mouseArea
++        hoverEnabled: true
++        onClicked: root.clicked()
++        anchors.fill: parent
++    }
++
++    Keys.onEnterPressed: clicked()
++    Keys.onReturnPressed: clicked()
++    Keys.onSpacePressed: clicked()
++
++    Accessible.onPressAction: clicked()
++    Accessible.role: Accessible.Button
++    Accessible.name: label.text
++}
+diff --git a/sddm-theme/components/Battery.qml b/sddm-theme/components/Battery.qml
+new file mode 100644
+index 0000000..05be535
+--- /dev/null
++++ b/sddm-theme/components/Battery.qml
+@@ -0,0 +1,43 @@
++/*
++    SPDX-FileCopyrightText: 2016 Kai Uwe Broulik <kde@privat.broulik.de>
++
++    SPDX-License-Identifier: LGPL-2.0-or-later
++*/
++
++import QtQuick 2.2
++
++import org.kde.plasma.core 2.0 as PlasmaCore
++import org.kde.plasma.components 3.0 as PlasmaComponents3
++import org.kde.plasma.workspace.components 2.0 as PW
++
++Row {
++    id: row
++
++    property int fontSize: PlasmaCore.Theme.defaultFont.pointSize
++
++    spacing: PlasmaCore.Units.smallSpacing
++    visible: pmSource.data["Battery"]["Has Cumulative"]
++
++    PlasmaCore.DataSource {
++        id: pmSource
++        engine: "powermanagement"
++        connectedSources: ["Battery", "AC Adapter"]
++    }
++
++    PW.BatteryIcon {
++        id: battery
++        hasBattery: pmSource.data["Battery"]["Has Battery"] || false
++        percent: pmSource.data["Battery"]["Percent"] || 0
++        pluggedIn: pmSource.data["AC Adapter"] ? pmSource.data["AC Adapter"]["Plugged in"] : false
++
++        height: batteryLabel.height
++        width: height
++    }
++
++    PlasmaComponents3.Label {
++        id: batteryLabel
++        font.pointSize: row.fontSize
++        text: i18nd("plasma_lookandfeel_org.kde.lookandfeel","%1%", battery.percent)
++        Accessible.name: i18nd("plasma_lookandfeel_org.kde.lookandfeel","Battery at %1%", battery.percent)
++    }
++}
+diff --git a/sddm-theme/components/Clock.qml b/sddm-theme/components/Clock.qml
+new file mode 100644
+index 0000000..fbe0c7c
+--- /dev/null
++++ b/sddm-theme/components/Clock.qml
+@@ -0,0 +1,37 @@
++/*
++    SPDX-FileCopyrightText: 2016 David Edmundson <davidedmundson@kde.org>
++
++    SPDX-License-Identifier: LGPL-2.0-or-later
++*/
++
++import QtQuick 2.8
++import QtQuick.Layouts 1.1
++import QtQuick.Controls 2.5 as QQC2
++import org.kde.plasma.core 2.0 as PlasmaCore
++
++ColumnLayout {
++    readonly property bool softwareRendering: GraphicsInfo.api === GraphicsInfo.Software
++
++    QQC2.Label {
++        text: Qt.formatTime(timeSource.data["Local"]["DateTime"])
++        color: PlasmaCore.ColorScope.textColor
++        style: softwareRendering ? Text.Outline : Text.Normal
++        styleColor: softwareRendering ? PlasmaCore.ColorScope.backgroundColor : "transparent" //no outline, doesn't matter
++        font.pointSize: 48
++        Layout.alignment: Qt.AlignHCenter
++    }
++    QQC2.Label {
++        text: Qt.formatDate(timeSource.data["Local"]["DateTime"], Qt.DefaultLocaleLongDate)
++        color: PlasmaCore.ColorScope.textColor
++        style: softwareRendering ? Text.Outline : Text.Normal
++        styleColor: softwareRendering ? PlasmaCore.ColorScope.backgroundColor : "transparent" //no outline, doesn't matter
++        font.pointSize: 24
++        Layout.alignment: Qt.AlignHCenter
++    }
++    PlasmaCore.DataSource {
++        id: timeSource
++        engine: "time"
++        connectedSources: ["Local"]
++        interval: 1000
++    }
++}
+diff --git a/sddm-theme/components/SessionManagementScreen.qml b/sddm-theme/components/SessionManagementScreen.qml
+new file mode 100644
+index 0000000..f002e51
+--- /dev/null
++++ b/sddm-theme/components/SessionManagementScreen.qml
+@@ -0,0 +1,109 @@
++/*
++    SPDX-FileCopyrightText: 2016 David Edmundson <davidedmundson@kde.org>
++
++    SPDX-License-Identifier: LGPL-2.0-or-later
++*/
++
++import QtQuick 2.2
++
++import QtQuick.Layouts 1.1
++import QtQuick.Controls 1.1
++
++import org.kde.plasma.core 2.0 as PlasmaCore
++import org.kde.plasma.components 3.0 as PlasmaComponents3
++
++Item {
++    id: root
++
++    /*
++     * Any message to be displayed to the user, visible above the text fields
++     */
++    property alias notificationMessage: notificationsLabel.text
++
++    /*
++     * A list of Items (typically ActionButtons) to be shown in a Row beneath the prompts
++     */
++    property alias actionItems: actionItemsLayout.children
++
++    /*
++     * A model with a list of users to show in the view
++     * The following roles should exist:
++     *  - name
++     *  - iconSource
++     *
++     * The following are also handled:
++     *  - vtNumber
++     *  - displayNumber
++     *  - session
++     *  - isTty
++     */
++    property alias userListModel: userListView.model
++
++    /*
++     * Self explanatory
++     */
++    property alias userListCurrentIndex: userListView.currentIndex
++    property alias userListCurrentItem: userListView.currentItem
++    property bool showUserList: true
++
++    property alias userList: userListView
++
++    property int fontSize: PlasmaCore.Theme.defaultFont.pointSize + 2
++
++    default property alias _children: innerLayout.children
++
++    UserList {
++        id: userListView
++        visible: showUserList && y > 0
++        anchors {
++            bottom: parent.verticalCenter
++            left: parent.left
++            right: parent.right
++        }
++        fontSize: root.fontSize
++    }
++
++    //goal is to show the prompts, in ~16 grid units high, then the action buttons
++    //but collapse the space between the prompts and actions if there's no room
++    //ui is constrained to 16 grid units wide, or the screen
++    ColumnLayout {
++        id: prompts
++        anchors.top: parent.verticalCenter
++        anchors.topMargin: PlasmaCore.Units.gridUnit * 0.5
++        anchors.left: parent.left
++        anchors.right: parent.right
++        anchors.bottom: parent.bottom
++        PlasmaComponents3.Label {
++            id: notificationsLabel
++            font.pointSize: root.fontSize
++            Layout.maximumWidth: PlasmaCore.Units.gridUnit * 16
++            Layout.alignment: Qt.AlignHCenter
++            Layout.fillWidth: true
++            horizontalAlignment: Text.AlignHCenter
++            wrapMode: Text.WordWrap
++            font.italic: true
++        }
++        ColumnLayout {
++            Layout.minimumHeight: implicitHeight
++            Layout.maximumHeight: PlasmaCore.Units.gridUnit * 10
++            Layout.maximumWidth: PlasmaCore.Units.gridUnit * 16
++            Layout.alignment: Qt.AlignHCenter
++            ColumnLayout {
++                id: innerLayout
++                Layout.alignment: Qt.AlignHCenter
++                Layout.fillWidth: true
++            }
++            Item {
++                Layout.fillHeight: true
++            }
++        }
++        Row { //deliberately not rowlayout as I'm not trying to resize child items
++            id: actionItemsLayout
++            spacing: PlasmaCore.Units.largeSpacing / 2
++            Layout.alignment: Qt.AlignHCenter
++        }
++        Item {
++            Layout.fillHeight: true
++        }
++    }
++}
+diff --git a/sddm-theme/components/UserDelegate.qml b/sddm-theme/components/UserDelegate.qml
+new file mode 100644
+index 0000000..9a823a2
+--- /dev/null
++++ b/sddm-theme/components/UserDelegate.qml
+@@ -0,0 +1,180 @@
++/*
++    SPDX-FileCopyrightText: 2014 David Edmundson <davidedmundson@kde.org>
++    SPDX-FileCopyrightText: 2014 Aleix Pol Gonzalez <aleixpol@blue-systems.com>
++
++    SPDX-License-Identifier: LGPL-2.0-or-later
++*/
++
++import QtQuick 2.8
++import QtQuick.Window 2.15
++import org.kde.plasma.core 2.0 as PlasmaCore
++import org.kde.plasma.components 3.0 as PlasmaComponents3
++
++Item {
++    id: wrapper
++
++    // If we're using software rendering, draw outlines instead of shadows
++    // See https://bugs.kde.org/show_bug.cgi?id=398317
++    readonly property bool softwareRendering: GraphicsInfo.api === GraphicsInfo.Software
++
++    property bool isCurrent: true
++
++    property string name
++    property string userName
++    property string avatarPath
++    property string iconSource
++    property bool needsPassword
++    property var vtNumber
++    property bool constrainText: true
++    property alias nameFontSize: usernameDelegate.font.pointSize
++    property int fontSize: PlasmaCore.Theme.defaultFont.pointSize + 2
++    signal clicked()
++
++    property real faceSize: PlasmaCore.Units.gridUnit * 7
++
++    opacity: isCurrent ? 1.0 : 0.5
++
++    Behavior on opacity {
++        OpacityAnimator {
++            duration: PlasmaCore.Units.longDuration
++        }
++    }
++
++    // Draw a translucent background circle under the user picture
++    Rectangle {
++        anchors.centerIn: imageSource
++        width: imageSource.width - 2 // Subtract to prevent fringing
++        height: width
++        radius: width / 2
++
++        color: PlasmaCore.ColorScope.backgroundColor
++        opacity: 0.6
++    }
++
++    Item {
++        id: imageSource
++        anchors {
++            bottom: usernameDelegate.top
++            bottomMargin: PlasmaCore.Units.largeSpacing
++            horizontalCenter: parent.horizontalCenter
++        }
++        Behavior on width {
++            PropertyAnimation {
++                from: faceSize
++                duration: PlasmaCore.Units.longDuration;
++            }
++        }
++        width: isCurrent ? faceSize : faceSize - PlasmaCore.Units.largeSpacing
++        height: width
++
++        //Image takes priority, taking a full path to a file, if that doesn't exist we show an icon
++        Image {
++            id: face
++            source: wrapper.avatarPath
++            sourceSize: Qt.size(faceSize * Screen.devicePixelRatio, faceSize * Screen.devicePixelRatio)
++            fillMode: Image.PreserveAspectCrop
++            anchors.fill: parent
++        }
++
++        PlasmaCore.IconItem {
++            id: faceIcon
++            source: iconSource
++            visible: (face.status == Image.Error || face.status == Image.Null)
++            anchors.fill: parent
++            anchors.margins: PlasmaCore.Units.gridUnit * 0.5 // because mockup says so...
++            colorGroup: PlasmaCore.ColorScope.colorGroup
++        }
++    }
++
++    ShaderEffect {
++        anchors {
++            bottom: usernameDelegate.top
++            bottomMargin: PlasmaCore.Units.largeSpacing
++            horizontalCenter: parent.horizontalCenter
++        }
++
++        width: imageSource.width
++        height: imageSource.height
++
++        supportsAtlasTextures: true
++
++        property var source: ShaderEffectSource {
++            sourceItem: imageSource
++            // software rendering is just a fallback so we can accept not having a rounded avatar here
++            hideSource: wrapper.GraphicsInfo.api !== GraphicsInfo.Software
++            live: true // otherwise the user in focus will show a blurred avatar
++        }
++
++        property var colorBorder: PlasmaCore.ColorScope.textColor
++
++        //draw a circle with an antialiased border
++        //innerRadius = size of the inner circle with contents
++        //outerRadius = size of the border
++        //blend = area to blend between two colours
++        //all sizes are normalised so 0.5 == half the width of the texture
++
++        //if copying into another project don't forget to connect themeChanged to update()
++        //but in SDDM that's a bit pointless
++        fragmentShader: "
++                        varying highp vec2 qt_TexCoord0;
++                        uniform highp float qt_Opacity;
++                        uniform lowp sampler2D source;
++
++                        uniform lowp vec4 colorBorder;
++                        highp float blend = 0.01;
++                        highp float innerRadius = 0.47;
++                        highp float outerRadius = 0.49;
++                        lowp vec4 colorEmpty = vec4(0.0, 0.0, 0.0, 0.0);
++
++                        void main() {
++                            lowp vec4 colorSource = texture2D(source, qt_TexCoord0.st);
++
++                            highp vec2 m = qt_TexCoord0 - vec2(0.5, 0.5);
++                            highp float dist = sqrt(m.x * m.x + m.y * m.y);
++
++                            if (dist < innerRadius)
++                                gl_FragColor = colorSource;
++                            else if (dist < innerRadius + blend)
++                                gl_FragColor = mix(colorSource, colorBorder, ((dist - innerRadius) / blend));
++                            else if (dist < outerRadius)
++                                gl_FragColor = colorBorder;
++                            else if (dist < outerRadius + blend)
++                                gl_FragColor = mix(colorBorder, colorEmpty, ((dist - outerRadius) / blend));
++                            else
++                                gl_FragColor = colorEmpty ;
++
++                            gl_FragColor = gl_FragColor * qt_Opacity;
++                    }
++        "
++    }
++
++    PlasmaComponents3.Label {
++        id: usernameDelegate
++
++        // Make it bigger than other fonts to match the scale of the avatar better
++        font.pointSize: wrapper.fontSize + 4
++        anchors {
++            bottom: parent.bottom
++            horizontalCenter: parent.horizontalCenter
++        }
++        width: constrainText ? parent.width : implicitWidth
++        text: wrapper.name
++        style: softwareRendering ? Text.Outline : Text.Normal
++        styleColor: softwareRendering ? PlasmaCore.ColorScope.backgroundColor : "transparent" //no outline, doesn't matter
++        elide: Text.ElideRight
++        horizontalAlignment: Text.AlignHCenter
++        //make an indication that this has active focus, this only happens when reached with keyboard navigation
++        font.underline: wrapper.activeFocus
++    }
++
++    MouseArea {
++        anchors.fill: parent
++        hoverEnabled: true
++
++        onClicked: wrapper.clicked();
++    }
++
++    Accessible.name: name
++    Accessible.role: Accessible.Button
++    function accessiblePressAction() { wrapper.clicked() }
++}
+diff --git a/sddm-theme/components/UserList.qml b/sddm-theme/components/UserList.qml
+new file mode 100644
+index 0000000..49f38eb
+--- /dev/null
++++ b/sddm-theme/components/UserList.qml
+@@ -0,0 +1,88 @@
++/*
++    SPDX-FileCopyrightText: 2014 David Edmundson <davidedmundson@kde.org>
++
++    SPDX-License-Identifier: LGPL-2.0-or-later
++*/
++
++import QtQuick 2.2
++import org.kde.plasma.core 2.0 as PlasmaCore
++
++ListView {
++    id: view
++    readonly property string selectedUser: currentItem ? currentItem.userName : ""
++    readonly property int userItemWidth: PlasmaCore.Units.gridUnit * 8
++    readonly property int userItemHeight: PlasmaCore.Units.gridUnit * 8
++    property int fontSize: PlasmaCore.Theme.defaultFont.pointSize + 2
++
++    implicitHeight: userItemHeight
++
++    activeFocusOnTab : true
++
++    /*
++     * Signals that a user was explicitly selected
++     */
++    signal userSelected;
++
++    orientation: ListView.Horizontal
++    highlightRangeMode: ListView.StrictlyEnforceRange
++
++    //centre align selected item (which implicitly centre aligns the rest
++    preferredHighlightBegin: width/2 - userItemWidth/2
++    preferredHighlightEnd: preferredHighlightBegin
++
++    // Disable flicking if we only have on user (like on the lockscreen)
++    interactive: count > 1
++
++    delegate: UserDelegate {
++        avatarPath: model.icon || ""
++        iconSource: model.iconName || "user-identity"
++        fontSize: view.fontSize
++        vtNumber: model.vtNumber
++        needsPassword: model.needsPassword
++
++        name: {
++            var displayName = model.realName || model.name
++
++            if (model.vtNumber === undefined || model.vtNumber < 0) {
++                return displayName
++            }
++
++            if (!model.session) {
++                return i18ndc("plasma_lookandfeel_org.kde.lookandfeel", "Nobody logged in on that session", "Unused")
++            }
++
++
++            var location = ""
++            if (model.isTty) {
++                location = i18ndc("plasma_lookandfeel_org.kde.lookandfeel", "User logged in on console number", "TTY %1", model.vtNumber)
++            } else if (model.displayNumber) {
++                location = i18ndc("plasma_lookandfeel_org.kde.lookandfeel", "User logged in on console (X display number)", "on TTY %1 (Display %2)", model.vtNumber, model.displayNumber)
++            }
++
++            if (location) {
++                return i18ndc("plasma_lookandfeel_org.kde.lookandfeel", "Username (location)", "%1 (%2)", displayName, location)
++            }
++
++            return displayName
++        }
++
++        userName: model.name
++
++        width: userItemWidth
++        height: userItemHeight
++
++        //if we only have one delegate, we don't need to clip the text as it won't be overlapping with anything
++        constrainText: ListView.view.count > 1
++
++        isCurrent: ListView.isCurrentItem
++
++        onClicked: {
++            ListView.view.currentIndex = index;
++            ListView.view.userSelected();
++        }
++    }
++
++    Keys.onEscapePressed: view.userSelected()
++    Keys.onEnterPressed: view.userSelected()
++    Keys.onReturnPressed: view.userSelected()
++}
+diff --git a/sddm-theme/components/VirtualKeyboard.qml b/sddm-theme/components/VirtualKeyboard.qml
+new file mode 100644
+index 0000000..503a35b
+--- /dev/null
++++ b/sddm-theme/components/VirtualKeyboard.qml
+@@ -0,0 +1,70 @@
++/*
++    SPDX-FileCopyrightText: 2017 Martin Gräßlin <mgraesslin@kde.org>
++
++    SPDX-License-Identifier: GPL-2.0-or-later
++*/
++
++import QtQuick 2.5
++import QtQuick.VirtualKeyboard 2.1
++import org.kde.plasma.core 2.0 as PlasmaCore
++
++InputPanel {
++    id: inputPanel
++    property bool activated: false
++    active: activated && Qt.inputMethod.visible
++    width: parent.width
++
++    states: [
++        State {
++            name: "visible"
++            when: inputPanel.active
++            PropertyChanges {
++                target: inputPanel
++                y: inputPanel.parent.height - inputPanel.height
++                opacity: 1
++                visible: true
++            }
++        },
++        State {
++            name: "hidden"
++            when: !inputPanel.active
++            PropertyChanges {
++                target: inputPanel
++                y: inputPanel.parent.height
++                opacity: 0
++                visible:false
++            }
++        }
++    ]
++
++    transitions: [
++        Transition {
++            to: "visible"
++            ParallelAnimation {
++                YAnimator {
++                    // NOTE this is necessary as otherwise the keyboard always starts the transition with Y as 0, due to the internal reparenting happening when becomes active
++                    from: inputPanel.parent.height
++                    duration: PlasmaCore.Units.longDuration
++                    easing.type: Easing.OutQuad
++                }
++                OpacityAnimator {
++                    duration: PlasmaCore.Units.longDuration
++                    easing.type: Easing.OutQuad
++                }
++            }
++        },
++        Transition {
++            to: "hidden"
++            ParallelAnimation {
++                YAnimator {
++                    duration: PlasmaCore.Units.longDuration
++                    easing.type: Easing.InQuad
++                }
++                OpacityAnimator {
++                    duration: PlasmaCore.Units.longDuration
++                    easing.type: Easing.InQuad
++                }
++            }
++        }
++    ]
++}
+diff --git a/sddm-theme/components/VirtualKeyboard_wayland.qml b/sddm-theme/components/VirtualKeyboard_wayland.qml
+new file mode 100644
+index 0000000..1328ee8
+--- /dev/null
++++ b/sddm-theme/components/VirtualKeyboard_wayland.qml
+@@ -0,0 +1,24 @@
++/*
++    SPDX-FileCopyrightText: 2021 Aleix Pol Gonzalez <aleixpol@kde.org>
++
++    SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
++*/
++
++import QtQuick 2.15
++import org.kde.plasma.workspace.keyboardlayout 1.0 as Keyboards
++
++Item {
++    id: inputPanel
++    readonly property bool active: Qt.inputMethod.visible
++    property bool activated: false
++    visible: Qt.inputMethod.visible
++
++    x: Qt.inputMethod.keyboardRectangle.x
++    y: Qt.inputMethod.keyboardRectangle.y
++    height: Qt.inputMethod.keyboardRectangle.height
++    width: Qt.inputMethod.keyboardRectangle.width
++
++    onActivatedChanged: if (activated) {
++        Keyboards.KWinVirtualKeyboard.enabled = true
++    }
++}
+diff --git a/sddm-theme/components/WallpaperFader.qml b/sddm-theme/components/WallpaperFader.qml
+new file mode 100644
+index 0000000..5c885d1
+--- /dev/null
++++ b/sddm-theme/components/WallpaperFader.qml
+@@ -0,0 +1,162 @@
++/*
++    SPDX-FileCopyrightText: 2014 Aleix Pol Gonzalez <aleixpol@blue-systems.com>
++
++    SPDX-License-Identifier: GPL-2.0-or-later
++*/
++
++import QtQuick 2.6
++import QtQuick.Controls 1.1
++import QtQuick.Layouts 1.1
++import QtGraphicalEffects 1.0
++
++import org.kde.plasma.core 2.0 as PlasmaCore
++
++import org.kde.plasma.private.sessions 2.0
++import "../components"
++
++Item {
++    id: wallpaperFader
++    property Item clock
++    property Item mainStack
++    property Item footer
++    property alias source: wallpaperBlur.source
++    state: lockScreenRoot.uiVisible ? "on" : "off"
++    property real factor: 0
++    readonly property bool lightBackground: Math.max(PlasmaCore.ColorScope.backgroundColor.r, PlasmaCore.ColorScope.backgroundColor.g, PlasmaCore.ColorScope.backgroundColor.b) > 0.5
++
++    property bool alwaysShowClock: typeof config === "undefined" || typeof config.alwaysShowClock === "undefined" || config.alwaysShowClock === true
++
++    Behavior on factor {
++        NumberAnimation {
++            target: wallpaperFader
++            property: "factor"
++            duration: PlasmaCore.Units.veryLongDuration * 2
++            easing.type: Easing.InOutQuad
++        }
++    }
++    FastBlur {
++        id: wallpaperBlur
++        anchors.fill: parent
++        radius: 50 * wallpaperFader.factor
++    }
++    ShaderEffect {
++        id: wallpaperShader
++        anchors.fill: parent
++        supportsAtlasTextures: true
++        property var source: ShaderEffectSource {
++            sourceItem: wallpaperBlur
++            live: true
++            hideSource: true
++            textureMirroring: ShaderEffectSource.NoMirroring
++        }
++
++        readonly property real contrast: 0.65 * wallpaperFader.factor + (1 - wallpaperFader.factor)
++        readonly property real saturation: 1.6 * wallpaperFader.factor + (1 - wallpaperFader.factor)
++        readonly property real intensity: (wallpaperFader.lightBackground ? 1.7 : 0.6) * wallpaperFader.factor + (1 - wallpaperFader.factor)
++
++        readonly property real transl: (1.0 - contrast) / 2.0;
++        readonly property real rval: (1.0 - saturation) * 0.2126;
++        readonly property real gval: (1.0 - saturation) * 0.7152;
++        readonly property real bval: (1.0 - saturation) * 0.0722;
++
++        property var colorMatrix: Qt.matrix4x4(
++            contrast, 0,        0,        0.0,
++            0,        contrast, 0,        0.0,
++            0,        0,        contrast, 0.0,
++            transl,   transl,   transl,   1.0).times(Qt.matrix4x4(
++                rval + saturation, rval,     rval,     0.0,
++                gval,     gval + saturation, gval,     0.0,
++                bval,     bval,     bval + saturation, 0.0,
++                0,        0,        0,        1.0)).times(Qt.matrix4x4(
++                    intensity, 0,         0,         0,
++                    0,         intensity, 0,         0,
++                    0,         0,         intensity, 0,
++                    0,         0,         0,         1
++                ));
++
++
++        fragmentShader: "
++            uniform mediump mat4 colorMatrix;
++            uniform mediump sampler2D source;
++            varying mediump vec2 qt_TexCoord0;
++            uniform lowp float qt_Opacity;
++
++            void main(void)
++            {
++                mediump vec4 tex = texture2D(source, qt_TexCoord0);
++                gl_FragColor = tex * colorMatrix * qt_Opacity;
++            }"
++    }
++
++    states: [
++        State {
++            name: "on"
++            PropertyChanges {
++                target: mainStack
++                opacity: 1
++            }
++            PropertyChanges {
++                target: footer
++                opacity: 1
++            }
++            PropertyChanges {
++                target: wallpaperFader
++                factor: 1
++            }
++            PropertyChanges {
++                target: clock.shadow
++                opacity: 0
++            }
++            PropertyChanges {
++                target: clock
++                opacity: 1
++            }
++        },
++        State {
++            name: "off"
++            PropertyChanges {
++                target: mainStack
++                opacity: 0
++            }
++            PropertyChanges {
++                target: footer
++                opacity: 0
++            }
++            PropertyChanges {
++                target: wallpaperFader
++                factor: 0
++            }
++            PropertyChanges {
++                target: clock.shadow
++                opacity: wallpaperFader.alwaysShowClock ? 1 : 0
++            }
++            PropertyChanges {
++                target: clock
++                opacity: wallpaperFader.alwaysShowClock ? 1 : 0
++            }
++        }
++    ]
++    transitions: [
++        Transition {
++            from: "off"
++            to: "on"
++            //Note: can't use animators as they don't play well with parallelanimations
++            NumberAnimation {
++                targets: [mainStack, footer, clock]
++                property: "opacity"
++                duration: PlasmaCore.Units.veryLongDuration
++                easing.type: Easing.InOutQuad
++            }
++        },
++        Transition {
++            from: "on"
++            to: "off"
++            NumberAnimation {
++                targets: [mainStack, footer, clock]
++                property: "opacity"
++                duration: PlasmaCore.Units.veryLongDuration
++                easing.type: Easing.InOutQuad
++            }
++        }
++    ]
++}
+diff --git a/sddm-theme/components/artwork/README.txt b/sddm-theme/components/artwork/README.txt
+new file mode 100644
+index 0000000..1885a36
+--- /dev/null
++++ b/sddm-theme/components/artwork/README.txt
+@@ -0,0 +1 @@
++After editing SVG files be sure to run currentColorFillFix.sh from plasma-framework
+\ No newline at end of file
+diff --git a/sddm-theme/components/artwork/logout_primary.svgz b/sddm-theme/components/artwork/logout_primary.svgz
+new file mode 100644
+index 0000000..6a9423f
+Binary files /dev/null and b/sddm-theme/components/artwork/logout_primary.svgz differ
+diff --git a/sddm-theme/components/artwork/restart_primary.svgz b/sddm-theme/components/artwork/restart_primary.svgz
+new file mode 100644
+index 0000000..e2312bd
+Binary files /dev/null and b/sddm-theme/components/artwork/restart_primary.svgz differ
+diff --git a/sddm-theme/components/artwork/shutdown_primary.svgz b/sddm-theme/components/artwork/shutdown_primary.svgz
+new file mode 100644
+index 0000000..1c60152
+Binary files /dev/null and b/sddm-theme/components/artwork/shutdown_primary.svgz differ
 
-PROJECT_ROOT="$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)"
-cd "$PROJECT_ROOT"
+========== NEXT SDDM SYNC COMMIT ==========
+remote: Enumerating objects: 24, done.
+remote: Counting objects: 100% (24/24), done.
+remote: Compressing objects: 100% (19/19), done.
+remote: Total 24 (delta 7), reused 20 (delta 5), pack-reused 0 (from 0)
+Receiving objects: 100% (24/24), 19.01 KiB | 237.00 KiB/s, done.
+Resolving deltas: 100% (7/7), done.
+commit 2eb6abb68a8c0eaf599f59e94058816dc8e05323
+Author: Artem Grinev <agrinev@manjaro.org>
+Date:   Wed Mar 13 19:49:08 2024 +0500
 
-BRANDING_SOURCE="branding/calamares/bibotto"
-BRANDING_TARGET="config/includes.chroot/etc/calamares/branding/bibotto"
+    [sddm-theme] Sync with upstream
 
-if [ ! -f "$BRANDING_SOURCE/branding.desc" ]; then
-    echo "ERROR: Calamares branding.desc source is missing."
-    exit 1
-fi
+ sddm-theme/Background.qml                           |  23 +---
+ sddm-theme/BreezeMenuStyle.qml                      |  25 ----
+ sddm-theme/KeyboardButton.qml                       |  62 +++++++---
+ sddm-theme/Login.qml                                |  79 ++++++++----
+ sddm-theme/Main.qml                                 | 404 ++++++++++++++++++++++++++++++------------------------------
+ sddm-theme/SessionButton.qml                        |  64 +++++-----
+ sddm-theme/components                               |   1 +
+ sddm-theme/components/ActionButton.qml              | 115 -----------------
+ sddm-theme/components/Battery.qml                   |  43 -------
+ sddm-theme/components/Clock.qml                     |  37 ------
+ sddm-theme/components/SessionManagementScreen.qml   | 109 ----------------
+ sddm-theme/components/UserDelegate.qml              | 180 ---------------------------
+ sddm-theme/components/UserList.qml                  |  88 -------------
+ sddm-theme/components/VirtualKeyboard.qml           |  70 -----------
+ sddm-theme/components/VirtualKeyboard_wayland.qml   |  24 ----
+ sddm-theme/components/WallpaperFader.qml            | 162 ------------------------
+ sddm-theme/components/artwork/README.txt            |   1 -
+ sddm-theme/components/artwork/logout_primary.svgz   | Bin 2514 -> 0 bytes
+ sddm-theme/components/artwork/restart_primary.svgz  | Bin 1860 -> 0 bytes
+ sddm-theme/components/artwork/shutdown_primary.svgz | Bin 1738 -> 0 bytes
+ sddm-theme/dummydata/config.qml                     |   9 +-
+ sddm-theme/dummydata/keyboard.qml                   |  11 +-
+ sddm-theme/dummydata/screenModel.qml                |   6 +-
+ sddm-theme/dummydata/sddm.qml                       |   6 +-
+ sddm-theme/dummydata/sessionModel.qml               |   2 +-
+ sddm-theme/dummydata/userModel.qml                  |   2 +-
+ sddm-theme/manjarologo.svgz                         | Bin 0 -> 5366 bytes
+ sddm-theme/metadata.desktop                         |   7 +-
+ sddm-theme/theme.conf.cmake                         |   1 +
+ 29 files changed, 357 insertions(+), 1174 deletions(-)
+commit 2eb6abb68a8c0eaf599f59e94058816dc8e05323
+Author:     Artem Grinev <agrinev@manjaro.org>
+AuthorDate: Wed Mar 13 19:49:08 2024 +0500
+Commit:     Artem Grinev <agrinev@manjaro.org>
+CommitDate: Wed Mar 13 19:49:08 2024 +0500
 
-if [ ! -f "$BRANDING_SOURCE/development.svg" ] ||
-   [ ! -f "$BRANDING_SOURCE/email.svg" ]; then
-    echo "ERROR: Required package chooser SVG source is missing."
-    exit 1
-fi
+    [sddm-theme] Sync with upstream
 
-mkdir -p "$BRANDING_TARGET"
-cp -a "$BRANDING_SOURCE/." "$BRANDING_TARGET/"
+diff --git a/sddm-theme/Background.qml b/sddm-theme/Background.qml
+index 5a38415..6721e57 100644
+--- a/sddm-theme/Background.qml
++++ b/sddm-theme/Background.qml
+@@ -1,23 +1,10 @@
+ /*
+- *   Copyright 2016 Boudhayan Gupta <bgupta@kde.org>
+- *
+- *   This program is free software; you can redistribute it and/or modify
+- *   it under the terms of the GNU Library General Public License as
+- *   published by the Free Software Foundation; either version 2 or
+- *   (at your option) any later version.
+- *
+- *   This program is distributed in the hope that it will be useful,
+- *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+- *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- *   GNU General Public License for more details
+- *
+- *   You should have received a copy of the GNU Library General Public
+- *   License along with this program; if not, write to the
+- *   Free Software Foundation, Inc.,
+- *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+- */
++    SPDX-FileCopyrightText: 2016 Boudhayan Gupta <bgupta@kde.org>
 
-echo "Bibotto Calamares branding assets synchronized."
+-import QtQuick 2.2
++    SPDX-License-Identifier: LGPL-2.0-or-later
++*/
++
++import QtQuick 2.15
 
-if [ "${BIBOTTO_BRANDING_SYNC_ONLY:-0}" = "1" ]; then
-    exit 0
-fi
+ FocusScope {
+     id: sceneBackground
+diff --git a/sddm-theme/BreezeMenuStyle.qml b/sddm-theme/BreezeMenuStyle.qml
+deleted file mode 100644
+index 7d56c14..0000000
+--- a/sddm-theme/BreezeMenuStyle.qml
++++ /dev/null
+@@ -1,25 +0,0 @@
+-import QtQuick 2.2
+-
+-import org.kde.plasma.core 2.0 as PlasmaCore
+-
+-import QtQuick.Controls.Styles 1.4 as QQCS
+-import QtQuick.Controls 1.3 as QQC
+-
+-QQCS.MenuStyle {
+-    frame: Rectangle {
+-        color: PlasmaCore.ColorScope.backgroundColor
+-        border.color: Qt.tint(PlasmaCore.ColorScope.textColor, Qt.rgba(color.r, color.g, color.b, 0.7))
+-        border.width: 1
+-    }
+-    itemDelegate.label: QQC.Label {
+-        height: contentHeight * 1.2
+-        verticalAlignment: Text.AlignVCenter
+-        color: styleData.selected ? PlasmaCore.ColorScope.highlightedTextColor : PlasmaCore.ColorScope.textColor
+-        font.pointSize: config.fontSize
+-        text: styleData.text
+-    }
+-    itemDelegate.background: Rectangle {
+-        visible: styleData.selected
+-        color: PlasmaCore.ColorScope.highlightColor
+-    }
+-}
+diff --git a/sddm-theme/KeyboardButton.qml b/sddm-theme/KeyboardButton.qml
+index d5d5a44..6731c30 100644
+--- a/sddm-theme/KeyboardButton.qml
++++ b/sddm-theme/KeyboardButton.qml
+@@ -1,35 +1,59 @@
+-import QtQuick 2.2
++/*
++    SPDX-FileCopyrightText: 2016 David Edmundson <davidedmundson@kde.org>
++    SPDX-FileCopyrightText: 2022 Aleix Pol Gonzalez <aleixpol@kde.org>
 
-exec lb build noauto "$@"
+-import org.kde.plasma.core 2.0 as PlasmaCore
+-import org.kde.plasma.components 2.0 as PlasmaComponents // Because PC3 ToolButton can't take a menu
++    SPDX-License-Identifier: LGPL-2.0-or-later
++*/
 
-===== GIT TRACKED DOSYALAR =====
-.gitignore
-auto/build
-branding/brand-guidelines.md
-branding/calamares/bibotto/branding.desc
-branding/calamares/bibotto/development.svg
-branding/calamares/bibotto/email.svg
-branding/colors.json
-branding/themes/dark/Bibotto-Dark.colors
-branding/themes/light/Bibotto-Light.colors
-config/binary
-config/bootstrap
-config/chroot
-config/common
-config/hooks/live/0010-disable-kexec-tools.hook.chroot
-config/hooks/live/0050-disable-sysvinit-tmpfs.hook.chroot
-config/hooks/normal/1000-create-mtab-symlink.hook.chroot
-config/hooks/normal/1010-enable-cryptsetup.hook.chroot
-config/hooks/normal/1020-create-locales-files.hook.chroot
-config/hooks/normal/5000-update-apt-file-cache.hook.chroot
-config/hooks/normal/5010-update-apt-xapian-index.hook.chroot
-config/hooks/normal/5020-update-glx-alternative.hook.chroot
-config/hooks/normal/5030-update-plocate-database.hook.chroot
-config/hooks/normal/5040-update-nvidia-alternative.hook.chroot
-config/hooks/normal/5050-dracut.hook.chroot
-config/hooks/normal/8000-remove-adjtime-configuration.hook.chroot
-config/hooks/normal/8010-remove-backup-files.hook.chroot
-config/hooks/normal/8020-remove-dbus-machine-id.hook.chroot
-config/hooks/normal/8030-truncate-log-files.hook.chroot
-config/hooks/normal/8040-remove-mdadm-configuration.hook.chroot
-config/hooks/normal/8050-remove-openssh-server-host-keys.hook.chroot
-config/hooks/normal/8060-remove-systemd-machine-id.hook.chroot
-config/hooks/normal/8070-remove-temporary-files.hook.chroot
-config/hooks/normal/8080-reproducible-glibc.hook.chroot
-config/hooks/normal/8090-remove-ssl-cert-snakeoil.hook.chroot
-config/hooks/normal/8100-remove-udev-persistent-cd-rules.hook.chroot
-config/hooks/normal/8110-remove-udev-persistent-net-rules.hook.chroot
-config/hooks/normal/9000-remove-gnome-icon-cache.hook.chroot
-config/hooks/normal/9010-remove-python-pyc.hook.chroot
-config/hooks/normal/9020-remove-man-cache.hook.chroot
-config/includes.chroot/etc/apt/apt.conf.d/20auto-upgrades
-config/includes.chroot/etc/apt/apt.conf.d/52bibotto-unattended-upgrades
-config/includes.chroot/etc/calamares/branding/bibotto/branding.desc
-config/includes.chroot/etc/calamares/branding/bibotto/development.svg
-config/includes.chroot/etc/calamares/branding/bibotto/email.svg
-config/includes.chroot/etc/calamares/modules/bootloader.conf
-config/includes.chroot/etc/calamares/modules/displaymanager.conf
-config/includes.chroot/etc/calamares/modules/finished.conf
-config/includes.chroot/etc/calamares/modules/fstab.conf
-config/includes.chroot/etc/calamares/modules/grubcfg.conf
-config/includes.chroot/etc/calamares/modules/mount.conf
-config/includes.chroot/etc/calamares/modules/packagechooser.conf
-config/includes.chroot/etc/calamares/modules/packages.conf
-config/includes.chroot/etc/calamares/modules/partition.conf
-config/includes.chroot/etc/calamares/modules/services-systemd.conf
-config/includes.chroot/etc/calamares/modules/shellprocess-crypttab-luks.conf
-config/includes.chroot/etc/calamares/modules/shellprocess-offline-repo-cleanup.conf
-config/includes.chroot/etc/calamares/modules/shellprocess-offline-repo-setup.conf
-config/includes.chroot/etc/calamares/modules/umount.conf
-config/includes.chroot/etc/calamares/modules/unpackfs.conf
-config/includes.chroot/etc/calamares/modules/users.conf
-config/includes.chroot/etc/calamares/modules/welcome.conf
-config/includes.chroot/etc/calamares/settings.conf
-config/includes.chroot/etc/firewalld/zones/public.xml
-config/includes.chroot/etc/live/config.conf
-config/includes.chroot/etc/sddm.conf
-config/includes.chroot/etc/security/pwquality.conf.d/50-bibotto.conf
-config/includes.chroot/etc/skel/.config/kdeglobals
-config/includes.chroot/etc/xdg/kdeglobals
-config/includes.chroot/usr/lib/x86_64-linux-gnu/calamares/modules/shellprocess/module.desc
-config/includes.chroot/usr/share/color-schemes/Bibotto-Dark.colors
-config/includes.chroot/usr/share/color-schemes/Bibotto-Light.colors
-config/package-lists/bibotto-bootloader.list.chroot
-config/package-lists/bibotto-desktop.list.chroot
-config/package-lists/bibotto-filesystem.list.chroot
-config/package-lists/bibotto-firmware.list.chroot
-config/package-lists/bibotto-hardware.list.chroot
-config/package-lists/bibotto-installer.list.chroot
-config/package-lists/bibotto-kernel.list.chroot
-config/package-lists/bibotto-productivity.list.chroot
-config/package-lists/bibotto-security.list.chroot
-config/package-lists/live.list.chroot
-config/source
-docs/ARCHITECTURE.md
-docs/CHANGELOG.md
-docs/INSTALLER.md
-docs/PACKAGE-MANIFEST.md
-docs/RESEARCH-LOG.md
-docs/ROADMAP.md
-docs/SECURITY.md
-docs/STATUS.md
-docs/TESTING.md
-docs/TODO.md
-packages-desktop.txt
-packages-developer.txt
-packages-email.txt
-scripts/build-iso.py
-wsl-echo.md
+-import QtQuick.Controls 1.3 as QQC
++import QtQuick 2.15
++
++import org.kde.plasma.components 3.0 as PlasmaComponents
++import org.kde.kirigami 2.20 as Kirigami
+
+ PlasmaComponents.ToolButton {
+-    id: keyboardButton
++    id: root
++
++    property int currentIndex: keyboard.currentLayout
++    onCurrentIndexChanged: keyboard.currentLayout = currentIndex
+
+-    property int currentIndex: -1
++    text: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Keyboard Layout: %1", keyboard.layouts[currentIndex].longName)
++    visible: keyboard.layouts.length > 1
+
+-    text: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Keyboard Layout: %1", instantiator.objectAt(currentIndex).shortName)
+-    implicitWidth: minimumWidth
++    checkable: true
++    checked: menu.opened
++    onToggled: {
++        if (checked) {
++            menu.popup(root, 0, 0)
++        } else {
++            menu.dismiss()
++        }
++    }
+
+-    visible: menu.items.length > 1
++    signal keyboardLayoutChanged()
+
+-    Component.onCompleted: currentIndex = Qt.binding(function() {return keyboard.currentLayout});
++    PlasmaComponents.Menu {
++        id: menu
++        Kirigami.Theme.colorSet: Kirigami.Theme.Window
++        Kirigami.Theme.inherit: false
++
++        onAboutToShow: {
++            if (instantiator.model === null) {
++                let layouts = keyboard.layouts;
++                layouts.sort((a, b) => a.longName.localeCompare(b.longName));
++                instantiator.model = layouts;
++            }
++        }
+
+-    menu: QQC.Menu {
+-        id: keyboardMenu
+-        style: BreezeMenuStyle {}
+         Instantiator {
+             id: instantiator
+-            model: keyboard.layouts
+-            onObjectAdded: keyboardMenu.insertItem(index, object)
+-            onObjectRemoved: keyboardMenu.removeItem( object )
+-            delegate: QQC.MenuItem {
++            model: null
++            onObjectAdded: (index, object) => menu.insertItem(index, object)
++            onObjectRemoved: (index, object) => menu.removeItem(object)
++            delegate: PlasmaComponents.MenuItem {
+                 text: modelData.longName
+-                property string shortName: modelData.shortName
+                 onTriggered: {
+-                    keyboard.currentLayout = model.index
++                    keyboard.currentLayout = keyboard.layouts.indexOf(modelData)
++                    root.keyboardLayoutChanged()
+                 }
+             }
+         }
+diff --git a/sddm-theme/Login.qml b/sddm-theme/Login.qml
+index bde6d8b..4a09aea 100644
+--- a/sddm-theme/Login.qml
++++ b/sddm-theme/Login.qml
+@@ -1,10 +1,12 @@
+-import "components"
++import org.kde.breeze.components
+
+-import QtQuick 2.0
+-import QtQuick.Layouts 1.2
++import QtQuick 2.15
++import QtQuick.Layouts 1.15
++import QtQuick.Controls 2.15 as QQC2
+
+-import org.kde.plasma.core 2.0 as PlasmaCore
+ import org.kde.plasma.components 3.0 as PlasmaComponents3
++import org.kde.plasma.extras 2.0 as PlasmaExtras
++import org.kde.kirigami 2.20 as Kirigami
+
+ SessionManagementScreen {
+     id: root
+@@ -17,7 +19,7 @@ SessionManagementScreen {
+
+     //the y position that should be ensured visible when the on screen keyboard is visible
+     property int visibleBoundary: mapFromItem(loginButton, 0, 0).y
+-    onHeightChanged: visibleBoundary = mapFromItem(loginButton, 0, 0).y + loginButton.height + PlasmaCore.Units.smallSpacing
++    onHeightChanged: visibleBoundary = mapFromItem(loginButton, 0, 0).y + loginButton.height + Kirigami.Units.smallSpacing
+
+     property int fontSize: parseInt(config.fontSize)
+
+@@ -29,23 +31,45 @@ SessionManagementScreen {
+         }
+     }
+
++    onUserSelected: {
++        // Don't startLogin() here, because the signal is connected to the
++        // Escape key as well, for which it wouldn't make sense to trigger
++        // login.
++        focusFirstVisibleFormControl();
++    }
++
++    QQC2.StackView.onActivating: {
++        // Controls are not visible yet.
++        Qt.callLater(focusFirstVisibleFormControl);
++    }
++
++    function focusFirstVisibleFormControl() {
++        const nextControl = (userNameInput.visible
++            ? userNameInput
++            : (passwordBox.visible
++                ? passwordBox
++                : loginButton));
++        // Using TabFocusReason, so that the loginButton gets the visual highlight.
++        nextControl.forceActiveFocus(Qt.TabFocusReason);
++    }
++
+     /*
+-    * Login has been requested with the following username and password
+-    * If username field is visible, it will be taken from that, otherwise from the "name" property of the currentIndex
+-    */
++     * Login has been requested with the following username and password
++     * If username field is visible, it will be taken from that, otherwise from the "name" property of the currentIndex
++     */
+     function startLogin() {
+-        var username = showUsernamePrompt ? userNameInput.text : userList.selectedUser
+-        var password = passwordBox.text
+-        passwordRow.visible = false
+-
++        const username = showUsernamePrompt ? userNameInput.text : userList.selectedUser
++        const password = passwordBox.text
+
+         footer.enabled = false
+         mainStack.enabled = false
+         userListComponent.userList.opacity = 0.5
+
+-        //this is partly because it looks nicer
+-        //but more importantly it works round a Qt bug that can trigger if the app is closed with a TextField focused
+-        //DAVE REPORT THE FRICKING THING AND PUT A LINK
++        // This is partly because it looks nicer, but more importantly it
++        // works round a Qt bug that can trigger if the app is closed with a
++        // TextField focused.
++        //
++        // See https://bugreports.qt.io/browse/QTBUG-55460
+         loginButton.forceActiveFocus();
+         loginRequest(username, password);
+     }
+@@ -60,25 +84,26 @@ SessionManagementScreen {
+         focus: showUsernamePrompt && !lastUserName //if there's a username prompt it gets focus first, otherwise password does
+         placeholderText: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Username")
+
+-        onAccepted:
++        onAccepted: {
+             if (root.loginScreenUiVisible) {
+                 passwordBox.forceActiveFocus()
+             }
++        }
+     }
+
+     RowLayout {
+         Layout.fillWidth: true
+-        id: passwordRow
+
+-        PlasmaComponents3.TextField {
++        PlasmaExtras.PasswordField {
+             id: passwordBox
+             font.pointSize: fontSize + 1
+             Layout.fillWidth: true
+
+             placeholderText: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Password")
+             focus: !showUsernamePrompt || lastUserName
+-            echoMode: TextInput.Password
+-            revealPasswordButtonShown: true
++
++            // Disable reveal password action because SDDM does not have the breeze icon set loaded
++            rightActions: []
+
+             onAccepted: {
+                 if (root.loginScreenUiVisible) {
+@@ -86,13 +111,15 @@ SessionManagementScreen {
+                 }
+             }
+
++            visible: root.showUsernamePrompt || userList.currentItem.needsPassword
++
+             Keys.onEscapePressed: {
+                 mainStack.currentItem.forceActiveFocus();
+             }
+
+             //if empty and left or right is pressed change selection in user switch
+             //this cannot be in keys.onLeftPressed as then it doesn't reach the password box
+-            Keys.onPressed: {
++            Keys.onPressed: event => {
+                 if (event.key === Qt.Key_Left && !text) {
+                     userList.decrementCurrentIndex();
+                     event.accepted = true
+@@ -106,7 +133,6 @@ SessionManagementScreen {
+             Connections {
+                 target: sddm
+                 function onLoginFailed() {
+-                    passwordRow.visible = true
+                     passwordBox.selectAll()
+                     passwordBox.forceActiveFocus()
+                 }
+@@ -117,11 +143,14 @@ SessionManagementScreen {
+             id: loginButton
+             Accessible.name: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Log In")
+             Layout.preferredHeight: passwordBox.implicitHeight
+-            Layout.preferredWidth: loginButton.Layout.preferredHeight
++            Layout.preferredWidth: text.length === 0 ? loginButton.Layout.preferredHeight : -1
+
+-            icon.name: "go-next"
++            icon.name: text.length === 0 ? (root.LayoutMirroring.enabled ? "go-previous" : "go-next") : ""
+
+-            onClicked: startLogin();
++            text: root.showUsernamePrompt || userList.currentItem.needsPassword ? "" : i18n("Log In")
++            onClicked: startLogin()
++            Keys.onEnterPressed: clicked()
++            Keys.onReturnPressed: clicked()
+         }
+     }
+ }
+diff --git a/sddm-theme/Main.qml b/sddm-theme/Main.qml
+index 16fdd38..f5da14c 100644
+--- a/sddm-theme/Main.qml
++++ b/sddm-theme/Main.qml
+@@ -1,48 +1,34 @@
+ /*
+- *   Copyright 2016 David Edmundson <davidedmundson@kde.org>
+- *
+- *   This program is free software; you can redistribute it and/or modify
+- *   it under the terms of the GNU Library General Public License as
+- *   published by the Free Software Foundation; either version 2 or
+- *   (at your option) any later version.
+- *
+- *   This program is distributed in the hope that it will be useful,
+- *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+- *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- *   GNU General Public License for more details
+- *
+- *   You should have received a copy of the GNU Library General Public
+- *   License along with this program; if not, write to the
+- *   Free Software Foundation, Inc.,
+- *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+- */
+-
+-import QtQuick 2.8
+-
+-import QtQuick.Layouts 1.1
+-import QtQuick.Controls 1.1
+-import QtGraphicalEffects 1.0
+-
+-import org.kde.plasma.core 2.0 as PlasmaCore
++    SPDX-FileCopyrightText: 2016 David Edmundson <davidedmundson@kde.org>
++
++    SPDX-License-Identifier: LGPL-2.0-or-later
++*/
++
++import QtQuick 2.15
++import QtQuick.Layouts 1.15
++import QtQuick.Controls 2.15 as QQC2
++import Qt5Compat.GraphicalEffects
++
+ import org.kde.plasma.components 3.0 as PlasmaComponents3
+-import org.kde.plasma.extras 2.0 as PlasmaExtras
++import org.kde.plasma.private.keyboardindicator as KeyboardIndicator
++import org.kde.kirigami 2.20 as Kirigami
+
+-import "components"
++import org.kde.breeze.components
+
+ // TODO: Once SDDM 0.19 is released and we are setting the font size using the
+ // SDDM KCM's syncing feature, remove the `config.fontSize` overrides here and
+ // the fontSize properties in various components, because the theme's default
+ // font size will be correctly propagated to the login screen
+
+-PlasmaCore.ColorScope {
++Item {
+     id: root
+
+     // If we're using software rendering, draw outlines instead of shadows
+     // See https://bugs.kde.org/show_bug.cgi?id=398317
+     readonly property bool softwareRendering: GraphicsInfo.api === GraphicsInfo.Software
+
+-    colorGroup: PlasmaCore.Theme.ComplementaryColorGroup
+-    readonly property bool lightBackground: Math.max(PlasmaCore.ColorScope.backgroundColor.r, PlasmaCore.ColorScope.backgroundColor.g, PlasmaCore.ColorScope.backgroundColor.b) > 0.5
++    Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
++    Kirigami.Theme.inherit: false
+
+     width: 1600
+     height: 900
+@@ -52,10 +38,9 @@ PlasmaCore.ColorScope {
+     LayoutMirroring.enabled: Qt.application.layoutDirection === Qt.RightToLeft
+     LayoutMirroring.childrenInherit: true
+
+-    PlasmaCore.DataSource {
+-        id: keystateSource
+-        engine: "keystate"
+-        connectedSources: "Caps Lock"
++    KeyboardIndicator.KeyState {
++        id: capsLockState
++        key: Qt.Key_CapsLock
+     }
+
+     Item {
+@@ -73,6 +58,11 @@ PlasmaCore.ColorScope {
+         }
+     }
+
++    RejectPasswordAnimation {
++        id: rejectPasswordAnimation
++        target: mainStack
++    }
++
+     MouseArea {
+         id: loginScreenRoot
+         anchors.fill: parent
+@@ -100,7 +90,7 @@ PlasmaCore.ColorScope {
+             }
+         }
+
+-        Keys.onPressed: {
++        Keys.onPressed: event => {
+             uiVisible = true;
+             event.accepted = false;
+         }
+@@ -112,6 +102,7 @@ PlasmaCore.ColorScope {
+             interval: 60000
+             onTriggered: {
+                 if (!loginScreenRoot.blockUI) {
++                    userListComponent.mainPasswordBox.showPassword = false;
+                     loginScreenRoot.uiVisible = false;
+                 }
+             }
+@@ -131,20 +122,13 @@ PlasmaCore.ColorScope {
+             anchors.fill: clock
+             source: clock
+             visible: !softwareRendering
+-            horizontalOffset: 1
+-            verticalOffset: 1
+             radius: 6
+             samples: 14
+             spread: 0.3
+-                                          // Soften the color a bit so it doesn't look so stark against light backgrounds
+-            color: root.lightBackground ? Qt.rgba(PlasmaCore.ColorScope.backgroundColor.r,
+-                                                  PlasmaCore.ColorScope.backgroundColor.g,
+-                                                  PlasmaCore.ColorScope.backgroundColor.b,
+-                                                  0.6)
+-                                        : "black" // black matches Breeze window decoration and desktopcontainment
++            color : "black" // shadows should always be black
+             Behavior on opacity {
+                 OpacityAnimator {
+-                    duration: PlasmaCore.Units.veryLongDuration * 2
++                    duration: Kirigami.Units.veryLongDuration * 2
+                     easing.type: Easing.InOutQuad
+                 }
+             }
+@@ -152,19 +136,27 @@ PlasmaCore.ColorScope {
+
+         Clock {
+             id: clock
+-            visible: y > 0
+             property Item shadow: clockShadow
+-            y: (userListComponent.userList.y + mainStack.y)/2 - height/2
++            visible: y > 0
+             anchors.horizontalCenter: parent.horizontalCenter
++            y: (userListComponent.userList.y + mainStack.y)/2 - height/2
++            Layout.alignment: Qt.AlignBaseline
+         }
+
+-        StackView {
++        QQC2.StackView {
+             id: mainStack
+             anchors {
+                 left: parent.left
+                 right: parent.right
+             }
+-            height: root.height + PlasmaCore.Units.gridUnit * 3
++            height: root.height + Kirigami.Units.gridUnit * 3
++
++            // If true (depends on the style and environment variables), hover events are always accepted
++            // and propagation stopped. This means the parent MouseArea won't get them and the UI won't be shown.
++            // Disable capturing those events while the UI is hidden to avoid that, while still passing events otherwise.
++            // One issue is that while the UI is visible, mouse activity won't keep resetting the timer, but when it
++            // finally expires, the next event should immediately set uiVisible = true again.
++            hoverEnabled: loginScreenRoot.uiVisible ? undefined : false
+
+             focus: true //StackView is an implicit focus scope, so we need to give this focus so the item inside will have it
+
+@@ -186,61 +178,63 @@ PlasmaCore.ColorScope {
+                 userListCurrentIndex: userModel.lastIndex >= 0 ? userModel.lastIndex : 0
+                 lastUserName: userModel.lastUser
+                 showUserList: {
+-                    if ( !userListModel.hasOwnProperty("count")
+-                    || !userListModel.hasOwnProperty("disableAvatarsThreshold"))
+-                        return (userList.y + mainStack.y) > 0
++                    if (!userListModel.hasOwnProperty("count")
++                        || !userListModel.hasOwnProperty("disableAvatarsThreshold")) {
++                        return false
++                    }
+
+-                    if ( userListModel.count === 0 ) return false
++                    if (userListModel.count === 0 ) {
++                        return false
++                    }
+
+-                    if ( userListModel.hasOwnProperty("containsAllUsers") && !userListModel.containsAllUsers ) return false
++                    if (userListModel.hasOwnProperty("containsAllUsers") && !userListModel.containsAllUsers) {
++                        return false
++                    }
+
+-                    return userListModel.count <= userListModel.disableAvatarsThreshold && (userList.y + mainStack.y) > 0
++                    return userListModel.count <= userListModel.disableAvatarsThreshold
+                 }
+
+                 notificationMessage: {
+-                    var text = ""
+-                    if (keystateSource.data["Caps Lock"]["Locked"]) {
+-                        text += i18nd("plasma_lookandfeel_org.kde.lookandfeel","Caps Lock is on")
+-                        if (root.notificationMessage) {
+-                            text += " • "
+-                        }
++                    const parts = [];
++                    if (capsLockState.locked) {
++                        parts.push(i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Caps Lock is on"));
++                    }
++                    if (root.notificationMessage) {
++                        parts.push(root.notificationMessage);
+                     }
+-                    text += root.notificationMessage
+-                    return text
++                    return parts.join(" • ");
+                 }
+
++                actionItemsVisible: !inputPanel.keyboardActive
+                 actionItems: [
+                     ActionButton {
+                         iconSource: "system-suspend"
+-                        text: i18ndc("plasma_lookandfeel_org.kde.lookandfeel","Suspend to RAM","Sleep")
++                        text: i18ndc("plasma_lookandfeel_org.kde.lookandfeel", "Suspend to RAM", "Sleep")
+                         fontSize: parseInt(config.fontSize) + 1
+                         onClicked: sddm.suspend()
+                         enabled: sddm.canSuspend
+-                        visible: !inputPanel.keyboardActive
+                     },
+                     ActionButton {
+                         iconSource: "system-reboot"
+-                        text: i18nd("plasma_lookandfeel_org.kde.lookandfeel","Restart")
++                        text: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Restart")
+                         fontSize: parseInt(config.fontSize) + 1
+                         onClicked: sddm.reboot()
+                         enabled: sddm.canReboot
+-                        visible: !inputPanel.keyboardActive
+                     },
+                     ActionButton {
+                         iconSource: "system-shutdown"
+-                        text: i18nd("plasma_lookandfeel_org.kde.lookandfeel","Shut Down")
++                        text: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Shut Down")
+                         fontSize: parseInt(config.fontSize) + 1
+                         onClicked: sddm.powerOff()
+                         enabled: sddm.canPowerOff
+-                        visible: !inputPanel.keyboardActive
+                     },
+                     ActionButton {
+                         iconSource: "system-user-prompt"
+-                        text: i18ndc("plasma_lookandfeel_org.kde.lookandfeel", "For switching to a username and password prompt", "Other...")
++                        text: i18ndc("plasma_lookandfeel_org.kde.lookandfeel", "For switching to a username and password prompt", "Other…")
+                         fontSize: parseInt(config.fontSize) + 1
+                         onClicked: mainStack.push(userPromptComponent)
+                         enabled: true
+-                        visible: !userListComponent.showUsernamePrompt && !inputPanel.keyboardActive
++                        visible: !userListComponent.showUsernamePrompt
+                     }]
+
+                 onLoginRequest: {
+@@ -251,126 +245,83 @@ PlasmaCore.ColorScope {
+
+             Behavior on opacity {
+                 OpacityAnimator {
+-                    duration: PlasmaCore.Units.longDuration
++                    duration: Kirigami.Units.longDuration
+                 }
+             }
+-        }
+
+-        Loader {
+-            id: inputPanel
+-            state: "hidden"
+-            property bool keyboardActive: item ? item.active : false
+-            onKeyboardActiveChanged: {
+-                if (keyboardActive) {
+-                    state = "visible"
+-                    // Otherwise the password field loses focus and virtual keyboard
+-                    // keystrokes get eaten
+-                    userListComponent.mainPasswordBox.forceActiveFocus();
+-                } else {
+-                    state = "hidden";
++            readonly property real zoomFactor: 1.5
++
++            popEnter: Transition {
++                ScaleAnimator {
++                    from: mainStack.zoomFactor
++                    to: 1
++                    duration: Kirigami.Units.veryLongDuration
++                    easing.type: Easing.OutCubic
++                }
++                OpacityAnimator {
++                    from: 0
++                    to: 1
++                    duration: Kirigami.Units.veryLongDuration
++                    easing.type: Easing.OutCubic
+                 }
+             }
+-            source: "components/VirtualKeyboard.qml"
+-            anchors {
+-                left: parent.left
+-                right: parent.right
++
++            popExit: Transition {
++                ScaleAnimator {
++                    from: 1
++                    to: 1 / mainStack.zoomFactor
++                    duration: Kirigami.Units.veryLongDuration
++                    easing.type: Easing.OutCubic
++                }
++                OpacityAnimator {
++                    from: 1
++                    to: 0
++                    duration: Kirigami.Units.veryLongDuration
++                    easing.type: Easing.OutCubic
++                }
+             }
+
+-            function showHide() {
+-                state = state == "hidden" ? "visible" : "hidden";
++            pushEnter: Transition {
++                ScaleAnimator {
++                    from: 1 / mainStack.zoomFactor
++                    to: 1
++                    duration: Kirigami.Units.veryLongDuration
++                    easing.type: Easing.OutCubic
++                }
++                OpacityAnimator {
++                    from: 0
++                    to: 1
++                    duration: Kirigami.Units.veryLongDuration
++                    easing.type: Easing.OutCubic
++                }
+             }
+
+-            states: [
+-                State {
+-                    name: "visible"
+-                    PropertyChanges {
+-                        target: mainStack
+-                        y: Math.min(0, root.height - inputPanel.height - userListComponent.visibleBoundary)
+-                    }
+-                    PropertyChanges {
+-                        target: inputPanel
+-                        y: root.height - inputPanel.height
+-                        opacity: 1
+-                    }
+-                },
+-                State {
+-                    name: "hidden"
+-                    PropertyChanges {
+-                        target: mainStack
+-                        y: 0
+-                    }
+-                    PropertyChanges {
+-                        target: inputPanel
+-                        y: root.height - root.height/4
+-                        opacity: 0
+-                    }
++            pushExit: Transition {
++                ScaleAnimator {
++                    from: 1
++                    to: mainStack.zoomFactor
++                    duration: Kirigami.Units.veryLongDuration
++                    easing.type: Easing.OutCubic
+                 }
+-            ]
+-            transitions: [
+-                Transition {
+-                    from: "hidden"
+-                    to: "visible"
+-                    SequentialAnimation {
+-                        ScriptAction {
+-                            script: {
+-                                inputPanel.item.activated = true;
+-                                Qt.inputMethod.show();
+-                            }
+-                        }
+-                        ParallelAnimation {
+-                            NumberAnimation {
+-                                target: mainStack
+-                                property: "y"
+-                                duration: PlasmaCore.Units.longDuration
+-                                easing.type: Easing.InOutQuad
+-                            }
+-                            NumberAnimation {
+-                                target: inputPanel
+-                                property: "y"
+-                                duration: PlasmaCore.Units.longDuration
+-                                easing.type: Easing.OutQuad
+-                            }
+-                            OpacityAnimator {
+-                                target: inputPanel
+-                                duration: PlasmaCore.Units.longDuration
+-                                easing.type: Easing.OutQuad
+-                            }
+-                        }
+-                    }
+-                },
+-                Transition {
+-                    from: "visible"
+-                    to: "hidden"
+-                    SequentialAnimation {
+-                        ParallelAnimation {
+-                            NumberAnimation {
+-                                target: mainStack
+-                                property: "y"
+-                                duration: PlasmaCore.Units.longDuration
+-                                easing.type: Easing.InOutQuad
+-                            }
+-                            NumberAnimation {
+-                                target: inputPanel
+-                                property: "y"
+-                                duration: PlasmaCore.Units.longDuration
+-                                easing.type: Easing.InQuad
+-                            }
+-                            OpacityAnimator {
+-                                target: inputPanel
+-                                duration: PlasmaCore.Units.longDuration
+-                                easing.type: Easing.InQuad
+-                            }
+-                        }
+-                        ScriptAction {
+-                            script: {
+-                                Qt.inputMethod.hide();
+-                            }
+-                        }
+-                    }
++                OpacityAnimator {
++                    from: 1
++                    to: 0
++                    duration: Kirigami.Units.veryLongDuration
++                    easing.type: Easing.OutCubic
+                 }
+-            ]
++            }
+         }
+
++        VirtualKeyboardLoader {
++            id: inputPanel
++
++            z: 1
++
++            screenRoot: root
++            mainStack: mainStack
++            mainBlock: userListComponent
++            passwordField: userListComponent.mainPasswordBox
++        }
+
+         Component {
+             id: userPromptComponent
+@@ -384,11 +335,12 @@ PlasmaCore.ColorScope {
+                 userListModel: ListModel {
+                     ListElement {
+                         name: ""
+-                        iconSource: ""
++                        icon: ""
+                     }
+                     Component.onCompleted: {
+                         // as we can't bind inside ListElement
+                         setProperty(0, "name", i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Type in Username and Password"));
++                        setProperty(0, "icon", Qt.resolvedUrl("faces/.face.icon"))
+                     }
+                 }
+
+@@ -397,37 +349,34 @@ PlasmaCore.ColorScope {
+                     sddm.login(username, password, sessionButton.currentIndex)
+                 }
+
++                actionItemsVisible: !inputPanel.keyboardActive
+                 actionItems: [
+                     ActionButton {
+                         iconSource: "system-suspend"
+-                        text: i18ndc("plasma_lookandfeel_org.kde.lookandfeel","Suspend to RAM","Sleep")
++                        text: i18ndc("plasma_lookandfeel_org.kde.lookandfeel", "Suspend to RAM", "Sleep")
+                         fontSize: parseInt(config.fontSize) + 1
+                         onClicked: sddm.suspend()
+                         enabled: sddm.canSuspend
+-                        visible: !inputPanel.keyboardActive
+                     },
+                     ActionButton {
+                         iconSource: "system-reboot"
+-                        text: i18nd("plasma_lookandfeel_org.kde.lookandfeel","Restart")
++                        text: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Restart")
+                         fontSize: parseInt(config.fontSize) + 1
+                         onClicked: sddm.reboot()
+                         enabled: sddm.canReboot
+-                        visible: !inputPanel.keyboardActive
+                     },
+                     ActionButton {
+                         iconSource: "system-shutdown"
+-                        text: i18nd("plasma_lookandfeel_org.kde.lookandfeel","Shut Down")
++                        text: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Shut Down")
+                         fontSize: parseInt(config.fontSize) + 1
+                         onClicked: sddm.powerOff()
+                         enabled: sddm.canPowerOff
+-                        visible: !inputPanel.keyboardActive
+                     },
+                     ActionButton {
+                         iconSource: "system-user-list"
+-                        text: i18nd("plasma_lookandfeel_org.kde.lookandfeel","List Users")
++                        text: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "List Users")
+                         fontSize: parseInt(config.fontSize) + 1
+                         onClicked: mainStack.pop()
+-                        visible: !inputPanel.keyboardActive
+                     }
+                 ]
+             }
+@@ -437,23 +386,18 @@ PlasmaCore.ColorScope {
+             id: logoShadow
+             anchors.fill: logo
+             source: logo
+-            visible: !softwareRendering && config.showlogo == "shown"
++            visible: !softwareRendering && config.showlogo === "shown"
+             horizontalOffset: 1
+             verticalOffset: 1
+             radius: 6
+             samples: 14
+             spread: 0.3
+-                                          // Soften the color a bit so it doesn't look so stark against light backgrounds
+-            color: root.lightBackground ? Qt.rgba(PlasmaCore.ColorScope.backgroundColor.r,
+-                                                  PlasmaCore.ColorScope.backgroundColor.g,
+-                                                  PlasmaCore.ColorScope.backgroundColor.b,
+-                                                  0.6)
+-                                        : "black" // black matches Breeze window decoration and desktopcontainment
++            color : "black" // shadows should always be black
+             opacity: loginScreenRoot.uiVisible ? 0 : 1
+             Behavior on opacity {
+                 //OpacityAnimator when starting from 0 is buggy (it shows one frame with opacity 1)"
+                 NumberAnimation {
+-                    duration: PlasmaCore.Units.longDuration
++                    duration: Kirigami.Units.longDuration
+                     easing.type: Easing.InOutQuad
+                 }
+             }
+@@ -461,56 +405,109 @@ PlasmaCore.ColorScope {
+
+         Image {
+             id: logo
+-            visible: config.showlogo == "shown"
++            visible: config.showlogo === "shown"
+             source: config.logo
+             anchors.horizontalCenter: parent.horizontalCenter
+             anchors.bottom: footer.top
+-            anchors.bottomMargin: PlasmaCore.Units.largeSpacing
++            anchors.bottomMargin: Kirigami.Units.largeSpacing
+             asynchronous: true
+             sourceSize.height: height
+             opacity: loginScreenRoot.uiVisible ? 0 : 1
+             fillMode: Image.PreserveAspectFit
+-            height: Math.round(PlasmaCore.Units.gridUnit * 3.5)
++            height: Math.round(Kirigami.Units.gridUnit * 3.5)
+             Behavior on opacity {
+                 // OpacityAnimator when starting from 0 is buggy (it shows one frame with opacity 1)"
+                 NumberAnimation {
+-                    duration: PlasmaCore.Units.longDuration
++                    duration: Kirigami.Units.longDuration
+                     easing.type: Easing.InOutQuad
+                 }
+             }
+         }
+
+-        //Footer
++        // Note: Containment masks stretch clickable area of their buttons to
++        // the screen edges, essentially making them adhere to Fitts's law.
++        // Due to virtual keyboard button having an icon, buttons may have
++        // different heights, so fillHeight is required.
++        //
++        // Note for contributors: Keep this in sync with LockScreenUi.qml footer.
+         RowLayout {
+             id: footer
+             anchors {
+                 bottom: parent.bottom
+                 left: parent.left
+                 right: parent.right
+-                margins: PlasmaCore.Units.smallSpacing
++                margins: Kirigami.Units.smallSpacing
+             }
++            spacing: Kirigami.Units.smallSpacing
+
+             Behavior on opacity {
+                 OpacityAnimator {
+-                    duration: PlasmaCore.Units.longDuration
++                    duration: Kirigami.Units.longDuration
+                 }
+             }
+
+             PlasmaComponents3.ToolButton {
++                id: virtualKeyboardButton
++
+                 text: i18ndc("plasma_lookandfeel_org.kde.lookandfeel", "Button to show/hide virtual keyboard", "Virtual Keyboard")
+                 font.pointSize: config.fontSize
+                 icon.name: inputPanel.keyboardActive ? "input-keyboard-virtual-on" : "input-keyboard-virtual-off"
+-                onClicked: inputPanel.showHide()
+-                visible: inputPanel.status == Loader.Ready
++                onClicked: {
++                    // Otherwise the password field loses focus and virtual keyboard
++                    // keystrokes get eaten
++                    userListComponent.mainPasswordBox.forceActiveFocus();
++                    inputPanel.showHide()
++                }
++                visible: inputPanel.status === Loader.Ready
++
++                Layout.fillHeight: true
++                containmentMask: Item {
++                    parent: virtualKeyboardButton
++                    anchors.fill: parent
++                    anchors.leftMargin: -footer.anchors.margins
++                    anchors.bottomMargin: -footer.anchors.margins
++                }
+             }
+
+             KeyboardButton {
++                id: keyboardButton
++
+                 font.pointSize: config.fontSize
++
++                onKeyboardLayoutChanged: {
++                    // Otherwise the password field loses focus and virtual keyboard
++                    // keystrokes get eaten
++                    userListComponent.mainPasswordBox.forceActiveFocus();
++                }
++
++                Layout.fillHeight: true
++                containmentMask: Item {
++                    parent: keyboardButton
++                    anchors.fill: parent
++                    anchors.leftMargin: virtualKeyboardButton.visible ? 0 : -footer.anchors.margins
++                    anchors.bottomMargin: -footer.anchors.margins
++                }
+             }
+
+             SessionButton {
+                 id: sessionButton
++
+                 font.pointSize: config.fontSize
++
++                onSessionChanged: {
++                    // Otherwise the password field loses focus and virtual keyboard
++                    // keystrokes get eaten
++                    userListComponent.mainPasswordBox.forceActiveFocus();
++                }
++
++                Layout.fillHeight: true
++                containmentMask: Item {
++                    parent: sessionButton
++                    anchors.fill: parent
++                    anchors.leftMargin: virtualKeyboardButton.visible || keyboardButton.visible
++                        ? 0 : -footer.anchors.margins
++                    anchors.bottomMargin: -footer.anchors.margins
++                }
+             }
+
+             Item {
+@@ -530,6 +527,7 @@ PlasmaCore.ColorScope {
+             footer.enabled = true
+             mainStack.enabled = true
+             userListComponent.userList.opacity = 1
++            rejectPasswordAnimation.start()
+         }
+         function onLoginSucceeded() {
+             //note SDDM will kill the greeter at some random point after this
+diff --git a/sddm-theme/SessionButton.qml b/sddm-theme/SessionButton.qml
+index cdd730a..dceecd7 100644
+--- a/sddm-theme/SessionButton.qml
++++ b/sddm-theme/SessionButton.qml
+@@ -1,55 +1,53 @@
+ /*
+- *   Copyright 2016 David Edmundson <davidedmundson@kde.org>
+- *
+- *   This program is free software; you can redistribute it and/or modify
+- *   it under the terms of the GNU Library General Public License as
+- *   published by the Free Software Foundation; either version 2 or
+- *   (at your option) any later version.
+- *
+- *   This program is distributed in the hope that it will be useful,
+- *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+- *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+- *   GNU General Public License for more details
+- *
+- *   You should have received a copy of the GNU Library General Public
+- *   License along with this program; if not, write to the
+- *   Free Software Foundation, Inc.,
+- *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+- */
+-
+-import QtQuick 2.2
+-
+-import org.kde.plasma.core 2.0 as PlasmaCore
+-import org.kde.plasma.components 2.0 as PlasmaComponents // Because PC3 ToolButton can't take a menu
+-
+-import QtQuick.Controls 1.3 as QQC
++    SPDX-FileCopyrightText: 2016 David Edmundson <davidedmundson@kde.org>
++    SPDX-FileCopyrightText: 2022 Aleix Pol Gonzalez <aleixpol@kde.org>
++
++    SPDX-License-Identifier: LGPL-2.0-or-later
++*/
++
++import QtQuick 2.15
++
++import org.kde.plasma.components 3.0 as PlasmaComponents
++import org.kde.kirigami 2.20 as Kirigami
+
+ PlasmaComponents.ToolButton {
+     id: root
+-    property int currentIndex: -1
+-
+-    implicitWidth: minimumWidth
+
+-    visible: menu.items.length > 1
++    property int currentIndex: -1
+
+     text: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Desktop Session: %1", instantiator.objectAt(currentIndex).text || "")
++    visible: menu.count > 1
+
+     Component.onCompleted: {
+         currentIndex = sessionModel.lastIndex
+     }
++    checkable: true
++    checked: menu.opened
++    onToggled: {
++        if (checked) {
++            menu.popup(root, 0, 0)
++        } else {
++            menu.dismiss()
++        }
++    }
++
++    signal sessionChanged()
++
++    PlasmaComponents.Menu {
++        Kirigami.Theme.colorSet: Kirigami.Theme.Window
++        Kirigami.Theme.inherit: false
+
+-    menu: QQC.Menu {
+         id: menu
+-        style: BreezeMenuStyle {}
+         Instantiator {
+             id: instantiator
+             model: sessionModel
+-            onObjectAdded: menu.insertItem(index, object)
+-            onObjectRemoved: menu.removeItem( object )
+-            delegate: QQC.MenuItem {
++            onObjectAdded: (index, object) => menu.insertItem(index, object)
++            onObjectRemoved: (index, object) => menu.removeItem(object)
++            delegate: PlasmaComponents.MenuItem {
+                 text: model.name
+                 onTriggered: {
+                     root.currentIndex = model.index
++                    sessionChanged()
+                 }
+             }
+         }
+diff --git a/sddm-theme/components b/sddm-theme/components
+new file mode 100755
+index 0000000..0d764f5
+--- /dev/null
++++ b/sddm-theme/components
+@@ -0,0 +1 @@
++../lnf/org.manjaro.breath/contents/components
+diff --git a/sddm-theme/components/ActionButton.qml b/sddm-theme/components/ActionButton.qml
+deleted file mode 100644
+index af278f6..0000000
+--- a/sddm-theme/components/ActionButton.qml
++++ /dev/null
+@@ -1,115 +0,0 @@
+-/*
+-    SPDX-FileCopyrightText: 2016 David Edmundson <davidedmundson@kde.org>
+-
+-    SPDX-License-Identifier: LGPL-2.0-or-later
+-*/
+-
+-import QtQuick 2.8
+-import org.kde.plasma.core 2.0 as PlasmaCore
+-import org.kde.plasma.components 3.0 as PlasmaComponents3
+-
+-Item {
+-    id: root
+-    property alias text: label.text
+-    property alias iconSource: icon.source
+-    property alias containsMouse: mouseArea.containsMouse
+-    property alias font: label.font
+-    property alias labelRendering: label.renderType
+-    property alias circleOpacity: iconCircle.opacity
+-    property alias circleVisiblity: iconCircle.visible
+-    property int fontSize: PlasmaCore.Theme.defaultFont.pointSize + 1
+-    readonly property bool softwareRendering: GraphicsInfo.api === GraphicsInfo.Software
+-    signal clicked
+-
+-    activeFocusOnTab: true
+-
+-    property int iconSize: PlasmaCore.Units.gridUnit * 3
+-
+-    implicitWidth: Math.max(iconSize + PlasmaCore.Units.largeSpacing * 2, label.contentWidth)
+-    implicitHeight: iconSize + PlasmaCore.Units.smallSpacing + label.implicitHeight
+-
+-    opacity: activeFocus || containsMouse ? 1 : 0.85
+-    Behavior on opacity {
+-        PropertyAnimation { // OpacityAnimator makes it turn black at random intervals
+-            duration: PlasmaCore.Units.longDuration
+-            easing.type: Easing.InOutQuad
+-        }
+-    }
+-
+-    Rectangle {
+-        id: iconCircle
+-        anchors.centerIn: icon
+-        width: iconSize + PlasmaCore.Units.smallSpacing
+-        height: width
+-        radius: width / 2
+-        color: softwareRendering ?  PlasmaCore.ColorScope.backgroundColor : PlasmaCore.ColorScope.textColor
+-        opacity: root.activeFocus || containsMouse ? (softwareRendering ? 0.8 : 0.15) : (softwareRendering ? 0.6 : 0)
+-        Behavior on opacity {
+-            PropertyAnimation { // OpacityAnimator makes it turn black at random intervals
+-                duration: PlasmaCore.Units.longDuration
+-                easing.type: Easing.InOutQuad
+-            }
+-        }
+-    }
+-
+-    Rectangle {
+-        anchors.centerIn: iconCircle
+-        width: iconCircle.width
+-        height: width
+-        radius: width / 2
+-        scale: mouseArea.containsPress ? 1 : 0
+-        color: PlasmaCore.ColorScope.textColor
+-        opacity: 0.15
+-        Behavior on scale {
+-            PropertyAnimation {
+-                duration: PlasmaCore.Units.shortDuration
+-                easing.type: Easing.InOutQuart
+-            }
+-        }
+-    }
+-
+-    PlasmaCore.IconItem {
+-        id: icon
+-        anchors {
+-            top: parent.top
+-            horizontalCenter: parent.horizontalCenter
+-        }
+-        width: iconSize
+-        height: iconSize
+-
+-        colorGroup: PlasmaCore.ColorScope.colorGroup
+-        active: mouseArea.containsMouse || root.activeFocus
+-    }
+-
+-    PlasmaComponents3.Label {
+-        id: label
+-        font.pointSize: root.fontSize
+-        anchors {
+-            top: icon.bottom
+-            topMargin: (softwareRendering ? 1.5 : 1) * PlasmaCore.Units.smallSpacing
+-            left: parent.left
+-            right: parent.right
+-        }
+-        style: softwareRendering ? Text.Outline : Text.Normal
+-        styleColor: softwareRendering ? PlasmaCore.ColorScope.backgroundColor : "transparent" //no outline, doesn't matter
+-        horizontalAlignment: Text.AlignHCenter
+-        verticalAlignment: Text.AlignTop
+-        wrapMode: Text.WordWrap
+-        font.underline: root.activeFocus
+-    }
+-
+-    MouseArea {
+-        id: mouseArea
+-        hoverEnabled: true
+-        onClicked: root.clicked()
+-        anchors.fill: parent
+-    }
+-
+-    Keys.onEnterPressed: clicked()
+-    Keys.onReturnPressed: clicked()
+-    Keys.onSpacePressed: clicked()
+-
+-    Accessible.onPressAction: clicked()
+-    Accessible.role: Accessible.Button
+-    Accessible.name: label.text
+-}
+diff --git a/sddm-theme/components/Battery.qml b/sddm-theme/components/Battery.qml
+deleted file mode 100644
+index 05be535..0000000
+--- a/sddm-theme/components/Battery.qml
++++ /dev/null
+@@ -1,43 +0,0 @@
+-/*
+-    SPDX-FileCopyrightText: 2016 Kai Uwe Broulik <kde@privat.broulik.de>
+-
+-    SPDX-License-Identifier: LGPL-2.0-or-later
+-*/
+-
+-import QtQuick 2.2
+-
+-import org.kde.plasma.core 2.0 as PlasmaCore
+-import org.kde.plasma.components 3.0 as PlasmaComponents3
+-import org.kde.plasma.workspace.components 2.0 as PW
+-
+-Row {
+-    id: row
+-
+-    property int fontSize: PlasmaCore.Theme.defaultFont.pointSize
+-
+-    spacing: PlasmaCore.Units.smallSpacing
+-    visible: pmSource.data["Battery"]["Has Cumulative"]
+-
+-    PlasmaCore.DataSource {
+-        id: pmSource
+-        engine: "powermanagement"
+-        connectedSources: ["Battery", "AC Adapter"]
+-    }
+-
+-    PW.BatteryIcon {
+-        id: battery
+-        hasBattery: pmSource.data["Battery"]["Has Battery"] || false
+-        percent: pmSource.data["Battery"]["Percent"] || 0
+-        pluggedIn: pmSource.data["AC Adapter"] ? pmSource.data["AC Adapter"]["Plugged in"] : false
+-
+-        height: batteryLabel.height
+-        width: height
+-    }
+-
+-    PlasmaComponents3.Label {
+-        id: batteryLabel
+-        font.pointSize: row.fontSize
+-        text: i18nd("plasma_lookandfeel_org.kde.lookandfeel","%1%", battery.percent)
+-        Accessible.name: i18nd("plasma_lookandfeel_org.kde.lookandfeel","Battery at %1%", battery.percent)
+-    }
+-}
+diff --git a/sddm-theme/components/Clock.qml b/sddm-theme/components/Clock.qml
+deleted file mode 100644
+index fbe0c7c..0000000
+--- a/sddm-theme/components/Clock.qml
++++ /dev/null
+@@ -1,37 +0,0 @@
+-/*
+-    SPDX-FileCopyrightText: 2016 David Edmundson <davidedmundson@kde.org>
+-
+-    SPDX-License-Identifier: LGPL-2.0-or-later
+-*/
+-
+-import QtQuick 2.8
+-import QtQuick.Layouts 1.1
+-import QtQuick.Controls 2.5 as QQC2
+-import org.kde.plasma.core 2.0 as PlasmaCore
+-
+-ColumnLayout {
+-    readonly property bool softwareRendering: GraphicsInfo.api === GraphicsInfo.Software
+-
+-    QQC2.Label {
+-        text: Qt.formatTime(timeSource.data["Local"]["DateTime"])
+-        color: PlasmaCore.ColorScope.textColor
+-        style: softwareRendering ? Text.Outline : Text.Normal
+-        styleColor: softwareRendering ? PlasmaCore.ColorScope.backgroundColor : "transparent" //no outline, doesn't matter
+-        font.pointSize: 48
+-        Layout.alignment: Qt.AlignHCenter
+-    }
+-    QQC2.Label {
+-        text: Qt.formatDate(timeSource.data["Local"]["DateTime"], Qt.DefaultLocaleLongDate)
+-        color: PlasmaCore.ColorScope.textColor
+-        style: softwareRendering ? Text.Outline : Text.Normal
+-        styleColor: softwareRendering ? PlasmaCore.ColorScope.backgroundColor : "transparent" //no outline, doesn't matter
+-        font.pointSize: 24
+-        Layout.alignment: Qt.AlignHCenter
+-    }
+-    PlasmaCore.DataSource {
+-        id: timeSource
+-        engine: "time"
+-        connectedSources: ["Local"]
+-        interval: 1000
+-    }
+-}
+diff --git a/sddm-theme/components/SessionManagementScreen.qml b/sddm-theme/components/SessionManagementScreen.qml
+deleted file mode 100644
+index f002e51..0000000
+--- a/sddm-theme/components/SessionManagementScreen.qml
++++ /dev/null
+@@ -1,109 +0,0 @@
+-/*
+-    SPDX-FileCopyrightText: 2016 David Edmundson <davidedmundson@kde.org>
+-
+-    SPDX-License-Identifier: LGPL-2.0-or-later
+-*/
+-
+-import QtQuick 2.2
+-
+-import QtQuick.Layouts 1.1
+-import QtQuick.Controls 1.1
+-
+-import org.kde.plasma.core 2.0 as PlasmaCore
+-import org.kde.plasma.components 3.0 as PlasmaComponents3
+-
+-Item {
+-    id: root
+-
+-    /*
+-     * Any message to be displayed to the user, visible above the text fields
+-     */
+-    property alias notificationMessage: notificationsLabel.text
+-
+-    /*
+-     * A list of Items (typically ActionButtons) to be shown in a Row beneath the prompts
+-     */
+-    property alias actionItems: actionItemsLayout.children
+-
+-    /*
+-     * A model with a list of users to show in the view
+-     * The following roles should exist:
+-     *  - name
+-     *  - iconSource
+-     *
+-     * The following are also handled:
+-     *  - vtNumber
+-     *  - displayNumber
+-     *  - session
+-     *  - isTty
+-     */
+-    property alias userListModel: userListView.model
+-
+-    /*
+-     * Self explanatory
+-     */
+-    property alias userListCurrentIndex: userListView.currentIndex
+-    property alias userListCurrentItem: userListView.currentItem
+-    property bool showUserList: true
+-
+-    property alias userList: userListView
+-
+-    property int fontSize: PlasmaCore.Theme.defaultFont.pointSize + 2
+-
+-    default property alias _children: innerLayout.children
+-
+-    UserList {
+-        id: userListView
+-        visible: showUserList && y > 0
+-        anchors {
+-            bottom: parent.verticalCenter
+-            left: parent.left
+-            right: parent.right
+-        }
+-        fontSize: root.fontSize
+-    }
+-
+-    //goal is to show the prompts, in ~16 grid units high, then the action buttons
+-    //but collapse the space between the prompts and actions if there's no room
+-    //ui is constrained to 16 grid units wide, or the screen
+-    ColumnLayout {
+-        id: prompts
+-        anchors.top: parent.verticalCenter
+-        anchors.topMargin: PlasmaCore.Units.gridUnit * 0.5
+-        anchors.left: parent.left
+-        anchors.right: parent.right
+-        anchors.bottom: parent.bottom
+-        PlasmaComponents3.Label {
+-            id: notificationsLabel
+-            font.pointSize: root.fontSize
+-            Layout.maximumWidth: PlasmaCore.Units.gridUnit * 16
+-            Layout.alignment: Qt.AlignHCenter
+-            Layout.fillWidth: true
+-            horizontalAlignment: Text.AlignHCenter
+-            wrapMode: Text.WordWrap
+-            font.italic: true
+-        }
+-        ColumnLayout {
+-            Layout.minimumHeight: implicitHeight
+-            Layout.maximumHeight: PlasmaCore.Units.gridUnit * 10
+-            Layout.maximumWidth: PlasmaCore.Units.gridUnit * 16
+-            Layout.alignment: Qt.AlignHCenter
+-            ColumnLayout {
+-                id: innerLayout
+-                Layout.alignment: Qt.AlignHCenter
+-                Layout.fillWidth: true
+-            }
+-            Item {
+-                Layout.fillHeight: true
+-            }
+-        }
+-        Row { //deliberately not rowlayout as I'm not trying to resize child items
+-            id: actionItemsLayout
+-            spacing: PlasmaCore.Units.largeSpacing / 2
+-            Layout.alignment: Qt.AlignHCenter
+-        }
+-        Item {
+-            Layout.fillHeight: true
+-        }
+-    }
+-}
+diff --git a/sddm-theme/components/UserDelegate.qml b/sddm-theme/components/UserDelegate.qml
+deleted file mode 100644
+index 9a823a2..0000000
+--- a/sddm-theme/components/UserDelegate.qml
++++ /dev/null
+@@ -1,180 +0,0 @@
+-/*
+-    SPDX-FileCopyrightText: 2014 David Edmundson <davidedmundson@kde.org>
+-    SPDX-FileCopyrightText: 2014 Aleix Pol Gonzalez <aleixpol@blue-systems.com>
+-
+-    SPDX-License-Identifier: LGPL-2.0-or-later
+-*/
+-
+-import QtQuick 2.8
+-import QtQuick.Window 2.15
+-import org.kde.plasma.core 2.0 as PlasmaCore
+-import org.kde.plasma.components 3.0 as PlasmaComponents3
+-
+-Item {
+-    id: wrapper
+-
+-    // If we're using software rendering, draw outlines instead of shadows
+-    // See https://bugs.kde.org/show_bug.cgi?id=398317
+-    readonly property bool softwareRendering: GraphicsInfo.api === GraphicsInfo.Software
+-
+-    property bool isCurrent: true
+-
+-    property string name
+-    property string userName
+-    property string avatarPath
+-    property string iconSource
+-    property bool needsPassword
+-    property var vtNumber
+-    property bool constrainText: true
+-    property alias nameFontSize: usernameDelegate.font.pointSize
+-    property int fontSize: PlasmaCore.Theme.defaultFont.pointSize + 2
+-    signal clicked()
+-
+-    property real faceSize: PlasmaCore.Units.gridUnit * 7
+-
+-    opacity: isCurrent ? 1.0 : 0.5
+-
+-    Behavior on opacity {
+-        OpacityAnimator {
+-            duration: PlasmaCore.Units.longDuration
+-        }
+-    }
+-
+-    // Draw a translucent background circle under the user picture
+-    Rectangle {
+-        anchors.centerIn: imageSource
+-        width: imageSource.width - 2 // Subtract to prevent fringing
+-        height: width
+-        radius: width / 2
+-
+-        color: PlasmaCore.ColorScope.backgroundColor
+-        opacity: 0.6
+-    }
+-
+-    Item {
+-        id: imageSource
+-        anchors {
+-            bottom: usernameDelegate.top
+-            bottomMargin: PlasmaCore.Units.largeSpacing
+-            horizontalCenter: parent.horizontalCenter
+-        }
+-        Behavior on width {
+-            PropertyAnimation {
+-                from: faceSize
+-                duration: PlasmaCore.Units.longDuration;
+-            }
+-        }
+-        width: isCurrent ? faceSize : faceSize - PlasmaCore.Units.largeSpacing
+-        height: width
+-
+-        //Image takes priority, taking a full path to a file, if that doesn't exist we show an icon
+-        Image {
+-            id: face
+-            source: wrapper.avatarPath
+-            sourceSize: Qt.size(faceSize * Screen.devicePixelRatio, faceSize * Screen.devicePixelRatio)
+-            fillMode: Image.PreserveAspectCrop
+-            anchors.fill: parent
+-        }
+-
+-        PlasmaCore.IconItem {
+-            id: faceIcon
+-            source: iconSource
+-            visible: (face.status == Image.Error || face.status == Image.Null)
+-            anchors.fill: parent
+-            anchors.margins: PlasmaCore.Units.gridUnit * 0.5 // because mockup says so...
+-            colorGroup: PlasmaCore.ColorScope.colorGroup
+-        }
+-    }
+-
+-    ShaderEffect {
+-        anchors {
+-            bottom: usernameDelegate.top
+-            bottomMargin: PlasmaCore.Units.largeSpacing
+-            horizontalCenter: parent.horizontalCenter
+-        }
+-
+-        width: imageSource.width
+-        height: imageSource.height
+-
+-        supportsAtlasTextures: true
+-
+-        property var source: ShaderEffectSource {
+-            sourceItem: imageSource
+-            // software rendering is just a fallback so we can accept not having a rounded avatar here
+-            hideSource: wrapper.GraphicsInfo.api !== GraphicsInfo.Software
+-            live: true // otherwise the user in focus will show a blurred avatar
+-        }
+-
+-        property var colorBorder: PlasmaCore.ColorScope.textColor
+-
+-        //draw a circle with an antialiased border
+-        //innerRadius = size of the inner circle with contents
+-        //outerRadius = size of the border
+-        //blend = area to blend between two colours
+-        //all sizes are normalised so 0.5 == half the width of the texture
+-
+-        //if copying into another project don't forget to connect themeChanged to update()
+-        //but in SDDM that's a bit pointless
+-        fragmentShader: "
+-                        varying highp vec2 qt_TexCoord0;
+-                        uniform highp float qt_Opacity;
+-                        uniform lowp sampler2D source;
+-
+-                        uniform lowp vec4 colorBorder;
+-                        highp float blend = 0.01;
+-                        highp float innerRadius = 0.47;
+-                        highp float outerRadius = 0.49;
+-                        lowp vec4 colorEmpty = vec4(0.0, 0.0, 0.0, 0.0);
+-
+-                        void main() {
+-                            lowp vec4 colorSource = texture2D(source, qt_TexCoord0.st);
+-
+-                            highp vec2 m = qt_TexCoord0 - vec2(0.5, 0.5);
+-                            highp float dist = sqrt(m.x * m.x + m.y * m.y);
+-
+-                            if (dist < innerRadius)
+-                                gl_FragColor = colorSource;
+-                            else if (dist < innerRadius + blend)
+-                                gl_FragColor = mix(colorSource, colorBorder, ((dist - innerRadius) / blend));
+-                            else if (dist < outerRadius)
+-                                gl_FragColor = colorBorder;
+-                            else if (dist < outerRadius + blend)
+-                                gl_FragColor = mix(colorBorder, colorEmpty, ((dist - outerRadius) / blend));
+-                            else
+-                                gl_FragColor = colorEmpty ;
+-
+-                            gl_FragColor = gl_FragColor * qt_Opacity;
+-                    }
+-        "
+-    }
+-
+-    PlasmaComponents3.Label {
+-        id: usernameDelegate
+-
+-        // Make it bigger than other fonts to match the scale of the avatar better
+-        font.pointSize: wrapper.fontSize + 4
+-        anchors {
+-            bottom: parent.bottom
+-            horizontalCenter: parent.horizontalCenter
+-        }
+-        width: constrainText ? parent.width : implicitWidth
+-        text: wrapper.name
+-        style: softwareRendering ? Text.Outline : Text.Normal
+-        styleColor: softwareRendering ? PlasmaCore.ColorScope.backgroundColor : "transparent" //no outline, doesn't matter
+-        elide: Text.ElideRight
+-        horizontalAlignment: Text.AlignHCenter
+-        //make an indication that this has active focus, this only happens when reached with keyboard navigation
+-        font.underline: wrapper.activeFocus
+-    }
+-
+-    MouseArea {
+-        anchors.fill: parent
+-        hoverEnabled: true
+-
+-        onClicked: wrapper.clicked();
+-    }
+-
+-    Accessible.name: name
+-    Accessible.role: Accessible.Button
+-    function accessiblePressAction() { wrapper.clicked() }
+-}
+diff --git a/sddm-theme/components/UserList.qml b/sddm-theme/components/UserList.qml
+deleted file mode 100644
+index 49f38eb..0000000
+--- a/sddm-theme/components/UserList.qml
++++ /dev/null
+@@ -1,88 +0,0 @@
+-/*
+-    SPDX-FileCopyrightText: 2014 David Edmundson <davidedmundson@kde.org>
+-
+-    SPDX-License-Identifier: LGPL-2.0-or-later
+-*/
+-
+-import QtQuick 2.2
+-import org.kde.plasma.core 2.0 as PlasmaCore
+-
+-ListView {
+-    id: view
+-    readonly property string selectedUser: currentItem ? currentItem.userName : ""
+-    readonly property int userItemWidth: PlasmaCore.Units.gridUnit * 8
+-    readonly property int userItemHeight: PlasmaCore.Units.gridUnit * 8
+-    property int fontSize: PlasmaCore.Theme.defaultFont.pointSize + 2
+-
+-    implicitHeight: userItemHeight
+-
+-    activeFocusOnTab : true
+-
+-    /*
+-     * Signals that a user was explicitly selected
+-     */
+-    signal userSelected;
+-
+-    orientation: ListView.Horizontal
+-    highlightRangeMode: ListView.StrictlyEnforceRange
+-
+-    //centre align selected item (which implicitly centre aligns the rest
+-    preferredHighlightBegin: width/2 - userItemWidth/2
+-    preferredHighlightEnd: preferredHighlightBegin
+-
+-    // Disable flicking if we only have on user (like on the lockscreen)
+-    interactive: count > 1
+-
+-    delegate: UserDelegate {
+-        avatarPath: model.icon || ""
+-        iconSource: model.iconName || "user-identity"
+-        fontSize: view.fontSize
+-        vtNumber: model.vtNumber
+-        needsPassword: model.needsPassword
+-
+-        name: {
+-            var displayName = model.realName || model.name
+-
+-            if (model.vtNumber === undefined || model.vtNumber < 0) {
+-                return displayName
+-            }
+-
+-            if (!model.session) {
+-                return i18ndc("plasma_lookandfeel_org.kde.lookandfeel", "Nobody logged in on that session", "Unused")
+-            }
+-
+-
+-            var location = ""
+-            if (model.isTty) {
+-                location = i18ndc("plasma_lookandfeel_org.kde.lookandfeel", "User logged in on console number", "TTY %1", model.vtNumber)
+-            } else if (model.displayNumber) {
+-                location = i18ndc("plasma_lookandfeel_org.kde.lookandfeel", "User logged in on console (X display number)", "on TTY %1 (Display %2)", model.vtNumber, model.displayNumber)
+-            }
+-
+-            if (location) {
+-                return i18ndc("plasma_lookandfeel_org.kde.lookandfeel", "Username (location)", "%1 (%2)", displayName, location)
+-            }
+-
+-            return displayName
+-        }
+-
+-        userName: model.name
+-
+-        width: userItemWidth
+-        height: userItemHeight
+-
+-        //if we only have one delegate, we don't need to clip the text as it won't be overlapping with anything
+-        constrainText: ListView.view.count > 1
+-
+-        isCurrent: ListView.isCurrentItem
+-
+-        onClicked: {
+-            ListView.view.currentIndex = index;
+-            ListView.view.userSelected();
+-        }
+-    }
+-
+-    Keys.onEscapePressed: view.userSelected()
+-    Keys.onEnterPressed: view.userSelected()
+-    Keys.onReturnPressed: view.userSelected()
+-}
+diff --git a/sddm-theme/components/VirtualKeyboard.qml b/sddm-theme/components/VirtualKeyboard.qml
+deleted file mode 100644
+index 503a35b..0000000
+--- a/sddm-theme/components/VirtualKeyboard.qml
++++ /dev/null
+@@ -1,70 +0,0 @@
+-/*
+-    SPDX-FileCopyrightText: 2017 Martin Gräßlin <mgraesslin@kde.org>
+-
+-    SPDX-License-Identifier: GPL-2.0-or-later
+-*/
+-
+-import QtQuick 2.5
+-import QtQuick.VirtualKeyboard 2.1
+-import org.kde.plasma.core 2.0 as PlasmaCore
+-
+-InputPanel {
+-    id: inputPanel
+-    property bool activated: false
+-    active: activated && Qt.inputMethod.visible
+-    width: parent.width
+-
+-    states: [
+-        State {
+-            name: "visible"
+-            when: inputPanel.active
+-            PropertyChanges {
+-                target: inputPanel
+-                y: inputPanel.parent.height - inputPanel.height
+-                opacity: 1
+-                visible: true
+-            }
+-        },
+-        State {
+-            name: "hidden"
+-            when: !inputPanel.active
+-            PropertyChanges {
+-                target: inputPanel
+-                y: inputPanel.parent.height
+-                opacity: 0
+-                visible:false
+-            }
+-        }
+-    ]
+-
+-    transitions: [
+-        Transition {
+-            to: "visible"
+-            ParallelAnimation {
+-                YAnimator {
+-                    // NOTE this is necessary as otherwise the keyboard always starts the transition with Y as 0, due to the internal reparenting happening when becomes active
+-                    from: inputPanel.parent.height
+-                    duration: PlasmaCore.Units.longDuration
+-                    easing.type: Easing.OutQuad
+-                }
+-                OpacityAnimator {
+-                    duration: PlasmaCore.Units.longDuration
+-                    easing.type: Easing.OutQuad
+-                }
+-            }
+-        },
+-        Transition {
+-            to: "hidden"
+-            ParallelAnimation {
+-                YAnimator {
+-                    duration: PlasmaCore.Units.longDuration
+-                    easing.type: Easing.InQuad
+-                }
+-                OpacityAnimator {
+-                    duration: PlasmaCore.Units.longDuration
+-                    easing.type: Easing.InQuad
+-                }
+-            }
+-        }
+-    ]
+-}
+diff --git a/sddm-theme/components/VirtualKeyboard_wayland.qml b/sddm-theme/components/VirtualKeyboard_wayland.qml
+deleted file mode 100644
+index 1328ee8..0000000
+--- a/sddm-theme/components/VirtualKeyboard_wayland.qml
++++ /dev/null
+@@ -1,24 +0,0 @@
+-/*
+-    SPDX-FileCopyrightText: 2021 Aleix Pol Gonzalez <aleixpol@kde.org>
+-
+-    SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
+-*/
+-
+-import QtQuick 2.15
+-import org.kde.plasma.workspace.keyboardlayout 1.0 as Keyboards
+-
+-Item {
+-    id: inputPanel
+-    readonly property bool active: Qt.inputMethod.visible
+-    property bool activated: false
+-    visible: Qt.inputMethod.visible
+-
+-    x: Qt.inputMethod.keyboardRectangle.x
+-    y: Qt.inputMethod.keyboardRectangle.y
+-    height: Qt.inputMethod.keyboardRectangle.height
+-    width: Qt.inputMethod.keyboardRectangle.width
+-
+-    onActivatedChanged: if (activated) {
+-        Keyboards.KWinVirtualKeyboard.enabled = true
+-    }
+-}
+diff --git a/sddm-theme/components/WallpaperFader.qml b/sddm-theme/components/WallpaperFader.qml
+deleted file mode 100644
+index 5c885d1..0000000
+--- a/sddm-theme/components/WallpaperFader.qml
++++ /dev/null
+@@ -1,162 +0,0 @@
+-/*
+-    SPDX-FileCopyrightText: 2014 Aleix Pol Gonzalez <aleixpol@blue-systems.com>
+-
+-    SPDX-License-Identifier: GPL-2.0-or-later
+-*/
+-
+-import QtQuick 2.6
+-import QtQuick.Controls 1.1
+-import QtQuick.Layouts 1.1
+-import QtGraphicalEffects 1.0
+-
+-import org.kde.plasma.core 2.0 as PlasmaCore
+-
+-import org.kde.plasma.private.sessions 2.0
+-import "../components"
+-
+-Item {
+-    id: wallpaperFader
+-    property Item clock
+-    property Item mainStack
+-    property Item footer
+-    property alias source: wallpaperBlur.source
+-    state: lockScreenRoot.uiVisible ? "on" : "off"
+-    property real factor: 0
+-    readonly property bool lightBackground: Math.max(PlasmaCore.ColorScope.backgroundColor.r, PlasmaCore.ColorScope.backgroundColor.g, PlasmaCore.ColorScope.backgroundColor.b) > 0.5
+-
+-    property bool alwaysShowClock: typeof config === "undefined" || typeof config.alwaysShowClock === "undefined" || config.alwaysShowClock === true
+-
+-    Behavior on factor {
+-        NumberAnimation {
+-            target: wallpaperFader
+-            property: "factor"
+-            duration: PlasmaCore.Units.veryLongDuration * 2
+-            easing.type: Easing.InOutQuad
+-        }
+-    }
+-    FastBlur {
+-        id: wallpaperBlur
+-        anchors.fill: parent
+-        radius: 50 * wallpaperFader.factor
+-    }
+-    ShaderEffect {
+-        id: wallpaperShader
+-        anchors.fill: parent
+-        supportsAtlasTextures: true
+-        property var source: ShaderEffectSource {
+-            sourceItem: wallpaperBlur
+-            live: true
+-            hideSource: true
+-            textureMirroring: ShaderEffectSource.NoMirroring
+-        }
+-
+-        readonly property real contrast: 0.65 * wallpaperFader.factor + (1 - wallpaperFader.factor)
+-        readonly property real saturation: 1.6 * wallpaperFader.factor + (1 - wallpaperFader.factor)
+-        readonly property real intensity: (wallpaperFader.lightBackground ? 1.7 : 0.6) * wallpaperFader.factor + (1 - wallpaperFader.factor)
+-
+-        readonly property real transl: (1.0 - contrast) / 2.0;
+-        readonly property real rval: (1.0 - saturation) * 0.2126;
+-        readonly property real gval: (1.0 - saturation) * 0.7152;
+-        readonly property real bval: (1.0 - saturation) * 0.0722;
+-
+-        property var colorMatrix: Qt.matrix4x4(
+-            contrast, 0,        0,        0.0,
+-            0,        contrast, 0,        0.0,
+-            0,        0,        contrast, 0.0,
+-            transl,   transl,   transl,   1.0).times(Qt.matrix4x4(
+-                rval + saturation, rval,     rval,     0.0,
+-                gval,     gval + saturation, gval,     0.0,
+-                bval,     bval,     bval + saturation, 0.0,
+-                0,        0,        0,        1.0)).times(Qt.matrix4x4(
+-                    intensity, 0,         0,         0,
+-                    0,         intensity, 0,         0,
+-                    0,         0,         intensity, 0,
+-                    0,         0,         0,         1
+-                ));
+-
+-
+-        fragmentShader: "
+-            uniform mediump mat4 colorMatrix;
+-            uniform mediump sampler2D source;
+-            varying mediump vec2 qt_TexCoord0;
+-            uniform lowp float qt_Opacity;
+-
+-            void main(void)
+-            {
+-                mediump vec4 tex = texture2D(source, qt_TexCoord0);
+-                gl_FragColor = tex * colorMatrix * qt_Opacity;
+-            }"
+-    }
+-
+-    states: [
+-        State {
+-            name: "on"
+-            PropertyChanges {
+-                target: mainStack
+-                opacity: 1
+-            }
+-            PropertyChanges {
+-                target: footer
+-                opacity: 1
+-            }
+-            PropertyChanges {
+-                target: wallpaperFader
+-                factor: 1
+-            }
+-            PropertyChanges {
+-                target: clock.shadow
+-                opacity: 0
+-            }
+-            PropertyChanges {
+-                target: clock
+-                opacity: 1
+-            }
+-        },
+-        State {
+-            name: "off"
+-            PropertyChanges {
+-                target: mainStack
+-                opacity: 0
+-            }
+-            PropertyChanges {
+-                target: footer
+-                opacity: 0
+-            }
+-            PropertyChanges {
+-                target: wallpaperFader
+-                factor: 0
+-            }
+-            PropertyChanges {
+-                target: clock.shadow
+-                opacity: wallpaperFader.alwaysShowClock ? 1 : 0
+-            }
+-            PropertyChanges {
+-                target: clock
+-                opacity: wallpaperFader.alwaysShowClock ? 1 : 0
+-            }
+-        }
+-    ]
+-    transitions: [
+-        Transition {
+-            from: "off"
+-            to: "on"
+-            //Note: can't use animators as they don't play well with parallelanimations
+-            NumberAnimation {
+-                targets: [mainStack, footer, clock]
+-                property: "opacity"
+-                duration: PlasmaCore.Units.veryLongDuration
+-                easing.type: Easing.InOutQuad
+-            }
+-        },
+-        Transition {
+-            from: "on"
+-            to: "off"
+-            NumberAnimation {
+-                targets: [mainStack, footer, clock]
+-                property: "opacity"
+-                duration: PlasmaCore.Units.veryLongDuration
+-                easing.type: Easing.InOutQuad
+-            }
+-        }
+-    ]
+-}
+diff --git a/sddm-theme/components/artwork/README.txt b/sddm-theme/components/artwork/README.txt
+deleted file mode 100644
+index 1885a36..0000000
+--- a/sddm-theme/components/artwork/README.txt
++++ /dev/null
+@@ -1 +0,0 @@
+-After editing SVG files be sure to run currentColorFillFix.sh from plasma-framework
+\ No newline at end of file
+diff --git a/sddm-theme/components/artwork/logout_primary.svgz b/sddm-theme/components/artwork/logout_primary.svgz
+deleted file mode 100644
+index 6a9423f..0000000
+Binary files a/sddm-theme/components/artwork/logout_primary.svgz and /dev/null differ
+diff --git a/sddm-theme/components/artwork/restart_primary.svgz b/sddm-theme/components/artwork/restart_primary.svgz
+deleted file mode 100644
+index e2312bd..0000000
+Binary files a/sddm-theme/components/artwork/restart_primary.svgz and /dev/null differ
+diff --git a/sddm-theme/components/artwork/shutdown_primary.svgz b/sddm-theme/components/artwork/shutdown_primary.svgz
+deleted file mode 100644
+index 1c60152..0000000
+Binary files a/sddm-theme/components/artwork/shutdown_primary.svgz and /dev/null differ
+diff --git a/sddm-theme/dummydata/config.qml b/sddm-theme/dummydata/config.qml
+index f19dabc..d488fe7 100644
+--- a/sddm-theme/dummydata/config.qml
++++ b/sddm-theme/dummydata/config.qml
+@@ -1,7 +1,8 @@
+-import QtQuick 2.0
+-QtObject
+-{
++import QtQuick 2.15
++
++QtObject {
+     property string type: "color"
+-    property color color: "#1abc9c" // Maia green
++    property color color: "#1d99f3" // Plasma blue
+     property string background: ""
++    property int fontSize: 12
+ }
+diff --git a/sddm-theme/dummydata/keyboard.qml b/sddm-theme/dummydata/keyboard.qml
+index 973d848..4b6a237 100644
+--- a/sddm-theme/dummydata/keyboard.qml
++++ b/sddm-theme/dummydata/keyboard.qml
+@@ -1,10 +1,9 @@
+-import QtQuick 2.0
++import QtQuick 2.15
+
+-QtObject
+-{
+-    property int currentLayout : 0
+-    property var layouts : [
++QtObject {
++    property int currentLayout: 0
++    property var layouts: [
+         { shortName: "US", longName: "English" },
+-        { shortName: "CZ", longName: "Czech" }
++        { shortName: "CZ", longName: "Czech" },
+     ]
+ }
+diff --git a/sddm-theme/dummydata/screenModel.qml b/sddm-theme/dummydata/screenModel.qml
+index 7454341..27a8521 100644
+--- a/sddm-theme/dummydata/screenModel.qml
++++ b/sddm-theme/dummydata/screenModel.qml
+@@ -1,15 +1,15 @@
+-import QtQuick 2.0
++import QtQuick 2.15
+
+ //NOTE: We do not implement a fully working dummy screenModel,
+ //we only implement what's needed for a basic multi-monitor test
+
+ ListModel {
+     property int primary: 0
+-
++
+     //Creating multiple ListElement objects doesn't work, because a ListElement can only take numbers,
+     //strings, booleans or enums, but we need a rect (it stores the screen size/position).
+     //We can insert rects into the ListModel by using this workaround
+-    //It's taken from: http://stackoverflow.com/questions/20537417/add-statically-object-to-listmodel
++    //It's taken from: https://stackoverflow.com/questions/20537417/add-statically-object-to-listmodel
+
+     //We create two monitors here, the left one 800x600 and the right one 800x400 pixels
+     //To disable a screen delete one of the "append" function calls
+diff --git a/sddm-theme/dummydata/sddm.qml b/sddm-theme/dummydata/sddm.qml
+index f400d2f..0eb1a40 100644
+--- a/sddm-theme/dummydata/sddm.qml
++++ b/sddm-theme/dummydata/sddm.qml
+@@ -1,7 +1,6 @@
+-import QtQuick 2.2
++import QtQuick 2.15
+
+-Item
+-{
++Item {
+     signal loginFailed()
+     signal loginSucceeded()
+
+@@ -21,7 +20,6 @@ Item
+         console.log("SDDM - HYBRID SLEEP");
+     }
+
+-
+     function login(user, password, sessionIndex) {
+         console.log("SDDM - logging in as ", user, password, sessionIndex)
+
+diff --git a/sddm-theme/dummydata/sessionModel.qml b/sddm-theme/dummydata/sessionModel.qml
+index 3865bf0..1eb82f0 100644
+--- a/sddm-theme/dummydata/sessionModel.qml
++++ b/sddm-theme/dummydata/sessionModel.qml
+@@ -1,4 +1,4 @@
+-import QtQuick 2.0
++import QtQuick 2.15
+
+ ListModel {
+     property int lastIndex: 1
+diff --git a/sddm-theme/dummydata/userModel.qml b/sddm-theme/dummydata/userModel.qml
+index b4b5ef4..c06de85 100644
+--- a/sddm-theme/dummydata/userModel.qml
++++ b/sddm-theme/dummydata/userModel.qml
+@@ -1,4 +1,4 @@
+-import QtQuick 2.0
++import QtQuick 2.15
+
+ ListModel {
+
+diff --git a/sddm-theme/manjarologo.svgz b/sddm-theme/manjarologo.svgz
+new file mode 100644
+index 0000000..c8547ea
+Binary files /dev/null and b/sddm-theme/manjarologo.svgz differ
+diff --git a/sddm-theme/metadata.desktop b/sddm-theme/metadata.desktop
+index 5e564aa..9d758a0 100644
+--- a/sddm-theme/metadata.desktop
++++ b/sddm-theme/metadata.desktop
+@@ -35,15 +35,16 @@ Description[sr@latin]=Tema Breath
+ Description[sv]=Breath-tema
+ Description[tr]=Breath Teması
+ Description[uk]=Тема «Breath»
+-Author=Manjaro Team
+-Copyright=(c) 2021, Manjaro
++Author=KDE Visual Design Group, Manjaro Team
++Copyright=(c) 2024, Manjaro Team
+ License=CC-BY-SA
+ Type=sddm-theme
+ Version=0.2.0
+-Website=https://gitlab.manjaro.org/artwork/themes/breath2
++Website=https://gitlab.manjaro.org/artwork/themes/breath
+ Screenshot=preview.png
+ MainScript=Main.qml
+ ConfigFile=theme.conf
+ TranslationsDirectory=translations
+ Theme-Id=Breath
+ Theme-API=2.0
++QtVersion=6
+diff --git a/sddm-theme/theme.conf.cmake b/sddm-theme/theme.conf.cmake
+index e536697..1faf1de 100644
+--- a/sddm-theme/theme.conf.cmake
++++ b/sddm-theme/theme.conf.cmake
+@@ -1,5 +1,6 @@
+ [General]
+ showlogo=hidden
++logo=${KDE_INSTALL_FULL_DATADIR}/sddm/themes/breath/manjarologo.svgz
+ type=image
+ color=#1abc9c
+ background=${CMAKE_INSTALL_PREFIX}/${WALLPAPER_INSTALL_DIR}/North/contents/images/5120x2880.png
+
+========== CURRENT COMPONENTS FILE ==========
+commit 2eb6abb68a8c0eaf599f59e94058816dc8e05323
+Author: Artem Grinev <agrinev@manjaro.org>
+Date:   Wed Mar 13 19:49:08 2024 +0500
+
+    [sddm-theme] Sync with upstream
+
+diff --git a/sddm-theme/components b/sddm-theme/components
+new file mode 100755
+index 0000000..0d764f5
+--- /dev/null
++++ b/sddm-theme/components
+@@ -0,0 +1 @@
++../lnf/org.manjaro.breath/contents/components
+diff --git a/sddm-theme/components/ActionButton.qml b/sddm-theme/components/ActionButton.qml
+deleted file mode 100644
+index af278f6..0000000
+--- a/sddm-theme/components/ActionButton.qml
++++ /dev/null
+@@ -1,115 +0,0 @@
+-/*
+-    SPDX-FileCopyrightText: 2016 David Edmundson <davidedmundson@kde.org>
+-
+-    SPDX-License-Identifier: LGPL-2.0-or-later
+-*/
+-
+-import QtQuick 2.8
+-import org.kde.plasma.core 2.0 as PlasmaCore
+-import org.kde.plasma.components 3.0 as PlasmaComponents3
+-
+-Item {
+-    id: root
+-    property alias text: label.text
+-    property alias iconSource: icon.source
+-    property alias containsMouse: mouseArea.containsMouse
+-    property alias font: label.font
+-    property alias labelRendering: label.renderType
+-    property alias circleOpacity: iconCircle.opacity
+-    property alias circleVisiblity: iconCircle.visible
+-    property int fontSize: PlasmaCore.Theme.defaultFont.pointSize + 1
+-    readonly property bool softwareRendering: GraphicsInfo.api === GraphicsInfo.Software
+-    signal clicked
+-
+-    activeFocusOnTab: true
+-
+-    property int iconSize: PlasmaCore.Units.gridUnit * 3
+-
+-    implicitWidth: Math.max(iconSize + PlasmaCore.Units.largeSpacing * 2, label.contentWidth)
+-    implicitHeight: iconSize + PlasmaCore.Units.smallSpacing + label.implicitHeight
+-
+-    opacity: activeFocus || containsMouse ? 1 : 0.85
+-    Behavior on opacity {
+-        PropertyAnimation { // OpacityAnimator makes it turn black at random intervals
+-            duration: PlasmaCore.Units.longDuration
+-            easing.type: Easing.InOutQuad
+-        }
+-    }
+-
+-    Rectangle {
+-        id: iconCircle
+-        anchors.centerIn: icon
+-        width: iconSize + PlasmaCore.Units.smallSpacing
+-        height: width
+-        radius: width / 2
+-        color: softwareRendering ?  PlasmaCore.ColorScope.backgroundColor : PlasmaCore.ColorScope.textColor
+-        opacity: root.activeFocus || containsMouse ? (softwareRendering ? 0.8 : 0.15) : (softwareRendering ? 0.6 : 0)
+-        Behavior on opacity {
+-            PropertyAnimation { // OpacityAnimator makes it turn black at random intervals
+-                duration: PlasmaCore.Units.longDuration
+-                easing.type: Easing.InOutQuad
+-            }
+-        }
+-    }
+-
+-    Rectangle {
+-        anchors.centerIn: iconCircle
+-        width: iconCircle.width
+-        height: width
+-        radius: width / 2
+-        scale: mouseArea.containsPress ? 1 : 0
+-        color: PlasmaCore.ColorScope.textColor
+-        opacity: 0.15
+-        Behavior on scale {
+-            PropertyAnimation {
+-                duration: PlasmaCore.Units.shortDuration
+-                easing.type: Easing.InOutQuart
+-            }
+-        }
+-    }
+-
+-    PlasmaCore.IconItem {
+-        id: icon
+-        anchors {
+-            top: parent.top
+-            horizontalCenter: parent.horizontalCenter
+-        }
+-        width: iconSize
+-        height: iconSize
+-
+-        colorGroup: PlasmaCore.ColorScope.colorGroup
+-        active: mouseArea.containsMouse || root.activeFocus
+-    }
+-
+-    PlasmaComponents3.Label {
+-        id: label
+-        font.pointSize: root.fontSize
+-        anchors {
+-            top: icon.bottom
+-            topMargin: (softwareRendering ? 1.5 : 1) * PlasmaCore.Units.smallSpacing
+-            left: parent.left
+-            right: parent.right
+-        }
+-        style: softwareRendering ? Text.Outline : Text.Normal
+-        styleColor: softwareRendering ? PlasmaCore.ColorScope.backgroundColor : "transparent" //no outline, doesn't matter
+-        horizontalAlignment: Text.AlignHCenter
+-        verticalAlignment: Text.AlignTop
+-        wrapMode: Text.WordWrap
+-        font.underline: root.activeFocus
+-    }
+-
+-    MouseArea {
+-        id: mouseArea
+-        hoverEnabled: true
+-        onClicked: root.clicked()
+-        anchors.fill: parent
+-    }
+-
+-    Keys.onEnterPressed: clicked()
+-    Keys.onReturnPressed: clicked()
+-    Keys.onSpacePressed: clicked()
+-
+-    Accessible.onPressAction: clicked()
+-    Accessible.role: Accessible.Button
+-    Accessible.name: label.text
+-}
+diff --git a/sddm-theme/components/Battery.qml b/sddm-theme/components/Battery.qml
+deleted file mode 100644
+index 05be535..0000000
+--- a/sddm-theme/components/Battery.qml
++++ /dev/null
+@@ -1,43 +0,0 @@
+-/*
+-    SPDX-FileCopyrightText: 2016 Kai Uwe Broulik <kde@privat.broulik.de>
+-
+-    SPDX-License-Identifier: LGPL-2.0-or-later
+-*/
+-
+-import QtQuick 2.2
+-
+-import org.kde.plasma.core 2.0 as PlasmaCore
+-import org.kde.plasma.components 3.0 as PlasmaComponents3
+-import org.kde.plasma.workspace.components 2.0 as PW
+-
+-Row {
+-    id: row
+-
+-    property int fontSize: PlasmaCore.Theme.defaultFont.pointSize
+-
+-    spacing: PlasmaCore.Units.smallSpacing
+-    visible: pmSource.data["Battery"]["Has Cumulative"]
+-
+-    PlasmaCore.DataSource {
+-        id: pmSource
+-        engine: "powermanagement"
+-        connectedSources: ["Battery", "AC Adapter"]
+-    }
+-
+-    PW.BatteryIcon {
+-        id: battery
+-        hasBattery: pmSource.data["Battery"]["Has Battery"] || false
+-        percent: pmSource.data["Battery"]["Percent"] || 0
+-        pluggedIn: pmSource.data["AC Adapter"] ? pmSource.data["AC Adapter"]["Plugged in"] : false
+-
+-        height: batteryLabel.height
+-        width: height
+-    }
+-
+-    PlasmaComponents3.Label {
+-        id: batteryLabel
+-        font.pointSize: row.fontSize
+-        text: i18nd("plasma_lookandfeel_org.kde.lookandfeel","%1%", battery.percent)
+-        Accessible.name: i18nd("plasma_lookandfeel_org.kde.lookandfeel","Battery at %1%", battery.percent)
+-    }
+-}
+diff --git a/sddm-theme/components/Clock.qml b/sddm-theme/components/Clock.qml
+deleted file mode 100644
+index fbe0c7c..0000000
+--- a/sddm-theme/components/Clock.qml
++++ /dev/null
+@@ -1,37 +0,0 @@
+-/*
+-    SPDX-FileCopyrightText: 2016 David Edmundson <davidedmundson@kde.org>
+-
+-    SPDX-License-Identifier: LGPL-2.0-or-later
+-*/
+-
+-import QtQuick 2.8
+-import QtQuick.Layouts 1.1
+-import QtQuick.Controls 2.5 as QQC2
+-import org.kde.plasma.core 2.0 as PlasmaCore
+-
+-ColumnLayout {
+-    readonly property bool softwareRendering: GraphicsInfo.api === GraphicsInfo.Software
+-
+-    QQC2.Label {
+-        text: Qt.formatTime(timeSource.data["Local"]["DateTime"])
+-        color: PlasmaCore.ColorScope.textColor
+-        style: softwareRendering ? Text.Outline : Text.Normal
+-        styleColor: softwareRendering ? PlasmaCore.ColorScope.backgroundColor : "transparent" //no outline, doesn't matter
+-        font.pointSize: 48
+-        Layout.alignment: Qt.AlignHCenter
+-    }
+-    QQC2.Label {
+-        text: Qt.formatDate(timeSource.data["Local"]["DateTime"], Qt.DefaultLocaleLongDate)
+-        color: PlasmaCore.ColorScope.textColor
+-        style: softwareRendering ? Text.Outline : Text.Normal
+-        styleColor: softwareRendering ? PlasmaCore.ColorScope.backgroundColor : "transparent" //no outline, doesn't matter
+-        font.pointSize: 24
+-        Layout.alignment: Qt.AlignHCenter
+-    }
+-    PlasmaCore.DataSource {
+-        id: timeSource
+-        engine: "time"
+-        connectedSources: ["Local"]
+-        interval: 1000
+-    }
+-}
+diff --git a/sddm-theme/components/SessionManagementScreen.qml b/sddm-theme/components/SessionManagementScreen.qml
+deleted file mode 100644
+index f002e51..0000000
+--- a/sddm-theme/components/SessionManagementScreen.qml
++++ /dev/null
+@@ -1,109 +0,0 @@
+-/*
+-    SPDX-FileCopyrightText: 2016 David Edmundson <davidedmundson@kde.org>
+-
+-    SPDX-License-Identifier: LGPL-2.0-or-later
+-*/
+-
+-import QtQuick 2.2
+-
+-import QtQuick.Layouts 1.1
+-import QtQuick.Controls 1.1
+-
+-import org.kde.plasma.core 2.0 as PlasmaCore
+-import org.kde.plasma.components 3.0 as PlasmaComponents3
+-
+-Item {
+-    id: root
+-
+-    /*
+-     * Any message to be displayed to the user, visible above the text fields
+-     */
+-    property alias notificationMessage: notificationsLabel.text
+-
+-    /*
+-     * A list of Items (typically ActionButtons) to be shown in a Row beneath the prompts
+-     */
+-    property alias actionItems: actionItemsLayout.children
+-
+-    /*
+-     * A model with a list of users to show in the view
+-     * The following roles should exist:
+-     *  - name
+-     *  - iconSource
+-     *
+-     * The following are also handled:
+-     *  - vtNumber
+-     *  - displayNumber
+-     *  - session
+-     *  - isTty
+-     */
+-    property alias userListModel: userListView.model
+-
+-    /*
+-     * Self explanatory
+-     */
+-    property alias userListCurrentIndex: userListView.currentIndex
+-    property alias userListCurrentItem: userListView.currentItem
+-    property bool showUserList: true
+-
+-    property alias userList: userListView
+-
+-    property int fontSize: PlasmaCore.Theme.defaultFont.pointSize + 2
+-
+-    default property alias _children: innerLayout.children
+-
+-    UserList {
+-        id: userListView
+-        visible: showUserList && y > 0
+-        anchors {
+-            bottom: parent.verticalCenter
+-            left: parent.left
+-            right: parent.right
+-        }
+-        fontSize: root.fontSize
+-    }
+-
+-    //goal is to show the prompts, in ~16 grid units high, then the action buttons
+-    //but collapse the space between the prompts and actions if there's no room
+-    //ui is constrained to 16 grid units wide, or the screen
+-    ColumnLayout {
+-        id: prompts
+-        anchors.top: parent.verticalCenter
+-        anchors.topMargin: PlasmaCore.Units.gridUnit * 0.5
+-        anchors.left: parent.left
+-        anchors.right: parent.right
+-        anchors.bottom: parent.bottom
+-        PlasmaComponents3.Label {
+-            id: notificationsLabel
+-            font.pointSize: root.fontSize
+-            Layout.maximumWidth: PlasmaCore.Units.gridUnit * 16
+-            Layout.alignment: Qt.AlignHCenter
+-            Layout.fillWidth: true
+-            horizontalAlignment: Text.AlignHCenter
+-            wrapMode: Text.WordWrap
+-            font.italic: true
+-        }
+-        ColumnLayout {
+-            Layout.minimumHeight: implicitHeight
+-            Layout.maximumHeight: PlasmaCore.Units.gridUnit * 10
+-            Layout.maximumWidth: PlasmaCore.Units.gridUnit * 16
+-            Layout.alignment: Qt.AlignHCenter
+-            ColumnLayout {
+-                id: innerLayout
+-                Layout.alignment: Qt.AlignHCenter
+-                Layout.fillWidth: true
+-            }
+-            Item {
+-                Layout.fillHeight: true
+-            }
+-        }
+-        Row { //deliberately not rowlayout as I'm not trying to resize child items
+-            id: actionItemsLayout
+-            spacing: PlasmaCore.Units.largeSpacing / 2
+-            Layout.alignment: Qt.AlignHCenter
+-        }
+-        Item {
+-            Layout.fillHeight: true
+-        }
+-    }
+-}
+diff --git a/sddm-theme/components/UserDelegate.qml b/sddm-theme/components/UserDelegate.qml
+deleted file mode 100644
+index 9a823a2..0000000
+--- a/sddm-theme/components/UserDelegate.qml
++++ /dev/null
+@@ -1,180 +0,0 @@
+-/*
+-    SPDX-FileCopyrightText: 2014 David Edmundson <davidedmundson@kde.org>
+-    SPDX-FileCopyrightText: 2014 Aleix Pol Gonzalez <aleixpol@blue-systems.com>
+-
+-    SPDX-License-Identifier: LGPL-2.0-or-later
+-*/
+-
+-import QtQuick 2.8
+-import QtQuick.Window 2.15
+-import org.kde.plasma.core 2.0 as PlasmaCore
+-import org.kde.plasma.components 3.0 as PlasmaComponents3
+-
+-Item {
+-    id: wrapper
+-
+-    // If we're using software rendering, draw outlines instead of shadows
+-    // See https://bugs.kde.org/show_bug.cgi?id=398317
+-    readonly property bool softwareRendering: GraphicsInfo.api === GraphicsInfo.Software
+-
+-    property bool isCurrent: true
+-
+-    property string name
+-    property string userName
+-    property string avatarPath
+-    property string iconSource
+-    property bool needsPassword
+-    property var vtNumber
+-    property bool constrainText: true
+-    property alias nameFontSize: usernameDelegate.font.pointSize
+-    property int fontSize: PlasmaCore.Theme.defaultFont.pointSize + 2
+-    signal clicked()
+-
+-    property real faceSize: PlasmaCore.Units.gridUnit * 7
+-
+-    opacity: isCurrent ? 1.0 : 0.5
+-
+-    Behavior on opacity {
+-        OpacityAnimator {
+-            duration: PlasmaCore.Units.longDuration
+-        }
+-    }
+-
+-    // Draw a translucent background circle under the user picture
+-    Rectangle {
+-        anchors.centerIn: imageSource
+-        width: imageSource.width - 2 // Subtract to prevent fringing
+-        height: width
+-        radius: width / 2
+-
+-        color: PlasmaCore.ColorScope.backgroundColor
+-        opacity: 0.6
+-    }
+-
+-    Item {
+-        id: imageSource
+-        anchors {
+-            bottom: usernameDelegate.top
+-            bottomMargin: PlasmaCore.Units.largeSpacing
+-            horizontalCenter: parent.horizontalCenter
+-        }
+-        Behavior on width {
+-            PropertyAnimation {
+-                from: faceSize
+-                duration: PlasmaCore.Units.longDuration;
+-            }
+-        }
+-        width: isCurrent ? faceSize : faceSize - PlasmaCore.Units.largeSpacing
+-        height: width
+-
+-        //Image takes priority, taking a full path to a file, if that doesn't exist we show an icon
+-        Image {
+-            id: face
+-            source: wrapper.avatarPath
+-            sourceSize: Qt.size(faceSize * Screen.devicePixelRatio, faceSize * Screen.devicePixelRatio)
+-            fillMode: Image.PreserveAspectCrop
+-            anchors.fill: parent
+-        }
+-
+-        PlasmaCore.IconItem {
+-            id: faceIcon
+-            source: iconSource
+-            visible: (face.status == Image.Error || face.status == Image.Null)
+-            anchors.fill: parent
+-            anchors.margins: PlasmaCore.Units.gridUnit * 0.5 // because mockup says so...
+-            colorGroup: PlasmaCore.ColorScope.colorGroup
+-        }
+-    }
+-
+-    ShaderEffect {
+-        anchors {
+-            bottom: usernameDelegate.top
+-            bottomMargin: PlasmaCore.Units.largeSpacing
+-            horizontalCenter: parent.horizontalCenter
+-        }
+-
+-        width: imageSource.width
+-        height: imageSource.height
+-
+-        supportsAtlasTextures: true
+-
+-        property var source: ShaderEffectSource {
+-            sourceItem: imageSource
+-            // software rendering is just a fallback so we can accept not having a rounded avatar here
+-            hideSource: wrapper.GraphicsInfo.api !== GraphicsInfo.Software
+-            live: true // otherwise the user in focus will show a blurred avatar
+-        }
+-
+-        property var colorBorder: PlasmaCore.ColorScope.textColor
+-
+-        //draw a circle with an antialiased border
+-        //innerRadius = size of the inner circle with contents
+-        //outerRadius = size of the border
+-        //blend = area to blend between two colours
+-        //all sizes are normalised so 0.5 == half the width of the texture
+-
+-        //if copying into another project don't forget to connect themeChanged to update()
+-        //but in SDDM that's a bit pointless
+-        fragmentShader: "
+-                        varying highp vec2 qt_TexCoord0;
+-                        uniform highp float qt_Opacity;
+-                        uniform lowp sampler2D source;
+-
+-                        uniform lowp vec4 colorBorder;
+-                        highp float blend = 0.01;
+-                        highp float innerRadius = 0.47;
+-                        highp float outerRadius = 0.49;
+-                        lowp vec4 colorEmpty = vec4(0.0, 0.0, 0.0, 0.0);
+-
+-                        void main() {
+-                            lowp vec4 colorSource = texture2D(source, qt_TexCoord0.st);
+-
+-                            highp vec2 m = qt_TexCoord0 - vec2(0.5, 0.5);
+-                            highp float dist = sqrt(m.x * m.x + m.y * m.y);
+-
+-                            if (dist < innerRadius)
+-                                gl_FragColor = colorSource;
+-                            else if (dist < innerRadius + blend)
+-                                gl_FragColor = mix(colorSource, colorBorder, ((dist - innerRadius) / blend));
+-                            else if (dist < outerRadius)
+-                                gl_FragColor = colorBorder;
+-                            else if (dist < outerRadius + blend)
+-                                gl_FragColor = mix(colorBorder, colorEmpty, ((dist - outerRadius) / blend));
+-                            else
+-                                gl_FragColor = colorEmpty ;
+-
+-                            gl_FragColor = gl_FragColor * qt_Opacity;
+-                    }
+-        "
+-    }
+-
+-    PlasmaComponents3.Label {
+-        id: usernameDelegate
+-
+-        // Make it bigger than other fonts to match the scale of the avatar better
+-        font.pointSize: wrapper.fontSize + 4
+-        anchors {
+-            bottom: parent.bottom
+-            horizontalCenter: parent.horizontalCenter
+-        }
+-        width: constrainText ? parent.width : implicitWidth
+-        text: wrapper.name
+-        style: softwareRendering ? Text.Outline : Text.Normal
+-        styleColor: softwareRendering ? PlasmaCore.ColorScope.backgroundColor : "transparent" //no outline, doesn't matter
+-        elide: Text.ElideRight
+-        horizontalAlignment: Text.AlignHCenter
+-        //make an indication that this has active focus, this only happens when reached with keyboard navigation
+-        font.underline: wrapper.activeFocus
+-    }
+-
+-    MouseArea {
+-        anchors.fill: parent
+-        hoverEnabled: true
+-
+-        onClicked: wrapper.clicked();
+-    }
+-
+-    Accessible.name: name
+-    Accessible.role: Accessible.Button
+-    function accessiblePressAction() { wrapper.clicked() }
+-}
+diff --git a/sddm-theme/components/UserList.qml b/sddm-theme/components/UserList.qml
+deleted file mode 100644
+index 49f38eb..0000000
+--- a/sddm-theme/components/UserList.qml
++++ /dev/null
+@@ -1,88 +0,0 @@
+-/*
+-    SPDX-FileCopyrightText: 2014 David Edmundson <davidedmundson@kde.org>
+-
+-    SPDX-License-Identifier: LGPL-2.0-or-later
+-*/
+-
+-import QtQuick 2.2
+-import org.kde.plasma.core 2.0 as PlasmaCore
+-
+-ListView {
+-    id: view
+-    readonly property string selectedUser: currentItem ? currentItem.userName : ""
+-    readonly property int userItemWidth: PlasmaCore.Units.gridUnit * 8
+-    readonly property int userItemHeight: PlasmaCore.Units.gridUnit * 8
+-    property int fontSize: PlasmaCore.Theme.defaultFont.pointSize + 2
+-
+-    implicitHeight: userItemHeight
+-
+-    activeFocusOnTab : true
+-
+-    /*
+-     * Signals that a user was explicitly selected
+-     */
+-    signal userSelected;
+-
+-    orientation: ListView.Horizontal
+-    highlightRangeMode: ListView.StrictlyEnforceRange
+-
+-    //centre align selected item (which implicitly centre aligns the rest
+-    preferredHighlightBegin: width/2 - userItemWidth/2
+-    preferredHighlightEnd: preferredHighlightBegin
+-
+-    // Disable flicking if we only have on user (like on the lockscreen)
+-    interactive: count > 1
+-
+-    delegate: UserDelegate {
+-        avatarPath: model.icon || ""
+-        iconSource: model.iconName || "user-identity"
+-        fontSize: view.fontSize
+-        vtNumber: model.vtNumber
+-        needsPassword: model.needsPassword
+-
+-        name: {
+-            var displayName = model.realName || model.name
+-
+-            if (model.vtNumber === undefined || model.vtNumber < 0) {
+-                return displayName
+-            }
+-
+-            if (!model.session) {
+-                return i18ndc("plasma_lookandfeel_org.kde.lookandfeel", "Nobody logged in on that session", "Unused")
+-            }
+-
+-
+-            var location = ""
+-            if (model.isTty) {
+-                location = i18ndc("plasma_lookandfeel_org.kde.lookandfeel", "User logged in on console number", "TTY %1", model.vtNumber)
+-            } else if (model.displayNumber) {
+-                location = i18ndc("plasma_lookandfeel_org.kde.lookandfeel", "User logged in on console (X display number)", "on TTY %1 (Display %2)", model.vtNumber, model.displayNumber)
+-            }
+-
+-            if (location) {
+-                return i18ndc("plasma_lookandfeel_org.kde.lookandfeel", "Username (location)", "%1 (%2)", displayName, location)
+-            }
+-
+-            return displayName
+-        }
+-
+-        userName: model.name
+-
+-        width: userItemWidth
+-        height: userItemHeight
+-
+-        //if we only have one delegate, we don't need to clip the text as it won't be overlapping with anything
+-        constrainText: ListView.view.count > 1
+-
+-        isCurrent: ListView.isCurrentItem
+-
+-        onClicked: {
+-            ListView.view.currentIndex = index;
+-            ListView.view.userSelected();
+-        }
+-    }
+-
+-    Keys.onEscapePressed: view.userSelected()
+-    Keys.onEnterPressed: view.userSelected()
+-    Keys.onReturnPressed: view.userSelected()
+-}
+diff --git a/sddm-theme/components/VirtualKeyboard.qml b/sddm-theme/components/VirtualKeyboard.qml
+deleted file mode 100644
+index 503a35b..0000000
+--- a/sddm-theme/components/VirtualKeyboard.qml
++++ /dev/null
+@@ -1,70 +0,0 @@
+-/*
+-    SPDX-FileCopyrightText: 2017 Martin Gräßlin <mgraesslin@kde.org>
+-
+-    SPDX-License-Identifier: GPL-2.0-or-later
+-*/
+-
+-import QtQuick 2.5
+-import QtQuick.VirtualKeyboard 2.1
+-import org.kde.plasma.core 2.0 as PlasmaCore
+-
+-InputPanel {
+-    id: inputPanel
+-    property bool activated: false
+-    active: activated && Qt.inputMethod.visible
+-    width: parent.width
+-
+-    states: [
+-        State {
+-            name: "visible"
+-            when: inputPanel.active
+-            PropertyChanges {
+-                target: inputPanel
+-                y: inputPanel.parent.height - inputPanel.height
+-                opacity: 1
+-                visible: true
+-            }
+-        },
+-        State {
+-            name: "hidden"
+-            when: !inputPanel.active
+-            PropertyChanges {
+-                target: inputPanel
+-                y: inputPanel.parent.height
+-                opacity: 0
+-                visible:false
+-            }
+-        }
+-    ]
+-
+-    transitions: [
+-        Transition {
+-            to: "visible"
+-            ParallelAnimation {
+-                YAnimator {
+-                    // NOTE this is necessary as otherwise the keyboard always starts the transition with Y as 0, due to the internal reparenting happening when becomes active
+-                    from: inputPanel.parent.height
+-                    duration: PlasmaCore.Units.longDuration
+-                    easing.type: Easing.OutQuad
+-                }
+-                OpacityAnimator {
+-                    duration: PlasmaCore.Units.longDuration
+-                    easing.type: Easing.OutQuad
+-                }
+-            }
+-        },
+-        Transition {
+-            to: "hidden"
+-            ParallelAnimation {
+-                YAnimator {
+-                    duration: PlasmaCore.Units.longDuration
+-                    easing.type: Easing.InQuad
+-                }
+-                OpacityAnimator {
+-                    duration: PlasmaCore.Units.longDuration
+-                    easing.type: Easing.InQuad
+-                }
+-            }
+-        }
+-    ]
+-}
+diff --git a/sddm-theme/components/VirtualKeyboard_wayland.qml b/sddm-theme/components/VirtualKeyboard_wayland.qml
+deleted file mode 100644
+index 1328ee8..0000000
+--- a/sddm-theme/components/VirtualKeyboard_wayland.qml
++++ /dev/null
+@@ -1,24 +0,0 @@
+-/*
+-    SPDX-FileCopyrightText: 2021 Aleix Pol Gonzalez <aleixpol@kde.org>
+-
+-    SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
+-*/
+-
+-import QtQuick 2.15
+-import org.kde.plasma.workspace.keyboardlayout 1.0 as Keyboards
+-
+-Item {
+-    id: inputPanel
+-    readonly property bool active: Qt.inputMethod.visible
+-    property bool activated: false
+-    visible: Qt.inputMethod.visible
+-
+-    x: Qt.inputMethod.keyboardRectangle.x
+-    y: Qt.inputMethod.keyboardRectangle.y
+-    height: Qt.inputMethod.keyboardRectangle.height
+-    width: Qt.inputMethod.keyboardRectangle.width
+-
+-    onActivatedChanged: if (activated) {
+-        Keyboards.KWinVirtualKeyboard.enabled = true
+-    }
+-}
+diff --git a/sddm-theme/components/WallpaperFader.qml b/sddm-theme/components/WallpaperFader.qml
+deleted file mode 100644
+index 5c885d1..0000000
+--- a/sddm-theme/components/WallpaperFader.qml
++++ /dev/null
+@@ -1,162 +0,0 @@
+-/*
+-    SPDX-FileCopyrightText: 2014 Aleix Pol Gonzalez <aleixpol@blue-systems.com>
+-
+-    SPDX-License-Identifier: GPL-2.0-or-later
+-*/
+-
+-import QtQuick 2.6
+-import QtQuick.Controls 1.1
+-import QtQuick.Layouts 1.1
+-import QtGraphicalEffects 1.0
+-
+-import org.kde.plasma.core 2.0 as PlasmaCore
+-
+-import org.kde.plasma.private.sessions 2.0
+-import "../components"
+-
+-Item {
+-    id: wallpaperFader
+-    property Item clock
+-    property Item mainStack
+-    property Item footer
+-    property alias source: wallpaperBlur.source
+-    state: lockScreenRoot.uiVisible ? "on" : "off"
+-    property real factor: 0
+-    readonly property bool lightBackground: Math.max(PlasmaCore.ColorScope.backgroundColor.r, PlasmaCore.ColorScope.backgroundColor.g, PlasmaCore.ColorScope.backgroundColor.b) > 0.5
+-
+-    property bool alwaysShowClock: typeof config === "undefined" || typeof config.alwaysShowClock === "undefined" || config.alwaysShowClock === true
+-
+-    Behavior on factor {
+-        NumberAnimation {
+-            target: wallpaperFader
+-            property: "factor"
+-            duration: PlasmaCore.Units.veryLongDuration * 2
+-            easing.type: Easing.InOutQuad
+-        }
+-    }
+-    FastBlur {
+-        id: wallpaperBlur
+-        anchors.fill: parent
+-        radius: 50 * wallpaperFader.factor
+-    }
+-    ShaderEffect {
+-        id: wallpaperShader
+-        anchors.fill: parent
+-        supportsAtlasTextures: true
+-        property var source: ShaderEffectSource {
+-            sourceItem: wallpaperBlur
+-            live: true
+-            hideSource: true
+-            textureMirroring: ShaderEffectSource.NoMirroring
+-        }
+-
+-        readonly property real contrast: 0.65 * wallpaperFader.factor + (1 - wallpaperFader.factor)
+-        readonly property real saturation: 1.6 * wallpaperFader.factor + (1 - wallpaperFader.factor)
+-        readonly property real intensity: (wallpaperFader.lightBackground ? 1.7 : 0.6) * wallpaperFader.factor + (1 - wallpaperFader.factor)
+-
+-        readonly property real transl: (1.0 - contrast) / 2.0;
+-        readonly property real rval: (1.0 - saturation) * 0.2126;
+-        readonly property real gval: (1.0 - saturation) * 0.7152;
+-        readonly property real bval: (1.0 - saturation) * 0.0722;
+-
+-        property var colorMatrix: Qt.matrix4x4(
+-            contrast, 0,        0,        0.0,
+-            0,        contrast, 0,        0.0,
+-            0,        0,        contrast, 0.0,
+-            transl,   transl,   transl,   1.0).times(Qt.matrix4x4(
+-                rval + saturation, rval,     rval,     0.0,
+-                gval,     gval + saturation, gval,     0.0,
+-                bval,     bval,     bval + saturation, 0.0,
+-                0,        0,        0,        1.0)).times(Qt.matrix4x4(
+-                    intensity, 0,         0,         0,
+-                    0,         intensity, 0,         0,
+-                    0,         0,         intensity, 0,
+-                    0,         0,         0,         1
+-                ));
+-
+-
+-        fragmentShader: "
+-            uniform mediump mat4 colorMatrix;
+-            uniform mediump sampler2D source;
+-            varying mediump vec2 qt_TexCoord0;
+-            uniform lowp float qt_Opacity;
+-
+-            void main(void)
+-            {
+-                mediump vec4 tex = texture2D(source, qt_TexCoord0);
+-                gl_FragColor = tex * colorMatrix * qt_Opacity;
+-            }"
+-    }
+-
+-    states: [
+-        State {
+-            name: "on"
+-            PropertyChanges {
+-                target: mainStack
+-                opacity: 1
+-            }
+-            PropertyChanges {
+-                target: footer
+-                opacity: 1
+-            }
+-            PropertyChanges {
+-                target: wallpaperFader
+-                factor: 1
+-            }
+-            PropertyChanges {
+-                target: clock.shadow
+-                opacity: 0
+-            }
+-            PropertyChanges {
+-                target: clock
+-                opacity: 1
+-            }
+-        },
+-        State {
+-            name: "off"
+-            PropertyChanges {
+-                target: mainStack
+-                opacity: 0
+-            }
+-            PropertyChanges {
+-                target: footer
+-                opacity: 0
+-            }
+-            PropertyChanges {
+-                target: wallpaperFader
+-                factor: 0
+-            }
+-            PropertyChanges {
+-                target: clock.shadow
+-                opacity: wallpaperFader.alwaysShowClock ? 1 : 0
+-            }
+-            PropertyChanges {
+-                target: clock
+-                opacity: wallpaperFader.alwaysShowClock ? 1 : 0
+-            }
+-        }
+-    ]
+-    transitions: [
+-        Transition {
+-            from: "off"
+-            to: "on"
+-            //Note: can't use animators as they don't play well with parallelanimations
+-            NumberAnimation {
+-                targets: [mainStack, footer, clock]
+-                property: "opacity"
+-                duration: PlasmaCore.Units.veryLongDuration
+-                easing.type: Easing.InOutQuad
+-            }
+-        },
+-        Transition {
+-            from: "on"
+-            to: "off"
+-            NumberAnimation {
+-                targets: [mainStack, footer, clock]
+-                property: "opacity"
+-                duration: PlasmaCore.Units.veryLongDuration
+-                easing.type: Easing.InOutQuad
+-            }
+-        }
+-    ]
+-}
+diff --git a/sddm-theme/components/artwork/README.txt b/sddm-theme/components/artwork/README.txt
+deleted file mode 100644
+index 1885a36..0000000
+--- a/sddm-theme/components/artwork/README.txt
++++ /dev/null
+@@ -1 +0,0 @@
+-After editing SVG files be sure to run currentColorFillFix.sh from plasma-framework
+\ No newline at end of file
+diff --git a/sddm-theme/components/artwork/logout_primary.svgz b/sddm-theme/components/artwork/logout_primary.svgz
+deleted file mode 100644
+index 6a9423f..0000000
+Binary files a/sddm-theme/components/artwork/logout_primary.svgz and /dev/null differ
+diff --git a/sddm-theme/components/artwork/restart_primary.svgz b/sddm-theme/components/artwork/restart_primary.svgz
+deleted file mode 100644
+index e2312bd..0000000
+Binary files a/sddm-theme/components/artwork/restart_primary.svgz and /dev/null differ
+diff --git a/sddm-theme/components/artwork/shutdown_primary.svgz b/sddm-theme/components/artwork/shutdown_primary.svgz
+deleted file mode 100644
+index 1c60152..0000000
+Binary files a/sddm-theme/components/artwork/shutdown_primary.svgz and /dev/null differ
+
+commit 59b6057a6af7f77d17b5d93ecdb4ecbeb752aa0b
+Author: Artem Grinev <agrinev@manjaro.org>
+Date:   Sat Dec 4 15:37:56 2021 +0400
+
+    [sddm-theme] Duplicate components instead of symlinking
+
+diff --git a/sddm-theme/components b/sddm-theme/components
+deleted file mode 120000
+index 250c60d..0000000
+--- a/sddm-theme/components
++++ /dev/null
+@@ -1 +0,0 @@
+-/usr/share/plasma/look-and-feel/org.kde.breeze.desktop/contents/components/
+\ No newline at end of file
+diff --git a/sddm-theme/components/ActionButton.qml b/sddm-theme/components/ActionButton.qml
+new file mode 100644
+index 0000000..af278f6
+--- /dev/null
++++ b/sddm-theme/components/ActionButton.qml
+@@ -0,0 +1,115 @@
++/*
++    SPDX-FileCopyrightText: 2016 David Edmundson <davidedmundson@kde.org>
++
++    SPDX-License-Identifier: LGPL-2.0-or-later
++*/
++
++import QtQuick 2.8
++import org.kde.plasma.core 2.0 as PlasmaCore
++import org.kde.plasma.components 3.0 as PlasmaComponents3
++
++Item {
++    id: root
++    property alias text: label.text
++    property alias iconSource: icon.source
++    property alias containsMouse: mouseArea.containsMouse
++    property alias font: label.font
++    property alias labelRendering: label.renderType
++    property alias circleOpacity: iconCircle.opacity
++    property alias circleVisiblity: iconCircle.visible
++    property int fontSize: PlasmaCore.Theme.defaultFont.pointSize + 1
++    readonly property bool softwareRendering: GraphicsInfo.api === GraphicsInfo.Software
++    signal clicked
++
++    activeFocusOnTab: true
++
++    property int iconSize: PlasmaCore.Units.gridUnit * 3
++
++    implicitWidth: Math.max(iconSize + PlasmaCore.Units.largeSpacing * 2, label.contentWidth)
++    implicitHeight: iconSize + PlasmaCore.Units.smallSpacing + label.implicitHeight
++
++    opacity: activeFocus || containsMouse ? 1 : 0.85
++    Behavior on opacity {
++        PropertyAnimation { // OpacityAnimator makes it turn black at random intervals
++            duration: PlasmaCore.Units.longDuration
++            easing.type: Easing.InOutQuad
++        }
++    }
++
++    Rectangle {
++        id: iconCircle
++        anchors.centerIn: icon
++        width: iconSize + PlasmaCore.Units.smallSpacing
++        height: width
++        radius: width / 2
++        color: softwareRendering ?  PlasmaCore.ColorScope.backgroundColor : PlasmaCore.ColorScope.textColor
++        opacity: root.activeFocus || containsMouse ? (softwareRendering ? 0.8 : 0.15) : (softwareRendering ? 0.6 : 0)
++        Behavior on opacity {
++            PropertyAnimation { // OpacityAnimator makes it turn black at random intervals
++                duration: PlasmaCore.Units.longDuration
++                easing.type: Easing.InOutQuad
++            }
++        }
++    }
++
++    Rectangle {
++        anchors.centerIn: iconCircle
++        width: iconCircle.width
++        height: width
++        radius: width / 2
++        scale: mouseArea.containsPress ? 1 : 0
++        color: PlasmaCore.ColorScope.textColor
++        opacity: 0.15
++        Behavior on scale {
++            PropertyAnimation {
++                duration: PlasmaCore.Units.shortDuration
++                easing.type: Easing.InOutQuart
++            }
++        }
++    }
++
++    PlasmaCore.IconItem {
++        id: icon
++        anchors {
++            top: parent.top
++            horizontalCenter: parent.horizontalCenter
++        }
++        width: iconSize
++        height: iconSize
++
++        colorGroup: PlasmaCore.ColorScope.colorGroup
++        active: mouseArea.containsMouse || root.activeFocus
++    }
++
++    PlasmaComponents3.Label {
++        id: label
++        font.pointSize: root.fontSize
++        anchors {
++            top: icon.bottom
++            topMargin: (softwareRendering ? 1.5 : 1) * PlasmaCore.Units.smallSpacing
++            left: parent.left
++            right: parent.right
++        }
++        style: softwareRendering ? Text.Outline : Text.Normal
++        styleColor: softwareRendering ? PlasmaCore.ColorScope.backgroundColor : "transparent" //no outline, doesn't matter
++        horizontalAlignment: Text.AlignHCenter
++        verticalAlignment: Text.AlignTop
++        wrapMode: Text.WordWrap
++        font.underline: root.activeFocus
++    }
++
++    MouseArea {
++        id: mouseArea
++        hoverEnabled: true
++        onClicked: root.clicked()
++        anchors.fill: parent
++    }
++
++    Keys.onEnterPressed: clicked()
++    Keys.onReturnPressed: clicked()
++    Keys.onSpacePressed: clicked()
++
++    Accessible.onPressAction: clicked()
++    Accessible.role: Accessible.Button
++    Accessible.name: label.text
++}
+diff --git a/sddm-theme/components/Battery.qml b/sddm-theme/components/Battery.qml
+new file mode 100644
+index 0000000..05be535
+--- /dev/null
++++ b/sddm-theme/components/Battery.qml
+@@ -0,0 +1,43 @@
++/*
++    SPDX-FileCopyrightText: 2016 Kai Uwe Broulik <kde@privat.broulik.de>
++
++    SPDX-License-Identifier: LGPL-2.0-or-later
++*/
++
++import QtQuick 2.2
++
++import org.kde.plasma.core 2.0 as PlasmaCore
++import org.kde.plasma.components 3.0 as PlasmaComponents3
++import org.kde.plasma.workspace.components 2.0 as PW
++
++Row {
++    id: row
++
++    property int fontSize: PlasmaCore.Theme.defaultFont.pointSize
++
++    spacing: PlasmaCore.Units.smallSpacing
++    visible: pmSource.data["Battery"]["Has Cumulative"]
++
++    PlasmaCore.DataSource {
++        id: pmSource
++        engine: "powermanagement"
++        connectedSources: ["Battery", "AC Adapter"]
++    }
++
++    PW.BatteryIcon {
++        id: battery
++        hasBattery: pmSource.data["Battery"]["Has Battery"] || false
++        percent: pmSource.data["Battery"]["Percent"] || 0
++        pluggedIn: pmSource.data["AC Adapter"] ? pmSource.data["AC Adapter"]["Plugged in"] : false
++
++        height: batteryLabel.height
++        width: height
++    }
++
++    PlasmaComponents3.Label {
++        id: batteryLabel
++        font.pointSize: row.fontSize
++        text: i18nd("plasma_lookandfeel_org.kde.lookandfeel","%1%", battery.percent)
++        Accessible.name: i18nd("plasma_lookandfeel_org.kde.lookandfeel","Battery at %1%", battery.percent)
++    }
++}
+diff --git a/sddm-theme/components/Clock.qml b/sddm-theme/components/Clock.qml
+new file mode 100644
+index 0000000..fbe0c7c
+--- /dev/null
++++ b/sddm-theme/components/Clock.qml
+@@ -0,0 +1,37 @@
++/*
++    SPDX-FileCopyrightText: 2016 David Edmundson <davidedmundson@kde.org>
++
++    SPDX-License-Identifier: LGPL-2.0-or-later
++*/
++
++import QtQuick 2.8
++import QtQuick.Layouts 1.1
++import QtQuick.Controls 2.5 as QQC2
++import org.kde.plasma.core 2.0 as PlasmaCore
++
++ColumnLayout {
++    readonly property bool softwareRendering: GraphicsInfo.api === GraphicsInfo.Software
++
++    QQC2.Label {
++        text: Qt.formatTime(timeSource.data["Local"]["DateTime"])
++        color: PlasmaCore.ColorScope.textColor
++        style: softwareRendering ? Text.Outline : Text.Normal
++        styleColor: softwareRendering ? PlasmaCore.ColorScope.backgroundColor : "transparent" //no outline, doesn't matter
++        font.pointSize: 48
++        Layout.alignment: Qt.AlignHCenter
++    }
++    QQC2.Label {
++        text: Qt.formatDate(timeSource.data["Local"]["DateTime"], Qt.DefaultLocaleLongDate)
++        color: PlasmaCore.ColorScope.textColor
++        style: softwareRendering ? Text.Outline : Text.Normal
++        styleColor: softwareRendering ? PlasmaCore.ColorScope.backgroundColor : "transparent" //no outline, doesn't matter
++        font.pointSize: 24
++        Layout.alignment: Qt.AlignHCenter
++    }
++    PlasmaCore.DataSource {
++        id: timeSource
++        engine: "time"
++        connectedSources: ["Local"]
++        interval: 1000
++    }
++}
+diff --git a/sddm-theme/components/SessionManagementScreen.qml b/sddm-theme/components/SessionManagementScreen.qml
+new file mode 100644
+index 0000000..f002e51
+--- /dev/null
++++ b/sddm-theme/components/SessionManagementScreen.qml
+@@ -0,0 +1,109 @@
++/*
++    SPDX-FileCopyrightText: 2016 David Edmundson <davidedmundson@kde.org>
++
++    SPDX-License-Identifier: LGPL-2.0-or-later
++*/
++
++import QtQuick 2.2
++
++import QtQuick.Layouts 1.1
++import QtQuick.Controls 1.1
++
++import org.kde.plasma.core 2.0 as PlasmaCore
++import org.kde.plasma.components 3.0 as PlasmaComponents3
++
++Item {
++    id: root
++
++    /*
++     * Any message to be displayed to the user, visible above the text fields
++     */
++    property alias notificationMessage: notificationsLabel.text
++
++    /*
++     * A list of Items (typically ActionButtons) to be shown in a Row beneath the prompts
++     */
++    property alias actionItems: actionItemsLayout.children
++
++    /*
++     * A model with a list of users to show in the view
++     * The following roles should exist:
++     *  - name
++     *  - iconSource
++     *
++     * The following are also handled:
++     *  - vtNumber
++     *  - displayNumber
++     *  - session
++     *  - isTty
++     */
++    property alias userListModel: userListView.model
++
++    /*
++     * Self explanatory
++     */
++    property alias userListCurrentIndex: userListView.currentIndex
++    property alias userListCurrentItem: userListView.currentItem
++    property bool showUserList: true
++
++    property alias userList: userListView
++
++    property int fontSize: PlasmaCore.Theme.defaultFont.pointSize + 2
++
++    default property alias _children: innerLayout.children
++
++    UserList {
++        id: userListView
++        visible: showUserList && y > 0
++        anchors {
++            bottom: parent.verticalCenter
++            left: parent.left
++            right: parent.right
++        }
++        fontSize: root.fontSize
++    }
++
++    //goal is to show the prompts, in ~16 grid units high, then the action buttons
++    //but collapse the space between the prompts and actions if there's no room
++    //ui is constrained to 16 grid units wide, or the screen
++    ColumnLayout {
++        id: prompts
++        anchors.top: parent.verticalCenter
++        anchors.topMargin: PlasmaCore.Units.gridUnit * 0.5
++        anchors.left: parent.left
++        anchors.right: parent.right
++        anchors.bottom: parent.bottom
++        PlasmaComponents3.Label {
++            id: notificationsLabel
++            font.pointSize: root.fontSize
++            Layout.maximumWidth: PlasmaCore.Units.gridUnit * 16
++            Layout.alignment: Qt.AlignHCenter
++            Layout.fillWidth: true
++            horizontalAlignment: Text.AlignHCenter
++            wrapMode: Text.WordWrap
++            font.italic: true
++        }
++        ColumnLayout {
++            Layout.minimumHeight: implicitHeight
++            Layout.maximumHeight: PlasmaCore.Units.gridUnit * 10
++            Layout.maximumWidth: PlasmaCore.Units.gridUnit * 16
++            Layout.alignment: Qt.AlignHCenter
++            ColumnLayout {
++                id: innerLayout
++                Layout.alignment: Qt.AlignHCenter
++                Layout.fillWidth: true
++            }
++            Item {
++                Layout.fillHeight: true
++            }
++        }
++        Row { //deliberately not rowlayout as I'm not trying to resize child items
++            id: actionItemsLayout
++            spacing: PlasmaCore.Units.largeSpacing / 2
++            Layout.alignment: Qt.AlignHCenter
++        }
++        Item {
++            Layout.fillHeight: true
++        }
++    }
++}
+diff --git a/sddm-theme/components/UserDelegate.qml b/sddm-theme/components/UserDelegate.qml
+new file mode 100644
+index 0000000..9a823a2
+--- /dev/null
++++ b/sddm-theme/components/UserDelegate.qml
+@@ -0,0 +1,180 @@
++/*
++    SPDX-FileCopyrightText: 2014 David Edmundson <davidedmundson@kde.org>
++    SPDX-FileCopyrightText: 2014 Aleix Pol Gonzalez <aleixpol@blue-systems.com>
++
++    SPDX-License-Identifier: LGPL-2.0-or-later
++*/
++
++import QtQuick 2.8
++import QtQuick.Window 2.15
++import org.kde.plasma.core 2.0 as PlasmaCore
++import org.kde.plasma.components 3.0 as PlasmaComponents3
++
++Item {
++    id: wrapper
++
++    // If we're using software rendering, draw outlines instead of shadows
++    // See https://bugs.kde.org/show_bug.cgi?id=398317
++    readonly property bool softwareRendering: GraphicsInfo.api === GraphicsInfo.Software
++
++    property bool isCurrent: true
++
++    property string name
++    property string userName
++    property string avatarPath
++    property string iconSource
++    property bool needsPassword
++    property var vtNumber
++    property bool constrainText: true
++    property alias nameFontSize: usernameDelegate.font.pointSize
++    property int fontSize: PlasmaCore.Theme.defaultFont.pointSize + 2
++    signal clicked()
++
++    property real faceSize: PlasmaCore.Units.gridUnit * 7
++
++    opacity: isCurrent ? 1.0 : 0.5
++
++    Behavior on opacity {
++        OpacityAnimator {
++            duration: PlasmaCore.Units.longDuration
++        }
++    }
++
++    // Draw a translucent background circle under the user picture
++    Rectangle {
++        anchors.centerIn: imageSource
++        width: imageSource.width - 2 // Subtract to prevent fringing
++        height: width
++        radius: width / 2
++
++        color: PlasmaCore.ColorScope.backgroundColor
++        opacity: 0.6
++    }
++
++    Item {
++        id: imageSource
++        anchors {
++            bottom: usernameDelegate.top
++            bottomMargin: PlasmaCore.Units.largeSpacing
++            horizontalCenter: parent.horizontalCenter
++        }
++        Behavior on width {
++            PropertyAnimation {
++                from: faceSize
++                duration: PlasmaCore.Units.longDuration;
++            }
++        }
++        width: isCurrent ? faceSize : faceSize - PlasmaCore.Units.largeSpacing
++        height: width
++
++        //Image takes priority, taking a full path to a file, if that doesn't exist we show an icon
++        Image {
++            id: face
++            source: wrapper.avatarPath
++            sourceSize: Qt.size(faceSize * Screen.devicePixelRatio, faceSize * Screen.devicePixelRatio)
++            fillMode: Image.PreserveAspectCrop
++            anchors.fill: parent
++        }
++
++        PlasmaCore.IconItem {
++            id: faceIcon
++            source: iconSource
++            visible: (face.status == Image.Error || face.status == Image.Null)
++            anchors.fill: parent
++            anchors.margins: PlasmaCore.Units.gridUnit * 0.5 // because mockup says so...
++            colorGroup: PlasmaCore.ColorScope.colorGroup
++        }
++    }
++
++    ShaderEffect {
++        anchors {
++            bottom: usernameDelegate.top
++            bottomMargin: PlasmaCore.Units.largeSpacing
++            horizontalCenter: parent.horizontalCenter
++        }
++
++        width: imageSource.width
++        height: imageSource.height
++
++        supportsAtlasTextures: true
++
++        property var source: ShaderEffectSource {
++            sourceItem: imageSource
++            // software rendering is just a fallback so we can accept not having a rounded avatar here
++            hideSource: wrapper.GraphicsInfo.api !== GraphicsInfo.Software
++            live: true // otherwise the user in focus will show a blurred avatar
++        }
++
++        property var colorBorder: PlasmaCore.ColorScope.textColor
++
++        //draw a circle with an antialiased border
++        //innerRadius = size of the inner circle with contents
++        //outerRadius = size of the border
++        //blend = area to blend between two colours
++        //all sizes are normalised so 0.5 == half the width of the texture
++
++        //if copying into another project don't forget to connect themeChanged to update()
++        //but in SDDM that's a bit pointless
++        fragmentShader: "
++                        varying highp vec2 qt_TexCoord0;
++                        uniform highp float qt_Opacity;
++                        uniform lowp sampler2D source;
++
++                        uniform lowp vec4 colorBorder;
++                        highp float blend = 0.01;
++                        highp float innerRadius = 0.47;
++                        highp float outerRadius = 0.49;
++                        lowp vec4 colorEmpty = vec4(0.0, 0.0, 0.0, 0.0);
++
++                        void main() {
++                            lowp vec4 colorSource = texture2D(source, qt_TexCoord0.st);
++
++                            highp vec2 m = qt_TexCoord0 - vec2(0.5, 0.5);
++                            highp float dist = sqrt(m.x * m.x + m.y * m.y);
++
++                            if (dist < innerRadius)
++                                gl_FragColor = colorSource;
++                            else if (dist < innerRadius + blend)
++                                gl_FragColor = mix(colorSource, colorBorder, ((dist - innerRadius) / blend));
++                            else if (dist < outerRadius)
++                                gl_FragColor = colorBorder;
++                            else if (dist < outerRadius + blend)
++                                gl_FragColor = mix(colorBorder, colorEmpty, ((dist - outerRadius) / blend));
++                            else
++                                gl_FragColor = colorEmpty ;
++
++                            gl_FragColor = gl_FragColor * qt_Opacity;
++                    }
++        "
++    }
++
++    PlasmaComponents3.Label {
++        id: usernameDelegate
++
++        // Make it bigger than other fonts to match the scale of the avatar better
++        font.pointSize: wrapper.fontSize + 4
++        anchors {
++            bottom: parent.bottom
++            horizontalCenter: parent.horizontalCenter
++        }
++        width: constrainText ? parent.width : implicitWidth
++        text: wrapper.name
++        style: softwareRendering ? Text.Outline : Text.Normal
++        styleColor: softwareRendering ? PlasmaCore.ColorScope.backgroundColor : "transparent" //no outline, doesn't matter
++        elide: Text.ElideRight
++        horizontalAlignment: Text.AlignHCenter
++        //make an indication that this has active focus, this only happens when reached with keyboard navigation
++        font.underline: wrapper.activeFocus
++    }
++
++    MouseArea {
++        anchors.fill: parent
++        hoverEnabled: true
++
++        onClicked: wrapper.clicked();
++    }
++
++    Accessible.name: name
++    Accessible.role: Accessible.Button
++    function accessiblePressAction() { wrapper.clicked() }
++}
+diff --git a/sddm-theme/components/UserList.qml b/sddm-theme/components/UserList.qml
+new file mode 100644
+index 0000000..49f38eb
+--- /dev/null
++++ b/sddm-theme/components/UserList.qml
+@@ -0,0 +1,88 @@
++/*
++    SPDX-FileCopyrightText: 2014 David Edmundson <davidedmundson@kde.org>
++
++    SPDX-License-Identifier: LGPL-2.0-or-later
++*/
++
++import QtQuick 2.2
++import org.kde.plasma.core 2.0 as PlasmaCore
++
++ListView {
++    id: view
++    readonly property string selectedUser: currentItem ? currentItem.userName : ""
++    readonly property int userItemWidth: PlasmaCore.Units.gridUnit * 8
++    readonly property int userItemHeight: PlasmaCore.Units.gridUnit * 8
++    property int fontSize: PlasmaCore.Theme.defaultFont.pointSize + 2
++
++    implicitHeight: userItemHeight
++
++    activeFocusOnTab : true
++
++    /*
++     * Signals that a user was explicitly selected
++     */
++    signal userSelected;
++
++    orientation: ListView.Horizontal
++    highlightRangeMode: ListView.StrictlyEnforceRange
++
++    //centre align selected item (which implicitly centre aligns the rest
++    preferredHighlightBegin: width/2 - userItemWidth/2
++    preferredHighlightEnd: preferredHighlightBegin
++
++    // Disable flicking if we only have on user (like on the lockscreen)
++    interactive: count > 1
++
++    delegate: UserDelegate {
++        avatarPath: model.icon || ""
++        iconSource: model.iconName || "user-identity"
++        fontSize: view.fontSize
++        vtNumber: model.vtNumber
++        needsPassword: model.needsPassword
++
++        name: {
++            var displayName = model.realName || model.name
++
++            if (model.vtNumber === undefined || model.vtNumber < 0) {
++                return displayName
++            }
++
++            if (!model.session) {
++                return i18ndc("plasma_lookandfeel_org.kde.lookandfeel", "Nobody logged in on that session", "Unused")
++            }
++
++
++            var location = ""
++            if (model.isTty) {
++                location = i18ndc("plasma_lookandfeel_org.kde.lookandfeel", "User logged in on console number", "TTY %1", model.vtNumber)
++            } else if (model.displayNumber) {
++                location = i18ndc("plasma_lookandfeel_org.kde.lookandfeel", "User logged in on console (X display number)", "on TTY %1 (Display %2)", model.vtNumber, model.displayNumber)
++            }
++
++            if (location) {
++                return i18ndc("plasma_lookandfeel_org.kde.lookandfeel", "Username (location)", "%1 (%2)", displayName, location)
++            }
++
++            return displayName
++        }
++
++        userName: model.name
++
++        width: userItemWidth
++        height: userItemHeight
++
++        //if we only have one delegate, we don't need to clip the text as it won't be overlapping with anything
++        constrainText: ListView.view.count > 1
++
++        isCurrent: ListView.isCurrentItem
++
++        onClicked: {
++            ListView.view.currentIndex = index;
++            ListView.view.userSelected();
++        }
++    }
++
++    Keys.onEscapePressed: view.userSelected()
++    Keys.onEnterPressed: view.userSelected()
++    Keys.onReturnPressed: view.userSelected()
++}
+diff --git a/sddm-theme/components/VirtualKeyboard.qml b/sddm-theme/components/VirtualKeyboard.qml
+new file mode 100644
+index 0000000..503a35b
+--- /dev/null
++++ b/sddm-theme/components/VirtualKeyboard.qml
+@@ -0,0 +1,70 @@
++/*
++    SPDX-FileCopyrightText: 2017 Martin Gräßlin <mgraesslin@kde.org>
++
++    SPDX-License-Identifier: GPL-2.0-or-later
++*/
++
++import QtQuick 2.5
++import QtQuick.VirtualKeyboard 2.1
++import org.kde.plasma.core 2.0 as PlasmaCore
++
++InputPanel {
++    id: inputPanel
++    property bool activated: false
++    active: activated && Qt.inputMethod.visible
++    width: parent.width
++
++    states: [
++        State {
++            name: "visible"
++            when: inputPanel.active
++            PropertyChanges {
++                target: inputPanel
++                y: inputPanel.parent.height - inputPanel.height
++                opacity: 1
++                visible: true
++            }
++        },
++        State {
++            name: "hidden"
++            when: !inputPanel.active
++            PropertyChanges {
++                target: inputPanel
++                y: inputPanel.parent.height
++                opacity: 0
++                visible:false
++            }
++        }
++    ]
++
++    transitions: [
++        Transition {
++            to: "visible"
++            ParallelAnimation {
++                YAnimator {
++                    // NOTE this is necessary as otherwise the keyboard always starts the transition with Y as 0, due to the internal reparenting happening when becomes active
++                    from: inputPanel.parent.height
++                    duration: PlasmaCore.Units.longDuration
++                    easing.type: Easing.OutQuad
++                }
++                OpacityAnimator {
++                    duration: PlasmaCore.Units.longDuration
++                    easing.type: Easing.OutQuad
++                }
++            }
++        },
++        Transition {
++            to: "hidden"
++            ParallelAnimation {
++                YAnimator {
++                    duration: PlasmaCore.Units.longDuration
++                    easing.type: Easing.InQuad
++                }
++                OpacityAnimator {
++                    duration: PlasmaCore.Units.longDuration
++                    easing.type: Easing.InQuad
++                }
++            }
++        }
++    ]
++}
+diff --git a/sddm-theme/components/VirtualKeyboard_wayland.qml b/sddm-theme/components/VirtualKeyboard_wayland.qml
+new file mode 100644
+index 0000000..1328ee8
+--- /dev/null
++++ b/sddm-theme/components/VirtualKeyboard_wayland.qml
+@@ -0,0 +1,24 @@
++/*
++    SPDX-FileCopyrightText: 2021 Aleix Pol Gonzalez <aleixpol@kde.org>
++
++    SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
++*/
++
++import QtQuick 2.15
++import org.kde.plasma.workspace.keyboardlayout 1.0 as Keyboards
++
++Item {
++    id: inputPanel
++    readonly property bool active: Qt.inputMethod.visible
++    property bool activated: false
++    visible: Qt.inputMethod.visible
++
++    x: Qt.inputMethod.keyboardRectangle.x
++    y: Qt.inputMethod.keyboardRectangle.y
++    height: Qt.inputMethod.keyboardRectangle.height
++    width: Qt.inputMethod.keyboardRectangle.width
++
++    onActivatedChanged: if (activated) {
++        Keyboards.KWinVirtualKeyboard.enabled = true
++    }
++}
+diff --git a/sddm-theme/components/WallpaperFader.qml b/sddm-theme/components/WallpaperFader.qml
+new file mode 100644
+index 0000000..5c885d1
+--- /dev/null
++++ b/sddm-theme/components/WallpaperFader.qml
+@@ -0,0 +1,162 @@
++/*
++    SPDX-FileCopyrightText: 2014 Aleix Pol Gonzalez <aleixpol@blue-systems.com>
++
++    SPDX-License-Identifier: GPL-2.0-or-later
++*/
++
++import QtQuick 2.6
++import QtQuick.Controls 1.1
++import QtQuick.Layouts 1.1
++import QtGraphicalEffects 1.0
++
++import org.kde.plasma.core 2.0 as PlasmaCore
++
++import org.kde.plasma.private.sessions 2.0
++import "../components"
++
++Item {
++    id: wallpaperFader
++    property Item clock
++    property Item mainStack
++    property Item footer
++    property alias source: wallpaperBlur.source
++    state: lockScreenRoot.uiVisible ? "on" : "off"
++    property real factor: 0
++    readonly property bool lightBackground: Math.max(PlasmaCore.ColorScope.backgroundColor.r, PlasmaCore.ColorScope.backgroundColor.g, PlasmaCore.ColorScope.backgroundColor.b) > 0.5
++
++    property bool alwaysShowClock: typeof config === "undefined" || typeof config.alwaysShowClock === "undefined" || config.alwaysShowClock === true
++
++    Behavior on factor {
++        NumberAnimation {
++            target: wallpaperFader
++            property: "factor"
++            duration: PlasmaCore.Units.veryLongDuration * 2
++            easing.type: Easing.InOutQuad
++        }
++    }
++    FastBlur {
++        id: wallpaperBlur
++        anchors.fill: parent
++        radius: 50 * wallpaperFader.factor
++    }
++    ShaderEffect {
++        id: wallpaperShader
++        anchors.fill: parent
++        supportsAtlasTextures: true
++        property var source: ShaderEffectSource {
++            sourceItem: wallpaperBlur
++            live: true
++            hideSource: true
++            textureMirroring: ShaderEffectSource.NoMirroring
++        }
++
++        readonly property real contrast: 0.65 * wallpaperFader.factor + (1 - wallpaperFader.factor)
++        readonly property real saturation: 1.6 * wallpaperFader.factor + (1 - wallpaperFader.factor)
++        readonly property real intensity: (wallpaperFader.lightBackground ? 1.7 : 0.6) * wallpaperFader.factor + (1 - wallpaperFader.factor)
++
++        readonly property real transl: (1.0 - contrast) / 2.0;
++        readonly property real rval: (1.0 - saturation) * 0.2126;
++        readonly property real gval: (1.0 - saturation) * 0.7152;
++        readonly property real bval: (1.0 - saturation) * 0.0722;
++
++        property var colorMatrix: Qt.matrix4x4(
++            contrast, 0,        0,        0.0,
++            0,        contrast, 0,        0.0,
++            0,        0,        contrast, 0.0,
++            transl,   transl,   transl,   1.0).times(Qt.matrix4x4(
++                rval + saturation, rval,     rval,     0.0,
++                gval,     gval + saturation, gval,     0.0,
++                bval,     bval,     bval + saturation, 0.0,
++                0,        0,        0,        1.0)).times(Qt.matrix4x4(
++                    intensity, 0,         0,         0,
++                    0,         intensity, 0,         0,
++                    0,         0,         intensity, 0,
++                    0,         0,         0,         1
++                ));
++
++
++        fragmentShader: "
++            uniform mediump mat4 colorMatrix;
++            uniform mediump sampler2D source;
++            varying mediump vec2 qt_TexCoord0;
++            uniform lowp float qt_Opacity;
++
++            void main(void)
++            {
++                mediump vec4 tex = texture2D(source, qt_TexCoord0);
++                gl_FragColor = tex * colorMatrix * qt_Opacity;
++            }"
++    }
++
++    states: [
++        State {
++            name: "on"
++            PropertyChanges {
++                target: mainStack
++                opacity: 1
++            }
++            PropertyChanges {
++                target: footer
++                opacity: 1
++            }
++            PropertyChanges {
++                target: wallpaperFader
++                factor: 1
++            }
++            PropertyChanges {
++                target: clock.shadow
++                opacity: 0
++            }
++            PropertyChanges {
++                target: clock
++                opacity: 1
++            }
++        },
++        State {
++            name: "off"
++            PropertyChanges {
++                target: mainStack
++                opacity: 0
++            }
++            PropertyChanges {
++                target: footer
++                opacity: 0
++            }
++            PropertyChanges {
++                target: wallpaperFader
++                factor: 0
++            }
++            PropertyChanges {
++                target: clock.shadow
++                opacity: wallpaperFader.alwaysShowClock ? 1 : 0
++            }
++            PropertyChanges {
++                target: clock
++                opacity: wallpaperFader.alwaysShowClock ? 1 : 0
++            }
++        }
++    ]
++    transitions: [
++        Transition {
++            from: "off"
++            to: "on"
++            //Note: can't use animators as they don't play well with parallelanimations
++            NumberAnimation {
++                targets: [mainStack, footer, clock]
++                property: "opacity"
++                duration: PlasmaCore.Units.veryLongDuration
++                easing.type: Easing.InOutQuad
++            }
++        },
++        Transition {
++            from: "on"
++            to: "off"
++            NumberAnimation {
++                targets: [mainStack, footer, clock]
++                property: "opacity"
++                duration: PlasmaCore.Units.veryLongDuration
++                easing.type: Easing.InOutQuad
++            }
++        }
++    ]
++}
+diff --git a/sddm-theme/components/artwork/README.txt b/sddm-theme/components/artwork/README.txt
+new file mode 100644
+index 0000000..1885a36
+--- /dev/null
++++ b/sddm-theme/components/artwork/README.txt
+@@ -0,0 +1 @@
++After editing SVG files be sure to run currentColorFillFix.sh from plasma-framework
+\ No newline at end of file
+diff --git a/sddm-theme/components/artwork/logout_primary.svgz b/sddm-theme/components/artwork/logout_primary.svgz
+new file mode 100644
+index 0000000..6a9423f
+Binary files /dev/null and b/sddm-theme/components/artwork/logout_primary.svgz differ
+diff --git a/sddm-theme/components/artwork/restart_primary.svgz b/sddm-theme/components/artwork/restart_primary.svgz
+new file mode 100644
+index 0000000..e2312bd
+Binary files /dev/null and b/sddm-theme/components/artwork/restart_primary.svgz differ
+diff --git a/sddm-theme/components/artwork/shutdown_primary.svgz b/sddm-theme/components/artwork/shutdown_primary.svgz
+new file mode 100644
+index 0000000..1c60152
+Binary files /dev/null and b/sddm-theme/components/artwork/shutdown_primary.svgz differ
+
+commit cd33946c244143d1bcdbfa9b32101223a29ff7cc
+Author: Artem Grinev <agrinev@manjaro.org>
+Date:   Wed Nov 24 05:35:52 2021 +0400
+
+    [sddm] Return dummy components
+
+diff --git a/sddm-theme/components b/sddm-theme/components
+new file mode 120000
+index 0000000..250c60d
+--- /dev/null
++++ b/sddm-theme/components
+@@ -0,0 +1 @@
++/usr/share/plasma/look-and-feel/org.kde.breeze.desktop/contents/components/
+\ No newline at end of file
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 1 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (1/1), 72 bytes | 72.00 KiB/s, done.
+
+commit 380787a00e14dbe38151fe52ac04cffc13be10cd
+Author: Artem Grinev <agrinev@manjaro.org>
+Date:   Wed Nov 24 03:55:41 2021 +0400
+
+    [colors] Fix breath light naming
+
+diff --git a/sddm-theme/components b/sddm-theme/components
+deleted file mode 120000
+index 6019cc9..0000000
+--- a/sddm-theme/components
++++ /dev/null
+@@ -1 +0,0 @@
+-../lookandfeel/contents/components/
+\ No newline at end of file
+
+commit a2209ef314a9b4afc61d82b75fcb2df33544d61f
+Author: Bernhard Landauer <oberon@manjaro.org>
+Date:   Tue Nov 5 22:00:09 2019 +0100
+
+    initial commit
+
+diff --git a/sddm-theme/components b/sddm-theme/components
+new file mode 120000
+index 0000000..6019cc9
+--- /dev/null
++++ b/sddm-theme/components
+@@ -0,0 +1 @@
++../lookandfeel/contents/components/
+\ No newline at end of file
+
+========== ROOT CMAKE ==========
+sed: can't read CMakeLists.txt: No such file or directory
+
+========== ALL CMAKE FILES ==========
+Bibotto@Bibotto:/tmp/breath-upstream-forgejo$
